@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Artifactory Package Summary — packages.idmod.org</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #1a1a1a; line-height: 1.5; font-size: 12px; }
+  h1 { font-size: 22px; border-bottom: 3px solid #2c6faf; padding-bottom: 6px; color: #1c4e80; }
+  h2 { font-size: 16px; color: #1c4e80; border-bottom: 1px solid #d0d7de; padding-bottom: 4px; margin-top: 26px; }
+  .meta { color: #666; font-style: italic; margin-bottom: 18px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 11px; }
+  th, td { border: 1px solid #c8ced4; padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: #eaf1f8; color: #1c4e80; }
+  tr:nth-child(even) td { background: #f7f9fb; }
+  code { background: #f0f2f4; padding: 1px 4px; border-radius: 3px; font-family: "Consolas", monospace; font-size: 10.5px; }
+  blockquote { border-left: 4px solid #f0ad4e; background: #fff8ec; margin: 10px 0; padding: 8px 14px; color: #5a4a2a; }
+  ul { margin: 8px 0; }
+  li { margin: 3px 0; }
+  .ok { color: #2e7d32; font-weight: bold; }
+  .no { color: #999; }
+  hr { border: none; border-top: 1px solid #d0d7de; margin: 24px 0; }
+</style>
+</head>
+<body>
+
+<h1>Artifactory Package Summary — packages.idmod.org</h1>
+<p class="meta">Generated: 2026-07-14 · Source: https://packages.idmod.org</p>
+
+<h2>Instance structure</h2>
+<p>There are <b>32 repositories</b> spanning <b>7 package types</b>, organized as LOCAL (hosted) / REMOTE (proxy) / VIRTUAL (aggregate). Only the <b>LOCAL production</b> repos actually store IDM-owned artifacts.</p>
+<ul>
+  <li><b>LOCAL</b> — org-hosted artifacts (IDM's own packages land here)</li>
+  <li><b>REMOTE</b> — caching proxies of public registries (PyPI, npm, Docker Hub, CRAN, NuGet, RPM)</li>
+  <li><b>VIRTUAL</b> — a single URL aggregating a local + remote pair</li>
+</ul>
+
+<table>
+  <thead><tr><th>Package type</th><th>Production LOCAL repo</th><th>Contents?</th><th>Latest activity</th></tr></thead>
+  <tbody>
+    <tr><td><b>Python (PyPI)</b></td><td><code>idm-pypi-production</code></td><td class="ok">✅ ~107 package names</td><td>2026-06-23</td></tr>
+    <tr><td><b>Docker</b></td><td><code>docker-production-public</code> (51), <code>idm-docker-public</code> (16)</td><td class="ok">✅ 67 image repos</td><td>2026-06-27</td></tr>
+    <tr><td><b>npm</b></td><td><code>idm-npm-production</code></td><td class="ok">✅ 4 packages</td><td>2026-06-16</td></tr>
+    <tr><td><b>Generic (data)</b></td><td><code>idm-data</code></td><td class="ok">✅ data files, not packages</td><td>2026-07-12</td></tr>
+    <tr><td><b>NuGet</b></td><td><code>idm-nuget-production</code></td><td class="no">⬜ empty</td><td>—</td></tr>
+    <tr><td><b>CRAN (R)</b></td><td><code>idm-cran-production</code></td><td class="no">⬜ empty</td><td>—</td></tr>
+    <tr><td><b>YUM/RPM</b></td><td><code>idm-rpm-production</code></td><td class="no">⬜ empty</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<blockquote>NuGet, CRAN, and RPM production repos are provisioned but currently hold <b>no packages</b> — only their remote proxies (<code>nuget-remote</code>, <code>cran-remote</code>, <code>rpm-remote</code>) are in use. Also present: 2 <code>testteam-*</code> dev/stage repos (Docker + PyPI) and Docker staging (<code>docker-staging-public</code>).</blockquote>
+
+<h2>Python — idm-pypi-production (~107 packages)</h2>
+<p>The largest and most active repository. Flagship packages with latest version / release date / publisher:</p>
+<table>
+  <thead><tr><th>Package</th><th>Latest version</th><th>Release date</th><th>Published by (owner)</th></tr></thead>
+  <tbody>
+    <tr><td><code>emodpy</code></td><td>2.1.16</td><td>2025-12-04</td><td>pypi-prod-deploy (CI)</td></tr>
+    <tr><td><code>emodpy-hiv</code></td><td>3.0.1</td><td>2026-03-03</td><td>pypi-prod-deploy (CI)</td></tr>
+    <tr><td><code>emodpy-malaria</code></td><td>4.3.2</td><td>2026-01-22</td><td>idm_bamboo_user (CI)</td></tr>
+    <tr><td><code>emod-api</code></td><td>1.33.7</td><td>2026-01-22</td><td>artifact_staging_deploy (CI)</td></tr>
+    <tr><td><code>emod-hiv</code></td><td>1.0.5</td><td>2025-10-22</td><td>stitova</td></tr>
+    <tr><td><code>emod-malaria</code></td><td>0.0.78</td><td>2025-10-21</td><td>stitova</td></tr>
+    <tr><td><code>idmtools</code></td><td>2.2.2</td><td>2026-04-22</td><td>idm_bamboo_user (CI)</td></tr>
+    <tr><td><code>idmtools-platform-comps</code></td><td>2.2.2</td><td>2026-04-22</td><td>idm_bamboo_user (CI)</td></tr>
+    <tr><td><code>laser-core</code></td><td>0.7.0</td><td>2025-11-11</td><td>jbloedow</td></tr>
+    <tr><td><code>pyCOMPS</code></td><td>2.11.0</td><td>2024-06-20</td><td>jsteinkraus</td></tr>
+    <tr><td><code>idm-buildtools</code></td><td>1.0.5</td><td>2024-02-28</td><td>idm_bamboo_user (CI)</td></tr>
+    <tr><td><code>dtk-tools</code></td><td>1.2.0rc6</td><td>2021-03-18</td><td>zdu (legacy)</td></tr>
+  </tbody>
+</table>
+<p><b>Package families in this repo:</b></p>
+<ul>
+  <li><b>EMOD / emodpy</b> disease models — <code>emod-{api,common,hiv,malaria,measles,polio,tbhiv,typhoid}</code>, <code>emodpy-*</code></li>
+  <li><b>idmtools</b> platform suite — <code>idmtools-platform-{comps,container,slurm,local,general}</code>, <code>idmtools-cli</code>, <code>idmtools-models</code></li>
+  <li><b>LASER</b> agent-based framework — <code>laser-core</code>, <code>laser_polio</code>, <code>laser-*-model</code>, <code>idmlaser*</code></li>
+  <li><b>Utilities</b> — <code>pyCOMPS</code>, <code>idm-test</code>, <code>idm-buildtools</code>, <code>emod-api</code></li>
+  <li><b>Vendored scientific deps</b> — <code>GDAL</code>, <code>Fiona</code>, <code>Shapely</code>, <code>geopandas</code>, <code>pyproj</code>, <code>statsmodels</code>, <code>lz4</code>, <code>scikit-cuda</code></li>
+</ul>
+<blockquote>Note: many names appear twice (e.g. <code>idmtools_cli</code> vs <code>idmtools-cli</code>) due to PEP 503 name normalization.</blockquote>
+
+<h2>Docker — 67 image repositories</h2>
+<ul>
+  <li><b><code>docker-production-public</code></b> (51 images): build/test environments and model runtimes — <code>emodpy</code>, <code>idmtools</code> (SSMT workers), <code>dtk-alma-*</code>, <code>dtk-rocky-*</code>, <code>idm-rocky-py39*</code>, <code>r-apache-base</code>, <code>laser*</code>, plus many user-scoped dev images (e.g. <code>krosenfeld_*</code>, <code>jonathanhhb-*</code>, <code>cwiswell-*</code>).</li>
+  <li><b><code>idm-docker-public</code></b> (16 images): <code>dtk</code>, <code>dtk-tools</code>, <code>emod</code>, <code>emodpy</code>, <code>idmtools</code>, <code>idmtools-slurm</code>, and org-partner images (<code>northwestern</code>, <code>nyu</code>).</li>
+  <li>Latest tags observed: <code>idmtools/comps_ssmt_worker:2.1.0.11</code> (2025-03-31), <code>idm/dtk-rocky-testenv</code> (2023-10-26).</li>
+</ul>
+<p><i>(Owner/tag detail is limited here because the Docker v2 <code>_catalog</code> API requires auth; the above is reconstructed from the storage-listing API.)</i></p>
+
+<h2>npm — idm-npm-production (4 packages, full coverage)</h2>
+<table>
+  <thead><tr><th>Package</th><th>Latest version</th><th>Last modified</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><code>comps-ui-auth</code></td><td>2.1.1</td><td>2022-09-30</td><td>COMPS UI auth lib</td></tr>
+    <tr><td><code>microcomps</code></td><td>0.1.0-build.42</td><td>2022-11-09</td><td></td></tr>
+    <tr><td><code>postette</code></td><td>0.4.1</td><td>2021-02-09</td><td></td></tr>
+    <tr><td><code>comps-ui</code></td><td>0.2.0</td><td>2019-01-22</td><td>oldest</td></tr>
+  </tbody>
+</table>
+<p>These are UI components for the COMPS platform; all are relatively dormant (last activity 2022).</p>
+
+<h2>Generic — idm-data</h2>
+<p>Not software packages but <b>data assets</b> — <b>568 data files across 11 project folders</b>. This is the <b>most recently active</b> repo (2026-07-12); model input/data files are updated more frequently than released packages. Content is dominated by EMOD/DTK simulation inputs.</p>
+
+<h3 style="font-size:13px;color:#1c4e80;margin-top:16px;">Data types by file format</h3>
+<table>
+  <thead><tr><th>Extension</th><th>Count</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><code>.json</code></td><td>345</td><td>DTK/EMOD <b>demographics &amp; config</b> files (population, node properties, simulation setup)</td></tr>
+    <tr><td><code>.bin</code></td><td>173</td><td>EMOD <b>binary climate/spatial inputs</b> (air &amp; land temperature, rainfall, humidity rasters) — each paired with a <code>.bin.json</code> header</td></tr>
+    <tr><td><code>.txt</code></td><td>11</td><td>Notes / manifests / plain-text inputs</td></tr>
+    <tr><td><code>.gz</code></td><td>9</td><td>Gzip-compressed datasets</td></tr>
+    <tr><td><code>.tgz</code></td><td>7</td><td>Tarball data bundles (HIV, Malaria project packs)</td></tr>
+    <tr><td><code>.pkl</code></td><td>6</td><td>Python <b>pickle</b> objects (MEASLES — serialized model state/data)</td></tr>
+    <tr><td><code>.zip</code></td><td>5</td><td>Zipped archives (LASER data, GADM shapefiles)</td></tr>
+    <tr><td><code>.csv</code></td><td>5</td><td>Tabular data (LASER, tb)</td></tr>
+    <tr><td><code>.npy</code></td><td>3</td><td><b>NumPy</b> array binaries (LASER matrices)</td></tr>
+    <tr><td><code>.tar</code></td><td>1</td><td>Tar archive (oc-proj)</td></tr>
+    <tr><td><code>.exe</code></td><td>1</td><td>Executable (LASER)</td></tr>
+    <tr><td><code>.conf</code></td><td>1</td><td>Config file (general)</td></tr>
+    <tr><td><i>(no ext)</i></td><td>1</td><td>Uncategorized</td></tr>
+  </tbody>
+</table>
+
+<h3 style="font-size:13px;color:#1c4e80;margin-top:16px;">Organized by project folder</h3>
+<table>
+  <thead><tr><th>Folder</th><th>Files</th><th>Data types / character</th></tr></thead>
+  <tbody>
+    <tr><td><code>DtkInput</code></td><td>524</td><td>Bulk of the repo — EMOD/DTK <b>simulation inputs</b>: <code>.json</code> (demographics/config) + <code>.bin</code> (climate rasters) + <code>.txt</code></td></tr>
+    <tr><td><code>LASER</code></td><td>14</td><td>Mixed LASER model assets: <code>.gz</code>, <code>.npy</code>, <code>.bin</code>, <code>.zip</code>, <code>.txt</code>, <code>.exe</code></td></tr>
+    <tr><td><code>laser</code></td><td>10</td><td>LASER datasets: <code>.gz</code>, <code>.csv</code>, <code>.npy</code></td></tr>
+    <tr><td><code>MEASLES</code></td><td>7</td><td><code>.pkl</code> (pickled Python data) + <code>.gz</code></td></tr>
+    <tr><td><code>gadm</code></td><td>3</td><td><code>.zip</code> — <b>GADM administrative-boundary</b> shapefiles (geographic)</td></tr>
+    <tr><td><code>Malaria</code></td><td>3</td><td><code>.tgz</code> data bundles</td></tr>
+    <tr><td><code>HIV</code></td><td>2</td><td><code>.tgz</code> data bundles</td></tr>
+    <tr><td><code>oc-proj</code></td><td>2</td><td><code>.json</code> + <code>.tar</code></td></tr>
+    <tr><td><code>tb</code></td><td>1</td><td><code>.csv</code></td></tr>
+    <tr><td><code>malaria</code></td><td>1</td><td><code>.tgz</code></td></tr>
+    <tr><td><code>general</code></td><td>1</td><td><code>.conf</code></td></tr>
+  </tbody>
+</table>
+<blockquote>The dominant <code>.json</code> + <code>.bin</code> pairing is the EMOD signature: climate inputs ship as a raw binary raster (<code>.bin</code>) plus a JSON sidecar describing dimensions, node IDs, and date ranges. Note both <code>LASER</code>/<code>laser</code> and <code>Malaria</code>/<code>malaria</code> exist as separate folders — data uploaded by different teams/scripts over time.</blockquote>
+
+<h2>Bottom line</h2>
+<p>IDM's Artifactory is predominantly a <b>Python + Docker</b> shop:</p>
+<ul>
+  <li><b>PyPI</b> (~107 packages) centered on the EMOD/emodpy, idmtools, and LASER ecosystems</li>
+  <li><b>Docker</b> (67 images) for build environments and model runtimes</li>
+  <li><b>npm</b> holds 4 legacy COMPS UI libraries</li>
+  <li><b><code>idm-data</code></b> holds project datasets (most recently active)</li>
+  <li><b>NuGet / CRAN / RPM</b> production repos are empty placeholders</li>
+</ul>
+<p>Most current releases are pushed by CI service accounts (<code>idm_bamboo_user</code>, <code>pypi-prod-deploy</code>, <code>artifact_staging_deploy</code>), with some manual publishes by individual engineers.</p>
+
+<hr>
+
+<h2>Methodology / data sources</h2>
+<p>Data was collected from the public Artifactory REST API:</p>
+<ul>
+  <li>Repository inventory: <code>GET /artifactory/api/repositories</code></li>
+  <li>PyPI package list: <code>GET /artifactory/api/pypi/idm-pypi-production/simple/</code></li>
+  <li>Folder/artifact listings: <code>GET /artifactory/api/storage/{repo}/</code></li>
+  <li>Latest activity + owner: <code>GET /artifactory/api/storage/{repo}/{path}?lastModified</code> (<code>createdBy</code> field)</li>
+  <li>npm metadata: <code>GET /artifactory/api/npm/idm-npm-production/{package}</code></li>
+</ul>
+<p>Note: AQL (<code>/api/search/aql</code>) and the Docker v2 registry catalog (<code>/v2/_catalog</code>) require authentication and were not used.</p>
+
+</body>
+</html>

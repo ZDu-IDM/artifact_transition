@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh --version)",
+      "Bash(docker --version)",
+      "Bash(twine --version)",
+      "Bash(npm --version)",
+      "Bash(git lfs *)",
+      "Bash(jq --version)"
+    ]
+  }
+}
