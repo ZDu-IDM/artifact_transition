@@ -104,6 +104,89 @@ def normalize_pypi_name(name: str) -> str:
     return re.sub(r"[-_.]+", "-", name).lower()
 
 
+def resolve_exe(name: str) -> str:
+    """Resolve a tool to a runnable path (finds npm.cmd / docker.exe on Windows).
+
+    subprocess on Windows won't find `npm` because it's `npm.cmd`; shutil.which
+    honours PATHEXT and returns the real path. Falls back to the bare name.
+    """
+    import shutil
+    return shutil.which(name) or name
+
+
+# ---- verification probes (read-only, used by each type's verify()) -----------
+def http_reachable(url: str, timeout: int = 30) -> tuple[bool, str]:
+    """GET a URL (follows redirects); return (ok, 'HTTP <status>' | 'error: ...')."""
+    import requests
+    try:
+        r = requests.get(url, timeout=timeout, stream=True)
+        r.close()
+        return (200 <= r.status_code < 300, f"HTTP {r.status_code}")
+    except Exception as exc:
+        return (False, f"error: {exc}")
+
+
+def http_size(url: str, timeout: int = 30) -> tuple[int | None, object]:
+    """HEAD a URL; return (content-length | None, status). None size = unreachable."""
+    import requests
+    try:
+        r = requests.head(url, timeout=timeout, allow_redirects=True)
+        if not (200 <= r.status_code < 300):
+            return (None, r.status_code)
+        return (int(r.headers.get("Content-Length", 0) or 0), r.status_code)
+    except Exception as exc:
+        return (None, str(exc))
+
+
+def sha256_url(url: str, timeout: int = 120) -> str | None:
+    """Stream a URL and return its sha256, or None if it couldn't be fetched."""
+    import requests
+    try:
+        h = hashlib.sha256()
+        with requests.get(url, stream=True, timeout=timeout) as r:
+            if not (200 <= r.status_code < 300):
+                return None
+            for chunk in r.iter_content(1 << 20):
+                h.update(chunk)
+        return h.hexdigest()
+    except Exception:
+        return None
+
+
+def probe_asset(label: str, url: str, sha256: str | None = None,
+                sha_max_bytes: int = 8_000_000) -> tuple[str, str, str]:
+    """Probe a release asset URL. Verifies sha256 if the asset is small enough.
+
+    Returns (status, label, detail) with status in OK/FAIL.
+    """
+    size, status = http_size(url)
+    if size is None:
+        return ("FAIL", label, f"unreachable ({status})")
+    if sha256 and 0 < size <= sha_max_bytes:
+        actual = sha256_url(url)
+        if actual is None:
+            return ("FAIL", label, "download failed during sha256 check")
+        if actual.lower() == sha256.lower():
+            return ("OK", label, f"sha256 match ({size} B)")
+        return ("FAIL", label, "sha256 MISMATCH")
+    note = ", sha256 skipped (large)" if sha256 else ""
+    return ("OK", label, f"reachable ({size} B){note}")
+
+
+def report_probes(type_name: str, results: list[tuple[str, str, str]]) -> None:
+    """Log OK/FAIL/SKIP probe results and raise if any hard FAILs occurred."""
+    marks = {"OK": "[ OK ]", "FAIL": "[FAIL]", "SKIP": "[SKIP]"}
+    log = get_logger()
+    for status, label, detail in results:
+        log.info("%s %s: %s — %s", marks.get(status, status), type_name, label, detail)
+    oks = sum(1 for s, _, _ in results if s == "OK")
+    fails = sum(1 for s, _, _ in results if s == "FAIL")
+    skips = sum(1 for s, _, _ in results if s == "SKIP")
+    log.info("%s verify: %d ok, %d failed, %d skipped", type_name, oks, fails, skips)
+    if fails:
+        raise RuntimeError(f"{type_name}: {fails} verification probe(s) failed")
+
+
 def retry(fn: Callable[[], T], *, attempts: int, backoff: float,
           what: str = "operation",
           give_up: Callable[[Exception], bool] | None = None) -> T:
