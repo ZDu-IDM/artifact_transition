@@ -73,6 +73,23 @@ package via `npm view`, and a ghcr image via `docker manifest inspect`. It repor
 per probe and exits non-zero on any hard failure. `SKIP` means a prerequisite is missing (e.g. npm
 auth, or Docker tags that need an authenticated inventory), not a failure.
 
+### Rollback / cleanup
+
+`cleanup` **undoes a migration** by deleting what it published — PyPI/data releases (via
+`gh release delete --cleanup-tag`) and npm/ghcr packages (via the GitHub Packages API) — and
+clears the matching `state.json` entries so a later `publish` re-runs cleanly.
+
+```bash
+python migrate.py cleanup --type npm --dry-run   # preview deletions, remove nothing
+python migrate.py cleanup --type npm             # real: prompts for 'yes'
+python migrate.py cleanup --type all --yes       # roll back everything, no prompt
+```
+
+Because it is **destructive and not recoverable**, any real `cleanup` (even single-type) requires
+confirmation — type `yes`, or pass `--yes`. Deleting packages needs a token with
+`delete:packages`; missing packages/permissions are logged as warnings, not hard failures. Note
+`make clean` (local cache) is unrelated to `cleanup`/`make cleanup` (remote artifacts).
+
 ### Make targets
 
 A `Makefile` wraps the common operations (`make help` lists them all):

@@ -13,7 +13,7 @@ TYPE ?= all
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install lint check auth-check inventory dry-run publish verify index clean distclean
+.PHONY: help install lint check auth-check inventory dry-run publish verify cleanup index clean distclean
 
 help:  ## Show this help
 	@grep -E '^[a-zA-Z_%-]+:.*?## ' $(MAKEFILE_LIST) \
@@ -43,8 +43,11 @@ dry-run:  ## Preview the full pipeline without changing anything. Use TYPE=...
 publish:  ## Download + transform + publish to GitHub. Use TYPE=...
 	$(PY) migrate.py publish --type $(TYPE)
 
-verify:  ## Print consumer verification commands. Use TYPE=...
+verify:  ## Probe deployed artifacts (HTTP/sha256/npm/docker). Use TYPE=...
 	$(PY) migrate.py verify --type $(TYPE)
+
+cleanup:  ## ROLLBACK: delete migrated releases/packages (prompts). Use TYPE=...
+	$(PY) migrate.py cleanup --type $(TYPE)
 
 index:  ## Regenerate the PEP 503 index from manifests/pypi-inventory.json
 	$(PY) migrate.py transform --type pypi
@@ -58,7 +61,10 @@ dryrun-%:  ## Dry-run publish one type, e.g. make dryrun-npm
 publish-%:  ## Publish one type, e.g. make publish-npm
 	$(PY) migrate.py publish --type $*
 
-clean:  ## Remove the staging cache and generated runtime outputs
+cleanup-%:  ## Rollback one type, e.g. make cleanup-npm (prompts)
+	$(PY) migrate.py cleanup --type $*
+
+clean:  ## Remove the local staging cache and generated outputs (NOT remote artifacts)
 	rm -rf staging docs/simple
 	rm -f manifests/*.log manifests/*.out manifests/state.json
 	rm -f manifests/docker-inventory.json manifests/npm-inventory.json manifests/data-inventory.json

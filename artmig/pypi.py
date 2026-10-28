@@ -186,6 +186,20 @@ def _page(title: str, links: list[str]) -> str:
             f"<title>{title}</title></head>\n<body>\n{body}\n</body></html>\n")
 
 
+# ---- cleanup / rollback -----------------------------------------------------
+def cleanup(ctx: Context) -> None:
+    """Delete every pypi/<name> release and forget its publish state."""
+    inv = ctx.read_inventory(TYPE)
+    removed = 0
+    for norm, pkg in inv["packages"].items():
+        if ctx.gh.delete_release(f"pypi/{norm}"):
+            removed += 1
+        for f in pkg["files"]:
+            ctx.state.clear(f"pypi:{norm}:{f['filename']}")
+    log.info("pypi: rollback removed %d of %d release(s). The PEP 503 index still lists them "
+             "until the next publish/transform regenerates it.", removed, len(inv["packages"]))
+
+
 # ---- verify -----------------------------------------------------------------
 def verify(ctx: Context) -> None:
     """Probe the deployed PyPI artifacts: Pages index, a package page, an asset."""

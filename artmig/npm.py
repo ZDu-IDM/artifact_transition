@@ -122,6 +122,17 @@ def transform(ctx: Context) -> None:
     log.info("npm: transform happens inline during publish (tarball rescope)")
 
 
+def cleanup(ctx: Context) -> None:
+    """Delete the rescoped @<ns>/* packages from GitHub Packages and reset state."""
+    inv = ctx.read_inventory(TYPE)
+    for pkg, meta in inv["packages"].items():
+        ctx.gh.delete_package("npm", meta["new_name"])
+        for v in meta["versions"]:
+            ctx.state.clear(f"npm:{pkg}:{v['version']}")
+    log.info("npm: rollback requested deletion of %d package(s) (warnings above = absent/no perm)",
+             len(inv["packages"]))
+
+
 def _npm_view(name: str) -> tuple[str, str, str]:
     """`npm view <name> version` against GitHub Packages. SKIP if npm/auth absent."""
     try:

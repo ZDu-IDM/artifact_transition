@@ -41,25 +41,32 @@ def _types(arg: str, cfg) -> list[str]:
     return [arg]
 
 
-def _guard_type_all(args, types: list[str]) -> None:
-    """Block an accidental real publish/run across *all* types.
+def _guard_destructive(args, types: list[str]) -> None:
+    """Confirm before a hard-to-undo operation.
 
-    A real (non-dry-run) `publish`/`run --type all` pushes to GitHub Releases,
-    ghcr.io, and npm in one shot — hard to undo. Require explicit confirmation:
-    `--yes`, or an interactive 'yes' at the prompt. Single-type runs and any
-    --dry-run are unaffected.
+    Guarded (require `--yes` or an interactive 'yes'):
+      * a real `publish`/`run --type all` — pushes to every registry at once;
+      * any real `cleanup` — DELETES published releases/packages.
+    Single-type publishes, read-only phases, and any `--dry-run` are unaffected.
     """
-    is_real_push = args.phase in ("publish", "run") and not args.dry_run
-    if args.type != "all" or not is_real_push or args.yes:
+    if args.dry_run or args.yes:
+        return
+    is_real_push_all = args.phase in ("publish", "run") and args.type == "all"
+    is_cleanup = args.phase == "cleanup"
+    if not (is_real_push_all or is_cleanup):
         return
 
-    log.warning("About to run a REAL '%s' across ALL types: %s", args.phase, ", ".join(types))
-    log.warning("This publishes artifacts to GitHub Releases, ghcr.io, and npm — hard to undo.")
-    log.warning("Re-run with --yes to skip this prompt, or target one type (e.g. --type npm).")
+    if is_cleanup:
+        log.warning("About to DELETE migrated artifacts for: %s", ", ".join(types))
+        log.warning("This removes GitHub releases and npm/ghcr packages — NOT recoverable.")
+    else:
+        log.warning("About to run a REAL '%s' across ALL types: %s", args.phase, ", ".join(types))
+        log.warning("This publishes to GitHub Releases, ghcr.io, and npm — hard to undo.")
+    log.warning("Re-run with --yes to skip this prompt.")
     # Prompt regardless of isatty() — it is unreliable on Windows/Git Bash. In a true
     # non-interactive run input() raises EOFError, which we treat as a decline.
     try:
-        resp = input("Proceed with the full migration? Type 'yes' to continue: ").strip().lower()
+        resp = input("Type 'yes' to continue: ").strip().lower()
     except (EOFError, KeyboardInterrupt):
         resp = ""
     if resp != "yes":
@@ -80,7 +87,7 @@ def _run_phase(ctx: Context, type_name: str, phase: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Artifactory -> GitHub migration")
-    parser.add_argument("phase", choices=[*PHASES, "run"])
+    parser.add_argument("phase", choices=[*PHASES, "run", "cleanup"])
     parser.add_argument("--type", default="all", help="pypi|docker|npm|data|all")
     parser.add_argument("--config", default="migration.yaml")
     parser.add_argument("--dry-run", action="store_true",
@@ -104,7 +111,7 @@ def main() -> None:
     ctx = Context(cfg=cfg, art=art, gh=gh, state=state, dry_run=args.dry_run)
 
     types = _types(args.type, cfg)
-    _guard_type_all(args, types)
+    _guard_destructive(args, types)
     phases = PHASES if args.phase == "run" else [args.phase]
     # 'publish' implies download+transform first for a one-shot push.
     if args.phase == "publish":
