@@ -85,6 +85,17 @@ class Artifactory:
         url = f"{self.base}/api/storage/{repo}/{path}"
         return self.get_json(url)
 
+    def repo_size(self, repo: str) -> tuple[int, int]:
+        """(total_bytes, file_count) for a whole repo via the File List API.
+
+        One call per repo, and it covers Docker blob storage too. Requires auth
+        (403 anonymously) — callers treat failure as 'size unavailable'.
+        """
+        url = (f"{self.base}/api/storage/{repo}/"
+               "?list&deep=1&listFolders=0&mdTimestamps=0")
+        files = self.get_json(url).get("files", [])
+        return sum(int(f.get("size", 0) or 0) for f in files), len(files)
+
     # ---- PyPI ---------------------------------------------------------------
     def pypi_simple_index(self, repo: str) -> str:
         return self.get_text(f"{self.base}/api/pypi/{repo}/simple/")
@@ -113,8 +124,13 @@ class Artifactory:
     def download(self, repo: str, path: str, dest: Path,
                  expected_sha256: str | None = None) -> Path:
         """Stream <repo>/<path> to dest; verify sha256 if provided."""
+        return self.download_abs(f"{self.base}/{repo}/{path}", dest, expected_sha256)
+
+    def download_abs(self, url: str, dest: Path,
+                     expected_sha256: str | None = None) -> Path:
+        """Stream an absolute URL to dest (e.g. an npm dist.tarball URL, whose
+        layout doesn't always map cleanly to a repo-relative storage path)."""
         dest.parent.mkdir(parents=True, exist_ok=True)
-        url = f"{self.base}/{repo}/{path}"
 
         def do() -> None:
             with self.session.get(url, stream=True, timeout=self.timeout) as r:
@@ -125,11 +141,20 @@ class Artifactory:
                         fh.write(chunk)
                 tmp.replace(dest)
 
-        retry(do, attempts=self.attempts, backoff=self.backoff, what=f"download {path}")
+        retry(do, attempts=self.attempts, backoff=self.backoff, what=f"download {url}")
 
         if expected_sha256:
             actual = sha256_file(dest)
             if actual.lower() != expected_sha256.lower():
-                raise ValueError(f"checksum mismatch for {path}: "
+                raise ValueError(f"checksum mismatch for {url}: "
                                  f"expected {expected_sha256}, got {actual}")
         return dest
+
+    def url_size(self, url: str) -> int:
+        """Content-Length of an absolute URL via HEAD (follows redirects)."""
+        def do() -> int:
+            r = self.session.head(url, timeout=self.timeout, allow_redirects=True)
+            r.raise_for_status()
+            return int(r.headers.get("Content-Length", 0) or 0)
+        return retry(do, attempts=self.attempts, backoff=self.backoff,
+                     what=f"HEAD {url}", give_up=_non_retryable_http)

@@ -35,6 +35,30 @@ def _human_bytes(n: int) -> str:
     return f"{val:.1f} PB"
 
 
+def _type_repos(ctx: Context, t: str) -> list[str]:
+    tc = ctx.cfg.types.get(t, {})
+    return tc.get("repos", []) if t == "docker" else ([tc["repo"]] if tc.get("repo") else [])
+
+
+def _type_size(ctx: Context, t: str, inv: dict) -> tuple[int | None, str | None]:
+    """(bytes, source) for a type. Prefers the one-call File List API (needs a
+    token); falls back to the data inventory / per-file npm lookups when anonymous."""
+    try:
+        total = sum(ctx.art.repo_size(r)[0] for r in _type_repos(ctx, t))
+        return total, "repo file-list"
+    except Exception:  # noqa: BLE001 - 403 when anonymous; degrade gracefully
+        if t == "data":
+            return sum(f["size"] for f in inv["files"]), "inventory"
+        if t == "npm":
+            try:
+                total = sum(ctx.art.url_size(v["tarball"])
+                            for p in inv["packages"].values() for v in p["versions"])
+                return total, "tarball HEAD"
+            except Exception:  # noqa: BLE001
+                return None, None
+        return None, None
+
+
 def build_report_data(ctx: Context) -> dict:
     """Collect per-type stats into a plain dict used by both renderers."""
     cap = ctx.cfg.options.get("max_asset_bytes", 2 << 30)
@@ -78,7 +102,20 @@ def build_report_data(ctx: Context) -> dict:
             entry.update(files=inv["file_count"], folders=inv["folders"],
                          total_bytes=total, total_human=_human_bytes(total),
                          oversize=oversize)
+        size_bytes, size_source = _type_size(ctx, t, inv)
+        entry["size_bytes"] = size_bytes
+        entry["size_human"] = _human_bytes(size_bytes) if size_bytes is not None else None
+        entry["size_source"] = size_source
         out["types"][t] = entry
+
+    # Grand total across types whose size we could determine.
+    sized = [e["size_bytes"] for e in out["types"].values()
+             if e.get("status") == "inventoried" and e.get("size_bytes") is not None]
+    missing = [t for t, e in out["types"].items()
+               if e.get("status") == "inventoried" and e.get("size_bytes") is None]
+    out["total_size_bytes"] = sum(sized)
+    out["total_size_human"] = _human_bytes(sum(sized))
+    out["size_incomplete_types"] = missing
     return out
 
 
@@ -103,17 +140,25 @@ def render_markdown(d: dict) -> str:
         "",
         _coverage_line(d.get("coverage", {})),
         "",
-        "| Type | Source | Target | Inventory | Published |",
-        "|---|---|---|---|---|",
+        "| Type | Source | Target | Inventory | Size | Published |",
+        "|---|---|---|---|---|---|",
     ]
     for t in _TYPES:
         e = d["types"][t]
         if e["status"] != "inventoried":
-            lines.append(f"| **{t}** | — | {e['target']} | _{e['status']}_ | — |")
+            lines.append(f"| **{t}** | — | {e['target']} | _{e['status']}_ | — | — |")
             continue
         inv_desc = _inv_desc(t, e)
+        size = e.get("size_human") or "n/a (needs token)"
         pub = e["progress"].get("published", 0) + e["progress"].get("verified", 0)
-        lines.append(f"| **{t}** | `{e['source_repo']}` | {e['target']} | {inv_desc} | {pub} |")
+        lines.append(f"| **{t}** | `{e['source_repo']}` | {e['target']} | {inv_desc} "
+                     f"| {size} | {pub} |")
+
+    note = ""
+    if d.get("size_incomplete_types"):
+        note = (f" (excludes {', '.join(d['size_incomplete_types'])} — "
+                "set ARTIFACTORY_TOKEN for those)")
+    lines += ["", f"**Estimated storage to migrate: {d.get('total_size_human', '?')}**{note}"]
 
     for t in _TYPES:
         e = d["types"][t]
@@ -150,13 +195,14 @@ def _render_body(d: dict) -> str:
         e = d["types"][t]
         if e["status"] != "inventoried":
             rows.append(f"<tr><td><b>{t}</b></td><td>—</td><td>{html.escape(e['target'])}</td>"
-                        f"<td><i>{e['status']}</i></td><td>—</td></tr>")
+                        f"<td><i>{e['status']}</i></td><td>—</td><td>—</td></tr>")
             continue
         pub = e["progress"].get("published", 0) + e["progress"].get("verified", 0)
+        size = html.escape(e.get("size_human") or "n/a (needs token)")
         rows.append(
             f"<tr><td><b>{t}</b></td><td><code>{html.escape(e['source_repo'])}</code></td>"
             f"<td>{html.escape(e['target'])}</td><td>{html.escape(_inv_desc(t, e))}</td>"
-            f"<td>{pub}</td></tr>")
+            f"<td>{size}</td><td>{pub}</td></tr>")
 
     sections = []
     for t in _TYPES:
@@ -185,9 +231,16 @@ def _render_body(d: dict) -> str:
             f'<a href="https://github.com/{gh}">{gh}</a></p>\n'
             f'<p>{html.escape(_coverage_line(d.get("coverage", {})))}</p>')
     thead = ("<thead><tr><th>Type</th><th>Source</th><th>Target</th>"
-             "<th>Inventory</th><th>Published</th></tr></thead>")
+             "<th>Inventory</th><th>Size</th><th>Published</th></tr></thead>")
+    note = ""
+    if d.get("size_incomplete_types"):
+        note = (f" (excludes {html.escape(', '.join(d['size_incomplete_types']))} — "
+                "set ARTIFACTORY_TOKEN)")
+    total = (f'<p><b>Estimated storage to migrate: {html.escape(d.get("total_size_human", "?"))}'
+             f'</b>{note}</p>')
     return (f"<h1>Migration report</h1>\n{head}\n"
             f"<table>\n{thead}\n<tbody>\n" + "\n".join(rows) + "\n</tbody>\n</table>\n"
+            f"{total}\n"
             f'<p>PyPI index: <a href="{pages}/simple/">{pages}/simple/</a></p>\n'
             + "\n".join(sections))
 
