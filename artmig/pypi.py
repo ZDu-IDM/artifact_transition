@@ -128,22 +128,26 @@ def download(ctx: Context) -> None:
             log.info("downloaded %s", f["filename"])
 
 
-# ---- publish (release assets) + transform (index) ---------------------------
+# ---- publish (release assets) -----------------------------------------------
+# The PEP 503 index is produced by transform(); the CLI runs it as its own phase
+# (download -> transform -> publish / run), so publish() does not regenerate it.
 def publish(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     for norm, pkg in inv["packages"].items():
         tag = f"pypi/{norm}"
-        files = [ctx.staging(TYPE, norm, f["filename"]) for f in pkg["files"]]
-        files = [f for f in files if f.exists()]
-        if not files and not ctx.dry_run:
-            log.warning("pypi: no downloaded files for %s — skipping", norm)
-            continue
         ctx.gh.ensure_release(tag, title=f"PyPI: {pkg['display_name']}",
                               notes=f"Migrated from Artifactory {inv['source_repo']}.")
+        if ctx.dry_run:
+            log.info("[dry-run] upload %d assets to release %s", len(pkg["files"]), tag)
+            continue
+        files = [ctx.staging(TYPE, norm, f["filename"]) for f in pkg["files"]]
+        files = [f for f in files if f.exists()]
+        if not files:
+            log.warning("pypi: no downloaded files for %s — run download first", norm)
+            continue
         ctx.gh.upload_assets(tag, files)
         for f in pkg["files"]:
             ctx.state.set(f"pypi:{norm}:{f['filename']}", "published")
-    transform(ctx)
 
 
 def transform(ctx: Context) -> None:
