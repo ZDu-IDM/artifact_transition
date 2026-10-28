@@ -1,3 +1,4 @@
 # Migration toolkit dependencies
 requests>=2.31
 PyYAML>=6.0
+fpdf2>=2.7          # PDF rendering for the discovery report

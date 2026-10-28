@@ -22,9 +22,11 @@ Current LOCAL repos → GitHub target:
 | `idm-npm-production` (Npm) | packages discovered live | **GitHub Packages npm** `@zdu-idm/*` |
 | `idm-data` (Generic) | 568 files / 11 folders | **GitHub Releases** (one per folder) + `manifest.json` |
 
-> The earlier `artifactory-package-summary.md` was a point-in-time snapshot and under-counted
-> (e.g. it omitted `docker-staging-public`'s ~65 images). The toolkit now relies on **live
-> discovery** instead; run `make discover` to see the authoritative coverage.
+> The earlier `artifactory-package-summary.{md,html,pdf}` was a point-in-time snapshot and
+> under-counted (e.g. it omitted `docker-staging-public`'s ~65 images). `make discover` replaces
+> it with a **live** equivalent: it writes `report/discovery-report.{md,html,pdf}` (same three
+> formats) documenting the current instance structure + coverage, and **fails** if any LOCAL repo
+> is unhandled.
 
 GitHub has no native PyPI registry, so Python wheels/sdists become **release assets** and a
 static **PEP 503 "simple" index** (`docs/simple/`, served via GitHub Pages) makes them

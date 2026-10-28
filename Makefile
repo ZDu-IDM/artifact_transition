@@ -34,7 +34,7 @@ auth-check:  ## Report whether required credentials are available
 	@gh auth status >/dev/null 2>&1 && echo "gh auth           : logged in" || echo "gh auth           : NOT logged in (run 'gh auth login')"
 	@docker info >/dev/null 2>&1 && echo "docker daemon     : running" || echo "docker daemon     : not reachable"
 
-discover:  ## Audit LOCAL repo coverage (fails if any repo is unhandled)
+discover:  ## Live discovery report (md/html/pdf) + coverage gate (fails if unhandled)
 	$(PY) migrate.py discover
 
 inventory:  ## Crawl Artifactory into manifests/ (read-only). Use TYPE=...
