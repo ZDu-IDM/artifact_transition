@@ -1,0 +1,56 @@
+name: Deploy PyPI index to GitHub Pages
+
+# Rebuilds the PEP 503 "simple" index from the committed inventory snapshot
+# (manifests/pypi-inventory.json) and deploys docs/ to GitHub Pages.
+# No Artifactory credentials needed — `transform` is fully offline.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - manifests/pypi-inventory.json
+      - migration.yaml
+      - docs/**
+      - artmig/pypi.py
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; don't cancel an in-progress run.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate PEP 503 index
+        run: |
+          python migrate.py transform --type pypi
+          touch docs/.nojekyll   # serve the raw index without Jekyll processing
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

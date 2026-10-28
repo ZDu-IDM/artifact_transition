@@ -116,4 +116,16 @@ docs/simple/        generated PEP 503 index (GitHub Pages source)
   ghcr storage, and GitHub API rate limits. The run is resumable if interrupted.
 - The summary is a point-in-time snapshot; `inventory` re-counts live and warns on drift
   (e.g. PyPI shows 91 normalized names vs ~107 raw names — expected due to PEP 503).
-- Enable GitHub Pages on `docs/` (branch `main`, `/docs` folder) so the PyPI index is served.
+## GitHub Pages (PyPI index)
+
+The PEP 503 index is served at `https://zdu-idm.github.io/artifact_transition/simple/` by the
+[`pages.yml`](.github/workflows/pages.yml) workflow. On every push to `main` that touches
+`manifests/pypi-inventory.json` (or the generator), CI regenerates `docs/simple/` from the
+committed inventory snapshot and deploys `docs/` — **no Artifactory credentials needed**, since
+`transform` is fully offline.
+
+One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**
+(or `gh api -X POST repos/ZDu-IDM/artifact_transition/pages -f build_type=workflow`).
+
+To refresh the index after a new migration: re-run `migrate.py inventory --type pypi`, commit the
+updated `manifests/pypi-inventory.json`, and push — the workflow redeploys automatically.
