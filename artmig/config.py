@@ -62,11 +62,14 @@ def load_config(path: str | Path = "migration.yaml") -> Config:
     gh = raw.get("github", {})
     art = raw.get("artifactory", {})
 
+    # Use `or` (not os.environ.get defaults) so an env var set to "" — which is
+    # what GitHub Actions injects for an *unset* secret — falls back to config
+    # / None instead of blanking the value.
     artifactory = ArtifactoryAuth(
-        base_url=os.environ.get("ARTIFACTORY_URL", art.get("base_url", "")).rstrip("/"),
+        base_url=(os.environ.get("ARTIFACTORY_URL") or art.get("base_url", "")).rstrip("/"),
         docker_registry=art.get("docker_registry", "packages.idmod.org"),
-        user=os.environ.get("ARTIFACTORY_USER"),
-        token=os.environ.get("ARTIFACTORY_TOKEN"),
+        user=os.environ.get("ARTIFACTORY_USER") or None,
+        token=os.environ.get("ARTIFACTORY_TOKEN") or None,
     )
 
     return Config(
