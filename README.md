@@ -105,6 +105,26 @@ confirmation — type `yes`, or pass `--yes`. Deleting packages needs a token wi
 `delete:packages`; missing packages/permissions are logged as warnings, not hard failures. Note
 `make clean` (local cache) is unrelated to `cleanup`/`make cleanup` (remote artifacts).
 
+### Running the migration from GitHub Actions
+
+`.github/workflows/migrate.yml` runs any phase from CI — **manual trigger only**
+(Actions → "Run migration" → pick `phase`, `type`, and `dry_run`). It authenticates to Artifactory
+and the GitHub registries from secrets, passes `--yes` for real runs (the interactive guard can't
+prompt in CI), always generates the report, and uploads `manifests/` + `report/` as a run artifact.
+
+Required/optional repo secrets:
+
+| Secret | Needed for |
+|---|---|
+| `ARTIFACTORY_TOKEN` | downloads + Docker catalog/tags (required for real runs) |
+| `ARTIFACTORY_USER` | Artifactory basic auth (optional if the token is a bearer) |
+| `ARTIFACTORY_URL` | override the registry URL (optional) |
+| `GH_PAT` | a PAT with `write:packages` (+ `delete:packages` for `cleanup`); falls back to the built-in `GITHUB_TOKEN` otherwise |
+
+Start with `dry_run: true`. Mind runner limits: the `data` type is ~12 GB and may exceed the
+hosted runner's disk — migrate it locally or on a larger runner. Publishing/deleting npm & ghcr
+packages needs the `packages: write` permission (already set in the workflow).
+
 ### Make targets
 
 A `Makefile` wraps the common operations (`make help` lists them all):
