@@ -10,7 +10,6 @@ Strategy
 from __future__ import annotations
 
 from html.parser import HTMLParser
-from pathlib import Path
 
 from .context import Context
 from .util import get_logger, normalize_pypi_name, sanitize_asset_name

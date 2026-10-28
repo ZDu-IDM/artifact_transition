@@ -6,8 +6,9 @@ import logging
 import re
 import sys
 import time
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable, TypeVar
+from typing import TypeVar
 
 T = TypeVar("T")
 

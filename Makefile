@@ -13,7 +13,7 @@ TYPE ?= all
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install check auth-check inventory dry-run publish verify index clean distclean
+.PHONY: help install lint check auth-check inventory dry-run publish verify index clean distclean
 
 help:  ## Show this help
 	@grep -E '^[a-zA-Z_%-]+:.*?## ' $(MAKEFILE_LIST) \
@@ -21,6 +21,9 @@ help:  ## Show this help
 
 install:  ## Install Python dependencies
 	$(PY) -m pip install -r requirements.txt
+
+lint:  ## Lint with ruff (same config as CI; `pip install ruff` first)
+	ruff check artmig migrate.py
 
 check:  ## Byte-compile the toolkit (quick sanity check)
 	$(PY) -m compileall -q artmig migrate.py

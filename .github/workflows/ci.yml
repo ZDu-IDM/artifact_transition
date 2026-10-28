@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install tools
+        # Pin ruff so a new release can't fail CI on rules we haven't adopted.
+        run: pip install ruff==0.17.3 -r requirements.txt
+
+      - name: Ruff lint (config in ruff.toml)
+        run: ruff check artmig migrate.py
+
+      - name: Byte-compile
+        run: python -m compileall -q artmig migrate.py
