@@ -31,14 +31,19 @@ def inventory(ctx: Context) -> dict:
         except Exception as exc:  # noqa: BLE001
             log.warning("npm: could not fetch %s: %s", pkg, exc)
             continue
-        versions = []
+        # Artifactory sometimes lists a version twice under both "0.2.0" and the
+        # alias "v0.2.0", pointing at the same tarball. Dedup by tarball path so we
+        # don't download twice or fail npm publish on a duplicate version.
+        by_path: dict[str, dict] = {}
         for ver, vmeta in (meta.get("versions") or {}).items():
             dist = vmeta.get("dist", {})
             tarball = dist.get("tarball", "")
             path = tarball.split(repo, 1)[1].lstrip("/") if repo in tarball else tarball
-            versions.append({"version": ver, "path": path,
-                             "shasum": dist.get("shasum"),
-                             "tarball": tarball})
+            label = ver[1:] if ver[:1] == "v" and ver[1:2].isdigit() else ver
+            if path not in by_path:
+                by_path[path] = {"version": label, "path": path,
+                                 "shasum": dist.get("shasum"), "tarball": tarball}
+        versions = list(by_path.values())
         packages[pkg] = {
             "latest": (meta.get("dist-tags") or {}).get("latest"),
             "new_name": f"@{ctx.cfg.namespace}/{pkg}",
@@ -97,12 +102,12 @@ def publish(ctx: Context) -> None:
         for v in meta["versions"]:
             key = f"npm:{pkg}:{v['version']}"
             src = ctx.staging(TYPE, pkg, f"{pkg}-{v['version']}.tgz")
-            if not src.exists():
-                log.warning("npm: missing tarball for %s@%s", pkg, v["version"])
-                continue
             if ctx.dry_run:
-                log.info("[dry-run] rescope+publish %s -> %s@%s",
-                         pkg, meta["new_name"], v["version"])
+                log.info("[dry-run] rescope %s and npm publish %s@%s -> npm.pkg.github.com",
+                         src.name, meta["new_name"], v["version"])
+                continue
+            if not src.exists():
+                log.warning("npm: missing tarball for %s@%s — run download first", pkg, v["version"])
                 continue
             scoped = _rescope_tarball(src, meta["new_name"], slug, ctx.cfg.namespace)
             subprocess.run(
