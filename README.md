@@ -90,8 +90,11 @@ auth, or Docker tags that need an authenticated inventory), not a failure.
 ### Migration report
 
 `report` summarizes the migration from the inventories + `state.json` — per-type source,
-target, inventory counts, publish progress, npm renames, data sizes, and split files. It's
-read-only and safe to run anytime (before publishing it just shows 0 published):
+target, inventory counts, **estimated storage size**, publish progress, npm renames, and split
+files. The size column answers "how much space will the real publish need", with a grand total.
+Sizes come from the one-call File List API (needs `ARTIFACTORY_TOKEN`); without a token, `data`
+and `npm` sizes still resolve (from the inventory / tarball HEADs) and `pypi`/`docker` show
+`n/a (needs token)`. It's read-only and safe to run anytime (before publishing it shows 0 published):
 
 ```bash
 python migrate.py report        # writes report/migration-report.{html,body.html,md}

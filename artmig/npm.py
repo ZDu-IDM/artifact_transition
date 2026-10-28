@@ -84,7 +84,6 @@ def inventory(ctx: Context) -> dict:
 
 def download(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
-    repo = inv["source_repo"]
     for pkg, meta in inv["packages"].items():
         for v in meta["versions"]:
             key = f"npm:{pkg}:{v['version']}"
@@ -94,7 +93,9 @@ def download(ctx: Context) -> None:
             if ctx.dry_run:
                 log.info("[dry-run] download %s@%s", pkg, v["version"])
                 continue
-            ctx.art.download(repo, v["path"], dest)
+            # Download via the authoritative dist.tarball URL — its layout isn't
+            # always a clean repo/path (e.g. comps-ui-auth@2.1.0 lacks the /-/ dir).
+            ctx.art.download_abs(v["tarball"], dest)
             ctx.state.set(key, "downloaded", path=str(dest))
             log.info("downloaded %s@%s", pkg, v["version"])
 
