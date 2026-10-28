@@ -13,7 +13,7 @@ TYPE ?= all
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install lint check auth-check inventory dry-run publish verify cleanup index clean distclean
+.PHONY: help install lint check auth-check inventory dry-run publish verify cleanup report index clean distclean
 
 help:  ## Show this help
 	@grep -E '^[a-zA-Z_%-]+:.*?## ' $(MAKEFILE_LIST) \
@@ -48,6 +48,9 @@ verify:  ## Probe deployed artifacts (HTTP/sha256/npm/docker). Use TYPE=...
 
 cleanup:  ## ROLLBACK: delete migrated releases/packages (prompts). Use TYPE=...
 	$(PY) migrate.py cleanup --type $(TYPE)
+
+report:  ## Generate the migration report (HTML + Markdown) into report/
+	$(PY) migrate.py report
 
 index:  ## Regenerate the PEP 503 index from manifests/pypi-inventory.json
 	$(PY) migrate.py transform --type pypi

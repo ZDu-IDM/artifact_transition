@@ -73,6 +73,21 @@ package via `npm view`, and a ghcr image via `docker manifest inspect`. It repor
 per probe and exits non-zero on any hard failure. `SKIP` means a prerequisite is missing (e.g. npm
 auth, or Docker tags that need an authenticated inventory), not a failure.
 
+### Migration report
+
+`report` summarizes the migration from the inventories + `state.json` — per-type source,
+target, inventory counts, publish progress, npm renames, data sizes, and split files. It's
+read-only and safe to run anytime (before publishing it just shows 0 published):
+
+```bash
+python migrate.py report        # writes report/migration-report.{html,body.html,md}
+make report
+```
+
+`migration-report.html` is a standalone page; `migration-report.body.html` is a head/body-less
+fragment for embedding; `migration-report.md` mirrors the original summary style. To serve the
+report on Pages, copy the HTML into `docs/`.
+
 ### Rollback / cleanup
 
 `cleanup` **undoes a migration** by deleting what it published — PyPI/data releases (via
