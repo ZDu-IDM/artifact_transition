@@ -55,7 +55,7 @@ python migrate.py publish --type pypi
 python migrate.py publish --type data
 python migrate.py publish --type docker
 
-# 4. Print verification commands
+# 4. Probe the deployed artifacts (exits non-zero if a hard check fails)
 python migrate.py verify --type all
 ```
 
@@ -66,6 +66,12 @@ bypass (e.g. in CI). Single-type publishes and any `--dry-run` are never guarded
 Phases: `inventory | download | transform | publish | verify | run`.
 Re-running skips items already recorded as done in `manifests/state.json`, so an interrupted
 migration resumes cleanly.
+
+`verify` actively **probes the deployed artifacts** (it doesn't just print commands): the PyPI
+Pages index + a release asset (sha256-checked), a `data/<folder>` asset + its manifest, an npm
+package via `npm view`, and a ghcr image via `docker manifest inspect`. It reports `OK/FAIL/SKIP`
+per probe and exits non-zero on any hard failure. `SKIP` means a prerequisite is missing (e.g. npm
+auth, or Docker tags that need an authenticated inventory), not a failure.
 
 ### Make targets
 

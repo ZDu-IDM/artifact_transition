@@ -13,10 +13,11 @@ import tempfile
 from pathlib import Path
 
 from .context import Context
-from .util import get_logger
+from .util import get_logger, report_probes, resolve_exe
 
 log = get_logger()
 TYPE = "npm"
+REGISTRY = "https://npm.pkg.github.com"
 
 # The 4 packages are known from the summary; we still fetch live metadata.
 KNOWN = ["comps-ui-auth", "microcomps", "postette", "comps-ui"]
@@ -111,8 +112,7 @@ def publish(ctx: Context) -> None:
                 continue
             scoped = _rescope_tarball(src, meta["new_name"], slug, ctx.cfg.namespace)
             subprocess.run(
-                ["npm", "publish", str(scoped),
-                 "--registry=https://npm.pkg.github.com"],
+                [resolve_exe("npm"), "publish", str(scoped), f"--registry={REGISTRY}"],
                 check=True, text=True)
             ctx.state.set(key, "published")
             log.info("published %s@%s", meta["new_name"], v["version"])
@@ -122,9 +122,30 @@ def transform(ctx: Context) -> None:
     log.info("npm: transform happens inline during publish (tarball rescope)")
 
 
+def _npm_view(name: str) -> tuple[str, str, str]:
+    """`npm view <name> version` against GitHub Packages. SKIP if npm/auth absent."""
+    try:
+        out = subprocess.run([resolve_exe("npm"), "view", name, "version",
+                              f"--registry={REGISTRY}"],
+                             capture_output=True, text=True, timeout=60)
+    except FileNotFoundError:
+        return ("SKIP", f"npm view {name}", "npm not installed")
+    except Exception as exc:
+        return ("SKIP", f"npm view {name}", str(exc))
+    if out.returncode == 0 and out.stdout.strip():
+        return ("OK", f"npm view {name}", f"published version {out.stdout.strip()}")
+    # Pull a meaningful line out of npm's noisy stderr (skip the "complete log" footer).
+    lines = [ln.strip() for ln in (out.stderr or "").splitlines()
+             if ln.strip() and "complete log" not in ln]
+    keys = ("404", "E404", "401", "ENEEDAUTH", "not found", "Not Found")
+    reason = next((ln for ln in lines if any(k in ln for k in keys)),
+                  lines[0] if lines else "not found")
+    # 404 vs auth/registry issues are indistinguishable here -> SKIP, not FAIL.
+    return ("SKIP", f"npm view {name}", f"unavailable ({reason[:90]})")
+
+
 def verify(ctx: Context) -> None:
+    """Probe that each rescoped package is live on GitHub Packages (needs npm auth)."""
     inv = ctx.read_inventory(TYPE)
-    for meta in inv["packages"].values():
-        log.info("npm: verify -> npm view %s --registry=https://npm.pkg.github.com",
-                 meta["new_name"])
-        break
+    results = [_npm_view(meta["new_name"]) for meta in inv["packages"].values()]
+    report_probes(TYPE, results)

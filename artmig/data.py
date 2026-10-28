@@ -18,7 +18,15 @@ from collections import defaultdict
 from pathlib import Path
 
 from .context import Context
-from .util import get_logger, plan_split, sanitize_asset_name, split_file
+from .util import (
+    get_logger,
+    http_reachable,
+    plan_split,
+    probe_asset,
+    report_probes,
+    sanitize_asset_name,
+    split_file,
+)
 
 log = get_logger()
 TYPE = "data"
@@ -176,12 +184,29 @@ def transform(ctx: Context) -> None:
 
 
 def verify(ctx: Context) -> None:
+    """Probe deployed data: sha256-check the smallest asset + its folder manifest."""
     inv = ctx.read_inventory(TYPE)
-    folder = next(iter(inv["folders"]), None)
-    if folder:
-        log.info("data: verify -> download a data/%s asset and sha256-match the manifest",
-                 folder)
-    oversize = [f["path"] for f in inv["files"] if f["size"] > _cap(ctx)]
-    for path in oversize:
-        log.info("data: verify split -> download %s.part*, reassemble per manifest, "
-                 "then sha256-match the whole file", sanitize_asset_name(path))
+    cap = _cap(ctx)
+    results: list[tuple[str, str, str]] = []
+
+    # smallest under-cap file with a known checksum -> cheap, meaningful sha256 probe
+    candidates = [f for f in inv["files"] if 0 < f["size"] <= cap and f.get("sha256")]
+    if candidates:
+        f = min(candidates, key=lambda x: x["size"])
+        tag = f"data/{f['folder']}"
+        asset = sanitize_asset_name(f["path"])
+        results.append(probe_asset(f"{tag} asset {Path(f['path']).name}",
+                                   ctx.gh.asset_download_url(tag, asset), f["sha256"]))
+        ok, detail = http_reachable(ctx.gh.asset_download_url(tag, "manifest.json"))
+        results.append(("OK" if ok else "FAIL", f"{tag} manifest.json", detail))
+    else:
+        results.append(("SKIP", "data asset", "no under-cap file with sha256 in inventory"))
+
+    oversize = [f for f in inv["files"] if f["size"] > cap]
+    for f in oversize:
+        tag = f"data/{f['folder']}"
+        part0 = f"{sanitize_asset_name(f['path'])}.part000"
+        ok, detail = http_reachable(ctx.gh.asset_download_url(tag, part0))
+        results.append(("OK" if ok else "FAIL", f"{tag} split part {part0}", detail))
+
+    report_probes(TYPE, results)

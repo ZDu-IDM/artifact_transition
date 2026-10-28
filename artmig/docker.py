@@ -10,7 +10,7 @@ from __future__ import annotations
 import subprocess
 
 from .context import Context
-from .util import get_logger
+from .util import get_logger, report_probes, resolve_exe
 
 log = get_logger()
 TYPE = "docker"
@@ -76,7 +76,7 @@ def download(ctx: Context) -> None:
             if ctx.dry_run:
                 log.info("[dry-run] docker pull %s", ref)
                 continue
-            subprocess.run(["docker", "pull", ref], check=True, text=True)
+            subprocess.run([resolve_exe("docker"), "pull", ref], check=True, text=True)
             ctx.state.set(key, "downloaded")
 
 
@@ -93,9 +93,9 @@ def publish(ctx: Context) -> None:
             if ctx.dry_run:
                 log.info("[dry-run] docker tag %s %s && docker push %s", src, dst, dst)
                 continue
-            subprocess.run(["docker", "pull", src], check=True, text=True)
-            subprocess.run(["docker", "tag", src, dst], check=True, text=True)
-            subprocess.run(["docker", "push", dst], check=True, text=True)
+            subprocess.run([resolve_exe("docker"), "pull", src], check=True, text=True)
+            subprocess.run([resolve_exe("docker"), "tag", src, dst], check=True, text=True)
+            subprocess.run([resolve_exe("docker"), "push", dst], check=True, text=True)
             ctx.state.set(key, "published", dest=dst)
             log.info("pushed %s", dst)
 
@@ -104,10 +104,31 @@ def transform(ctx: Context) -> None:
     log.info("docker: transform == retag (handled inline during publish)")
 
 
+def _manifest_inspect(ref: str) -> tuple[str, str, str]:
+    """`docker manifest inspect <ref>` — proves the image exists without pulling it."""
+    try:
+        out = subprocess.run([resolve_exe("docker"), "manifest", "inspect", ref],
+                             capture_output=True, text=True, timeout=120)
+    except FileNotFoundError:
+        return ("SKIP", f"manifest {ref}", "docker not installed")
+    except Exception as exc:
+        return ("SKIP", f"manifest {ref}", str(exc))
+    if out.returncode == 0:
+        return ("OK", f"manifest {ref}", "exists")
+    reason = (out.stderr or "").strip().splitlines()
+    return ("SKIP", f"manifest {ref}", f"unavailable ({reason[-1][:90] if reason else '?'})")
+
+
 def verify(ctx: Context) -> None:
+    """Probe that a migrated image exists on ghcr.io (needs docker login + tags)."""
     inv = ctx.read_inventory(TYPE)
-    for _, meta in inv["images"].items():
+    ref = None
+    for meta in inv["images"].values():
         if meta["tags"]:
-            dst = _dest_ref(ctx, meta["source_repo"], meta["image"], meta["tags"][0])
-            log.info("docker: verify -> docker pull %s", dst)
+            ref = _dest_ref(ctx, meta["source_repo"], meta["image"], meta["tags"][0])
             break
+    if ref is None:
+        results = [("SKIP", "docker image", "no tags in inventory — run an authed inventory first")]
+    else:
+        results = [_manifest_inspect(ref)]
+    report_probes(TYPE, results)

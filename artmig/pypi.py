@@ -12,7 +12,14 @@ from __future__ import annotations
 from html.parser import HTMLParser
 
 from .context import Context
-from .util import get_logger, normalize_pypi_name, sanitize_asset_name
+from .util import (
+    get_logger,
+    http_reachable,
+    normalize_pypi_name,
+    probe_asset,
+    report_probes,
+    sanitize_asset_name,
+)
 
 log = get_logger()
 TYPE = "pypi"
@@ -181,7 +188,24 @@ def _page(title: str, links: list[str]) -> str:
 
 # ---- verify -----------------------------------------------------------------
 def verify(ctx: Context) -> None:
+    """Probe the deployed PyPI artifacts: Pages index, a package page, an asset."""
     inv = ctx.read_inventory(TYPE)
-    sample = next(iter(inv["packages"]), None)
-    url = f"{ctx.cfg.pages_url}/simple/"
-    log.info("pypi: verify with -> pip install --index-url %s %s", url, sample or "<pkg>")
+    base = ctx.cfg.pages_url
+    results: list[tuple[str, str, str]] = []
+
+    ok, detail = http_reachable(f"{base}/simple/")
+    results.append(("OK" if ok else "FAIL", "pages simple index", detail))
+
+    norm = next(iter(inv["packages"]), None)
+    if norm:
+        pkg = inv["packages"][norm]
+        ok, detail = http_reachable(f"{base}/simple/{norm}/")
+        results.append(("OK" if ok else "FAIL", f"package page {norm}", detail))
+        if pkg["files"]:
+            f = pkg["files"][0]
+            url = ctx.gh.asset_download_url(f"pypi/{norm}", sanitize_asset_name(f["filename"]))
+            results.append(probe_asset(f"release asset {f['filename']}", url, f.get("sha256")))
+
+    log.info("pypi: consumer install -> pip install --index-url %s/simple/ %s",
+             base, norm or "<pkg>")
+    report_probes(TYPE, results)
