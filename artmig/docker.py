@@ -104,6 +104,18 @@ def transform(ctx: Context) -> None:
     log.info("docker: transform == retag (handled inline during publish)")
 
 
+def cleanup(ctx: Context) -> None:
+    """Delete the migrated container packages from ghcr.io and reset state."""
+    inv = ctx.read_inventory(TYPE)
+    for meta in inv["images"].values():
+        # ghcr package name is the image path under the namespace: <repo>/<image>
+        ctx.gh.delete_package("container", f"{meta['source_repo']}/{meta['image']}")
+        for tag in meta["tags"]:
+            ctx.state.clear(f"docker:{_src_ref(ctx, meta['source_repo'], meta['image'], tag)}")
+    log.info("docker: rollback requested deletion of %d container package(s) "
+             "(warnings above = absent/no perm)", len(inv["images"]))
+
+
 def _manifest_inspect(ref: str) -> tuple[str, str, str]:
     """`docker manifest inspect <ref>` — proves the image exists without pulling it."""
     try:

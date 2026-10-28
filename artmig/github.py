@@ -56,6 +56,35 @@ class GitHub:
     def asset_download_url(self, tag: str, asset_name: str) -> str:
         return f"https://github.com/{self.slug}/releases/download/{tag}/{asset_name}"
 
+    # ---- cleanup / rollback --------------------------------------------------
+    def delete_release(self, tag: str) -> bool:
+        """Delete a release and its assets + the git tag. Returns False if absent."""
+        if not self.release_exists(tag):
+            log.info("release %s absent — nothing to delete", tag)
+            return False
+        self._run(["release", "delete", tag, "-R", self.slug, "--yes", "--cleanup-tag"])
+        return True
+
+    def delete_package(self, package_type: str, name: str) -> None:
+        """Delete a whole GitHub Packages entry (npm/container). Best-effort.
+
+        Needs a token with `delete:packages`. 404 / permission issues are logged
+        as warnings rather than raised, so a partial rollback keeps going.
+        """
+        from urllib.parse import quote
+        path = f"/user/packages/{package_type}/{quote(name, safe='')}"
+        if self.dry_run:
+            log.info("[dry-run] gh api --method DELETE %s", path)
+            return
+        try:
+            subprocess.run(["gh", "api", "--method", "DELETE", path],
+                           check=True, text=True, capture_output=True)
+            log.info("deleted %s package %s", package_type, name)
+        except subprocess.CalledProcessError as exc:
+            tail = (exc.stderr or "").strip().splitlines()
+            log.warning("could not delete %s package %s: %s",
+                        package_type, name, tail[-1][:120] if tail else exc)
+
 
 def _is_mutating(args: list[str]) -> bool:
     mutating = {"create", "upload", "edit", "delete"}

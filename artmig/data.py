@@ -183,6 +183,16 @@ def transform(ctx: Context) -> None:
     log.info("data: transform == path flattening + manifest (handled during publish)")
 
 
+def cleanup(ctx: Context) -> None:
+    """Delete every data/<folder> release and forget its publish state."""
+    inv = ctx.read_inventory(TYPE)
+    folders = sorted({f["folder"] for f in inv["files"]})
+    removed = sum(1 for folder in folders if ctx.gh.delete_release(f"data/{folder}"))
+    for f in inv["files"]:
+        ctx.state.clear(f"data:{f['path']}")
+    log.info("data: rollback removed %d of %d folder release(s)", removed, len(folders))
+
+
 def verify(ctx: Context) -> None:
     """Probe deployed data: sha256-check the smallest asset + its folder manifest."""
     inv = ctx.read_inventory(TYPE)

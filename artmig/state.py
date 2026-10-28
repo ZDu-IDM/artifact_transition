@@ -32,6 +32,12 @@ class State:
         self._data[key] = {"status": status, **extra}
         self.save()
 
+    def clear(self, key: str) -> None:
+        """Forget an item so a later phase re-runs it (used by cleanup/rollback)."""
+        if key in self._data:
+            del self._data[key]
+            self.save()
+
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(json.dumps(self._data, indent=2, sort_keys=True),
