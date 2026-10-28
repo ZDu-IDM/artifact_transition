@@ -1,0 +1,7 @@
+# Lint configuration for the migration toolkit (used by local runs and CI).
+line-length = 100
+target-version = "py39"
+
+[lint]
+# E/W pycodestyle, F pyflakes, I import-sorting, B bugbear, UP pyupgrade.
+select = ["E", "F", "W", "I", "B", "UP"]

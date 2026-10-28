@@ -107,7 +107,7 @@ def publish(ctx: Context) -> None:
                          src.name, meta["new_name"], v["version"])
                 continue
             if not src.exists():
-                log.warning("npm: missing tarball for %s@%s — run download first", pkg, v["version"])
+                log.warning("npm: missing tarball for %s@%s — download first", pkg, v["version"])
                 continue
             scoped = _rescope_tarball(src, meta["new_name"], slug, ctx.cfg.namespace)
             subprocess.run(
@@ -124,7 +124,7 @@ def transform(ctx: Context) -> None:
 
 def verify(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
-    for pkg, meta in inv["packages"].items():
+    for meta in inv["packages"].values():
         log.info("npm: verify -> npm view %s --registry=https://npm.pkg.github.com",
                  meta["new_name"])
         break

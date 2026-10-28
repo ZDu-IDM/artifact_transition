@@ -85,6 +85,12 @@ make clean                   # drop staging cache + generated outputs
 Most targets accept `TYPE=all|pypi|docker|npm|data` (default `all`); per-type shortcuts like
 `make publish-docker` are also available.
 
+### Linting / CI
+
+`.github/workflows/ci.yml` runs `ruff` (config in `ruff.toml`) plus a byte-compile check on every
+push to `main` and every PR. Run it locally with `make lint` (`pip install ruff` first) or
+`ruff check artmig migrate.py`.
+
 ## After migration — how consumers pull
 
 ```bash
