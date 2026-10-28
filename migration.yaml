@@ -1,0 +1,56 @@
+# Artifactory -> GitHub migration configuration.
+#
+# Credentials are NOT stored here. They are read from environment variables:
+#   ARTIFACTORY_URL    (default: https://packages.idmod.org/artifactory)
+#   ARTIFACTORY_USER   Artifactory username (optional if using a bare token/API key)
+#   ARTIFACTORY_TOKEN  Artifactory API key or identity token (used as a password / bearer)
+#   GH_TOKEN           GitHub token (or rely on `gh auth login`)
+
+# ---- GitHub destination -------------------------------------------------------
+github:
+  owner: ZDu-IDM                 # user/org that owns the destination repo + packages
+  repo: artifact_transition      # single repo hosting everything
+  # Lowercased namespace used for ghcr images and npm scope (GitHub requirement).
+  namespace: zdu-idm
+  pages_url: https://zdu-idm.github.io/artifact_transition   # where the PEP 503 index is served
+
+# ---- Artifactory source -------------------------------------------------------
+artifactory:
+  # Overridable via ARTIFACTORY_URL; must include the /artifactory context path.
+  base_url: https://packages.idmod.org/artifactory
+  docker_registry: packages.idmod.org   # Docker v2 registry host (no /artifactory)
+
+# ---- Per-type source repositories --------------------------------------------
+types:
+  pypi:
+    enabled: true
+    repo: idm-pypi-production
+    expected_count: 107          # sanity target from the summary (name count)
+
+  docker:
+    enabled: true
+    repos:
+      - docker-production-public
+      - idm-docker-public
+    expected_count: 67           # image repositories across both
+
+  npm:
+    enabled: true
+    repo: idm-npm-production
+    expected_count: 4
+
+  data:
+    enabled: true
+    repo: idm-data
+    expected_count: 568          # total files across 11 folders
+
+# ---- Behavior -----------------------------------------------------------------
+options:
+  staging_dir: staging
+  manifests_dir: manifests
+  docs_dir: docs                 # PEP 503 index is written to docs/simple/
+  max_asset_bytes: 2147483648    # 2 GiB GitHub release-asset limit; larger files are split
+  split_chunk_bytes: 1900000000  # ~1.9 GB per part for over-cap files (safely under the limit)
+  retries: 4
+  retry_backoff_seconds: 3
+  request_timeout_seconds: 60
