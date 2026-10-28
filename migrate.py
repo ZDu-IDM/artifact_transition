@@ -9,8 +9,10 @@ Usage examples
   python migrate.py publish   --type pypi         # download -> transform -> publish
   python migrate.py run       --type all          # full pipeline (download->publish->verify)
   python migrate.py verify    --type all
+  python migrate.py report                        # HTML + Markdown migration report
+  python migrate.py cleanup   --type npm          # rollback (deletes; prompts)
 
-Phases: inventory | download | transform | publish | verify | run
+Phases: inventory | download | transform | publish | verify | run | cleanup | report
 Types:  pypi | docker | npm | data | all
 """
 from __future__ import annotations
@@ -20,6 +22,7 @@ import datetime as _dt
 import sys
 
 from artmig import data, docker, npm, pypi
+from artmig import report as report_mod
 from artmig.artifactory import Artifactory
 from artmig.config import load_config
 from artmig.context import Context
@@ -87,7 +90,7 @@ def _run_phase(ctx: Context, type_name: str, phase: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Artifactory -> GitHub migration")
-    parser.add_argument("phase", choices=[*PHASES, "run", "cleanup"])
+    parser.add_argument("phase", choices=[*PHASES, "run", "cleanup", "report"])
     parser.add_argument("--type", default="all", help="pypi|docker|npm|data|all")
     parser.add_argument("--config", default="migration.yaml")
     parser.add_argument("--dry-run", action="store_true",
@@ -109,6 +112,12 @@ def main() -> None:
     gh = GitHub(cfg.github_slug, dry_run=args.dry_run)
     state = State(cfg.manifests_dir / "state.json")
     ctx = Context(cfg=cfg, art=art, gh=gh, state=state, dry_run=args.dry_run)
+
+    # `report` is a single, type-agnostic, read-only summary — handle it up front.
+    if args.phase == "report":
+        report_mod.generate(ctx)
+        log.info("done.")
+        return
 
     types = _types(args.type, cfg)
     _guard_destructive(args, types)

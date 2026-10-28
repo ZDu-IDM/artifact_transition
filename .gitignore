@@ -9,6 +9,9 @@ manifests/*
 # Generated PEP 503 index — rebuilt from the inventory by CI / `migrate.py transform`.
 docs/simple/
 
+# Generated migration report — rebuilt by `migrate.py report`.
+report/
+
 # Secrets
 .env
 .npmrc

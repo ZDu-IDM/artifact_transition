@@ -38,6 +38,14 @@ class State:
             del self._data[key]
             self.save()
 
+    def status_counts(self, prefix: str) -> dict[str, int]:
+        """Tally statuses for keys starting with '<prefix>:' (e.g. 'pypi')."""
+        counts: dict[str, int] = {}
+        for key, rec in self._data.items():
+            if key.startswith(f"{prefix}:"):
+                counts[rec["status"]] = counts.get(rec["status"], 0) + 1
+        return counts
+
     def save(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(json.dumps(self._data, indent=2, sort_keys=True),
