@@ -7,8 +7,8 @@ on:
       phase:
         description: "Phase to run"
         type: choice
-        options: [inventory, report, verify, publish, run, cleanup]
-        default: inventory
+        options: [discover, inventory, report, verify, publish, run, cleanup]
+        default: discover
       type:
         description: "Artifact type"
         type: choice
@@ -64,7 +64,7 @@ jobs:
       # writes; a fresh runner has none, so inventory the type first. (`run`
       # and `inventory` already do it themselves.)
       - name: Inventory (prerequisite)
-        if: ${{ inputs.phase != 'inventory' && inputs.phase != 'run' }}
+        if: ${{ inputs.phase != 'inventory' && inputs.phase != 'run' && inputs.phase != 'discover' }}
         run: python migrate.py inventory --type ${{ inputs.type }}
 
       - name: Run migrate.py ${{ inputs.phase }} --type ${{ inputs.type }}

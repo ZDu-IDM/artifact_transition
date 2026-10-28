@@ -94,7 +94,10 @@ class Artifactory:
 
     # ---- npm ----------------------------------------------------------------
     def npm_metadata(self, repo: str, pkg: str) -> dict:
-        return self.get_json(f"{self.base}/api/npm/{repo}/{pkg}")
+        from urllib.parse import quote
+        # Scoped names like @scope/name must encode the slash (keep the @).
+        enc = quote(pkg, safe="@")
+        return self.get_json(f"{self.base}/api/npm/{repo}/{enc}")
 
     # ---- Docker v2 ----------------------------------------------------------
     def docker_catalog(self, repo: str) -> list[str]:

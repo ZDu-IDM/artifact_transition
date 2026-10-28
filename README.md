@@ -4,15 +4,27 @@ Tooling to transfer IDM's artifacts from Artifactory (`packages.idmod.org`) into
 GitHub repo (`ZDu-IDM/artifact_transition`). See
 [`artifactory-package-summary.md`](artifactory-package-summary.md) for the source inventory.
 
-## What moves where
+## Scope: all LOCAL (IDM-owned) repositories
 
-| Source (Artifactory) | Volume | GitHub target |
+The migration covers **every LOCAL repository** — the ones that store IDM's own artifacts —
+discovered live from `GET /api/repositories` (not a static list). REMOTE repos are caching
+proxies of public registries (PyPI, npm, Docker Hub, CRAN, NuGet, RPM) and VIRTUAL repos are
+aggregate views — neither holds IDM-owned data, so both are excluded. `migrate.py discover`
+audits the live LOCAL set against the config and **fails if any LOCAL repo is unhandled**, so
+nothing can be silently missed as Artifactory changes.
+
+Current LOCAL repos → GitHub target:
+
+| Source (LOCAL) | Volume | GitHub target |
 |---|---|---|
-| `idm-pypi-production` (Python) | ~107 names (91 after PEP 503 dedup) | **GitHub Releases** + **PEP 503 index** on GitHub Pages |
-| `docker-production-public`, `idm-docker-public` | 67 images | **ghcr.io** `ghcr.io/zdu-idm/<repo>/<image>` |
-| `idm-npm-production` (npm) | 4 packages | **GitHub Packages npm** `@zdu-idm/*` |
-| `idm-data` (generic data) | 568 files / 11 folders | **GitHub Releases** (one per folder) + `manifest.json` |
-| NuGet / CRAN / RPM | empty | not migrated |
+| `idm-pypi-production` (Pypi) | 91 pkgs / 1,692 files | **GitHub Releases** + **PEP 503 index** on GitHub Pages |
+| `docker-production-public` + `idm-docker-public` + `docker-staging-public` (Docker) | 132 images | **ghcr.io** `ghcr.io/zdu-idm/<repo>/<image>` |
+| `idm-npm-production` (Npm) | packages discovered live | **GitHub Packages npm** `@zdu-idm/*` |
+| `idm-data` (Generic) | 568 files / 11 folders | **GitHub Releases** (one per folder) + `manifest.json` |
+
+> The earlier `artifactory-package-summary.md` was a point-in-time snapshot and under-counted
+> (e.g. it omitted `docker-staging-public`'s ~65 images). The toolkit now relies on **live
+> discovery** instead; run `make discover` to see the authoritative coverage.
 
 GitHub has no native PyPI registry, so Python wheels/sdists become **release assets** and a
 static **PEP 503 "simple" index** (`docs/simple/`, served via GitHub Pages) makes them

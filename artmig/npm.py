@@ -19,14 +19,35 @@ log = get_logger()
 TYPE = "npm"
 REGISTRY = "https://npm.pkg.github.com"
 
-# The 4 packages are known from the summary; we still fetch live metadata.
-KNOWN = ["comps-ui-auth", "microcomps", "postette", "comps-ui"]
+
+def _discover_packages(ctx: Context, repo: str) -> list[str]:
+    """Enumerate package names live from the repo storage tree.
+
+    Unscoped packages are top-level folders; scoped packages live under @scope/.
+    Skips Artifactory metadata folders (e.g. .npm).
+    """
+    pkgs: list[str] = []
+    for child in ctx.art.storage(repo).get("children", []):
+        if not child.get("folder"):
+            continue
+        name = child["uri"].strip("/")
+        if name.startswith("."):          # .npm and other metadata
+            continue
+        if name.startswith("@"):          # scope folder -> descend
+            for sub in ctx.art.storage(f"{repo}/{name}").get("children", []):
+                if sub.get("folder"):
+                    pkgs.append(f"{name}/{sub['uri'].strip('/')}")
+        else:
+            pkgs.append(name)
+    return sorted(pkgs)
 
 
 def inventory(ctx: Context) -> dict:
     repo = ctx.cfg.types[TYPE]["repo"]
+    discovered = _discover_packages(ctx, repo)
+    log.info("npm: discovered %d package(s) in %s", len(discovered), repo)
     packages: dict[str, dict] = {}
-    for pkg in KNOWN:
+    for pkg in discovered:
         try:
             meta = ctx.art.npm_metadata(repo, pkg)
         except Exception as exc:  # noqa: BLE001
@@ -45,9 +66,10 @@ def inventory(ctx: Context) -> dict:
                 by_path[path] = {"version": label, "path": path,
                                  "shasum": dist.get("shasum"), "tarball": tarball}
         versions = list(by_path.values())
+        base = pkg.split("/")[-1]  # drop any existing @scope/ for the new name
         packages[pkg] = {
             "latest": (meta.get("dist-tags") or {}).get("latest"),
-            "new_name": f"@{ctx.cfg.namespace}/{pkg}",
+            "new_name": f"@{ctx.cfg.namespace}/{base}",
             "versions": versions,
         }
         log.info("npm: %-16s %d versions", pkg, len(versions))

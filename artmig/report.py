@@ -10,6 +10,7 @@ import datetime as _dt
 import html
 import json
 
+from . import discover
 from .context import Context
 from .util import get_logger
 
@@ -45,6 +46,12 @@ def build_report_data(ctx: Context) -> dict:
         "types": {},
     }
 
+    # LOCAL-repo coverage (best-effort — needs Artifactory access; skipped offline).
+    try:
+        out["coverage"] = discover.coverage(ctx)
+    except Exception as exc:  # noqa: BLE001
+        out["coverage"] = {"error": str(exc)}
+
     for t in _TYPES:
         path = ctx.inventory_path(t)
         entry: dict = {"target": _TARGETS[t], "progress": ctx.state.status_counts(t)}
@@ -75,12 +82,26 @@ def build_report_data(ctx: Context) -> dict:
     return out
 
 
+def _coverage_line(cov: dict) -> str:
+    """One-line LOCAL-repo coverage statement for the report header."""
+    if not cov or cov.get("error"):
+        return "LOCAL-repo coverage: unavailable (no Artifactory access at report time)."
+    local = cov.get("local", [])
+    uncovered = cov.get("uncovered", [])
+    if uncovered:
+        return (f"⚠️ Coverage: {len(local) - len(uncovered)}/{len(local)} LOCAL repos — "
+                f"UNCOVERED: {', '.join(uncovered)}")
+    return f"✅ Coverage: all {len(local)} LOCAL (IDM-owned) repositories are included."
+
+
 # ---- Markdown ----------------------------------------------------------------
 def render_markdown(d: dict) -> str:
     lines = [
         "# Migration report",
         "",
         f"*Generated: {d['generated']} · {d['source']} → {d['github']}*",
+        "",
+        _coverage_line(d.get("coverage", {})),
         "",
         "| Type | Source | Target | Inventory | Published |",
         "|---|---|---|---|---|",
@@ -161,7 +182,8 @@ def _render_body(d: dict) -> str:
     pages = html.escape(d["pages_url"])
     head = (f'<p class="meta">Generated {html.escape(d["generated"])} · '
             f'<code>{html.escape(d["source"])}</code> → '
-            f'<a href="https://github.com/{gh}">{gh}</a></p>')
+            f'<a href="https://github.com/{gh}">{gh}</a></p>\n'
+            f'<p>{html.escape(_coverage_line(d.get("coverage", {})))}</p>')
     thead = ("<thead><tr><th>Type</th><th>Source</th><th>Target</th>"
              "<th>Inventory</th><th>Published</th></tr></thead>")
     return (f"<h1>Migration report</h1>\n{head}\n"
