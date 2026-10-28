@@ -1,0 +1,84 @@
+name: Run migration
+
+# Manual only — never on push. Pick a phase/type and whether it's a dry run.
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Phase to run"
+        type: choice
+        options: [inventory, report, verify, publish, run, cleanup]
+        default: inventory
+      type:
+        description: "Artifact type"
+        type: choice
+        options: [all, pypi, docker, npm, data]
+        default: all
+      dry_run:
+        description: "Dry run (log actions, change nothing)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write      # create / delete GitHub Releases (pypi, data)
+  packages: write      # publish npm + push ghcr images
+
+concurrency:
+  group: migration     # never run two migrations at once
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      ARTIFACTORY_URL: ${{ secrets.ARTIFACTORY_URL }}
+      ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+      ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
+      # A PAT with write:packages (+ delete:packages for cleanup) if provided,
+      # otherwise the built-in token (fine for releases + publishing).
+      GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure npm auth (GitHub Packages)
+        run: echo "//npm.pkg.github.com/:_authToken=${GH_TOKEN}" > ~/.npmrc
+
+      - name: Log in to ghcr.io
+        run: echo "${GH_TOKEN}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Log in to the Artifactory Docker registry
+        if: env.ARTIFACTORY_TOKEN != ''
+        run: |
+          echo "${ARTIFACTORY_TOKEN}" | \
+            docker login packages.idmod.org -u "${ARTIFACTORY_USER:-token}" --password-stdin
+
+      - name: Run migrate.py ${{ inputs.phase }} --type ${{ inputs.type }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            FLAG=--dry-run
+          else
+            FLAG=--yes          # bypass the interactive guard in CI
+          fi
+          python migrate.py ${{ inputs.phase }} --type ${{ inputs.type }} $FLAG
+
+      - name: Generate report
+        if: ${{ always() && inputs.phase != 'report' }}
+        run: python migrate.py report || true
+
+      - name: Upload manifests + report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: migration-${{ inputs.phase }}-${{ inputs.type }}
+          path: |
+            manifests/
+            report/
+          if-no-files-found: ignore
