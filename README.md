@@ -63,6 +63,24 @@ Phases: `inventory | download | transform | publish | verify | run`.
 Re-running skips items already recorded as done in `manifests/state.json`, so an interrupted
 migration resumes cleanly.
 
+### Make targets
+
+A `Makefile` wraps the common operations (`make help` lists them all):
+
+```bash
+make install                 # pip install -r requirements.txt
+make auth-check              # report whether ARTIFACTORY_TOKEN / gh / docker are ready
+make inventory TYPE=all      # crawl Artifactory (read-only)
+make dry-run TYPE=pypi       # preview the full pipeline, no changes
+make dryrun-npm              # dry-run publish a single type
+make publish-npm             # publish a single type
+make index                   # regenerate the PEP 503 index
+make clean                   # drop staging cache + generated outputs
+```
+
+Most targets accept `TYPE=all|pypi|docker|npm|data` (default `all`); per-type shortcuts like
+`make publish-docker` are also available.
+
 ## After migration — how consumers pull
 
 ```bash
