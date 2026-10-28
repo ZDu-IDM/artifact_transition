@@ -13,7 +13,7 @@ TYPE ?= all
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install lint check auth-check inventory dry-run publish verify cleanup report index clean distclean
+.PHONY: help install lint check auth-check discover inventory dry-run publish verify cleanup report index clean distclean
 
 help:  ## Show this help
 	@grep -E '^[a-zA-Z_%-]+:.*?## ' $(MAKEFILE_LIST) \
@@ -33,6 +33,9 @@ auth-check:  ## Report whether required credentials are available
 	@if [ -n "$$ARTIFACTORY_USER" ];  then echo "ARTIFACTORY_USER  : set"; else echo "ARTIFACTORY_USER  : (optional, unset)"; fi
 	@gh auth status >/dev/null 2>&1 && echo "gh auth           : logged in" || echo "gh auth           : NOT logged in (run 'gh auth login')"
 	@docker info >/dev/null 2>&1 && echo "docker daemon     : running" || echo "docker daemon     : not reachable"
+
+discover:  ## Audit LOCAL repo coverage (fails if any repo is unhandled)
+	$(PY) migrate.py discover
 
 inventory:  ## Crawl Artifactory into manifests/ (read-only). Use TYPE=...
 	$(PY) migrate.py inventory --type $(TYPE)

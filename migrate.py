@@ -22,6 +22,7 @@ import datetime as _dt
 import sys
 
 from artmig import data, docker, npm, pypi
+from artmig import discover as discover_mod
 from artmig import report as report_mod
 from artmig.artifactory import Artifactory
 from artmig.config import load_config
@@ -90,7 +91,7 @@ def _run_phase(ctx: Context, type_name: str, phase: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Artifactory -> GitHub migration")
-    parser.add_argument("phase", choices=[*PHASES, "run", "cleanup", "report"])
+    parser.add_argument("phase", choices=[*PHASES, "run", "cleanup", "report", "discover"])
     parser.add_argument("--type", default="all", help="pypi|docker|npm|data|all")
     parser.add_argument("--config", default="migration.yaml")
     parser.add_argument("--dry-run", action="store_true",
@@ -113,7 +114,11 @@ def main() -> None:
     state = State(cfg.manifests_dir / "state.json")
     ctx = Context(cfg=cfg, art=art, gh=gh, state=state, dry_run=args.dry_run)
 
-    # `report` is a single, type-agnostic, read-only summary — handle it up front.
+    # `discover` and `report` are single, type-agnostic, read-only — handle up front.
+    if args.phase == "discover":
+        discover_mod.run(ctx)
+        log.info("done.")
+        return
     if args.phase == "report":
         report_mod.generate(ctx)
         log.info("done.")

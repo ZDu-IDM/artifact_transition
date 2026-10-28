@@ -29,10 +29,13 @@ types:
 
   docker:
     enabled: true
+    # All LOCAL Docker repos. `migrate.py discover` audits this list against the
+    # live /api/repositories and FAILS if a LOCAL repo is missing here.
     repos:
       - docker-production-public
       - idm-docker-public
-    expected_count: 67           # image repositories across both
+      - docker-staging-public    # LOCAL staging repo (~65 images) — was missed by the summary
+    expected_count: 132          # soft hint; discovery is authoritative
 
   npm:
     enabled: true
