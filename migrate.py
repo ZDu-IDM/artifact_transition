@@ -41,6 +41,32 @@ def _types(arg: str, cfg) -> list[str]:
     return [arg]
 
 
+def _guard_type_all(args, types: list[str]) -> None:
+    """Block an accidental real publish/run across *all* types.
+
+    A real (non-dry-run) `publish`/`run --type all` pushes to GitHub Releases,
+    ghcr.io, and npm in one shot — hard to undo. Require explicit confirmation:
+    `--yes`, or an interactive 'yes' at the prompt. Single-type runs and any
+    --dry-run are unaffected.
+    """
+    is_real_push = args.phase in ("publish", "run") and not args.dry_run
+    if args.type != "all" or not is_real_push or args.yes:
+        return
+
+    log.warning("About to run a REAL '%s' across ALL types: %s", args.phase, ", ".join(types))
+    log.warning("This publishes artifacts to GitHub Releases, ghcr.io, and npm — hard to undo.")
+    log.warning("Re-run with --yes to skip this prompt, or target one type (e.g. --type npm).")
+    # Prompt regardless of isatty() — it is unreliable on Windows/Git Bash. In a true
+    # non-interactive run input() raises EOFError, which we treat as a decline.
+    try:
+        resp = input("Proceed with the full migration? Type 'yes' to continue: ").strip().lower()
+    except (EOFError, KeyboardInterrupt):
+        resp = ""
+    if resp != "yes":
+        log.error("Aborted — no 'yes' confirmation (pass --yes to bypass).")
+        sys.exit(2)
+
+
 def _run_phase(ctx: Context, type_name: str, phase: str) -> None:
     mod = MODULES[type_name]
     log.info("=== %s : %s ===", type_name, phase)
@@ -59,6 +85,8 @@ def main() -> None:
     parser.add_argument("--config", default="migration.yaml")
     parser.add_argument("--dry-run", action="store_true",
                         help="log mutating actions without executing them")
+    parser.add_argument("--yes", action="store_true",
+                        help="skip the confirmation guard for a real --type all publish/run")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -76,6 +104,7 @@ def main() -> None:
     ctx = Context(cfg=cfg, art=art, gh=gh, state=state, dry_run=args.dry_run)
 
     types = _types(args.type, cfg)
+    _guard_type_all(args, types)
     phases = PHASES if args.phase == "run" else [args.phase]
     # 'publish' implies download+transform first for a one-shot push.
     if args.phase == "publish":

@@ -59,6 +59,10 @@ python migrate.py publish --type docker
 python migrate.py verify --type all
 ```
 
+A real (non-dry-run) `publish`/`run --type all` pushes to **all** registries at once and is
+hard to undo, so it requires confirmation — type `yes` at the prompt, or pass `--yes` to
+bypass (e.g. in CI). Single-type publishes and any `--dry-run` are never guarded.
+
 Phases: `inventory | download | transform | publish | verify | run`.
 Re-running skips items already recorded as done in `manifests/state.json`, so an interrupted
 migration resumes cleanly.
