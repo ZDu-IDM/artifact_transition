@@ -60,6 +60,13 @@ jobs:
           echo "${ARTIFACTORY_TOKEN}" | \
             docker login packages.idmod.org -u "${ARTIFACTORY_USER:-token}" --password-stdin
 
+      # publish / verify / cleanup / report read manifests that `inventory`
+      # writes; a fresh runner has none, so inventory the type first. (`run`
+      # and `inventory` already do it themselves.)
+      - name: Inventory (prerequisite)
+        if: ${{ inputs.phase != 'inventory' && inputs.phase != 'run' }}
+        run: python migrate.py inventory --type ${{ inputs.type }}
+
       - name: Run migrate.py ${{ inputs.phase }} --type ${{ inputs.type }}
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
