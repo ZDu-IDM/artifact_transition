@@ -2,7 +2,21 @@
 
 Tooling to transfer IDM's artifacts from Artifactory (`packages.idmod.org`) into this
 GitHub repo (`ZDu-IDM/artifact_transition`). See
-[`artifactory-package-summary.md`](artifactory-package-summary.md) for the source inventory.
+[`artifactory-package-summary.md`](artifactory-package-summary.md) for the original (stale)
+source snapshot; `make discover` produces the current live inventory.
+
+## Migration status (last updated 2026-10-29)
+
+| Type | Status | Result |
+|---|---|---|
+| **npm** | ✅ **done** | 4 packages / 15 versions → `@zdu-idm/*` on GitHub Packages (verified) |
+| **data** | ✅ **done** | 11 folder-releases / 578 assets, ~11.4 GB (sha256-verified) |
+| **pypi** | ✅ **done** | 91 releases / 1,692 assets, PEP 503 index live & `pip`-installable |
+| **docker** | 🟡 **pilot only** | 1 image (`idmtools/container-rocky-runtime`, 7 tags) migrated; full run pending (175 images / 569 tags / **281 GB**) |
+
+**Work is paused pending a team decision on the Docker run** (see
+[Resuming the Docker migration](#resuming-the-docker-migration)). npm/data/pypi are complete; nothing
+is in flight. The toolkit is fully built, CI-linted, and exercised end-to-end from the workflow.
 
 ## Scope: all LOCAL (IDM-owned) repositories
 
@@ -18,7 +32,7 @@ Current LOCAL repos → GitHub target:
 | Source (LOCAL) | Volume | GitHub target |
 |---|---|---|
 | `idm-pypi-production` (Pypi) | 91 pkgs / 1,692 files | **GitHub Releases** + **PEP 503 index** on GitHub Pages |
-| `docker-production-public` + `idm-docker-public` + `docker-staging-public` (Docker) | 132 images | **ghcr.io** `ghcr.io/zdu-idm/<repo>/<image>` |
+| `docker-production-public` + `idm-docker-public` + `docker-staging-public` (Docker) | 175 images / 569 tags / ~281 GB (authenticated count) | **ghcr.io** `ghcr.io/zdu-idm/<repo>/<image>` |
 | `idm-npm-production` (Npm) | packages discovered live | **GitHub Packages npm** `@zdu-idm/*` |
 | `idm-data` (Generic) | 568 files / 11 folders | **GitHub Releases** (one per folder) + `manifest.json` |
 
@@ -46,7 +60,7 @@ pip install -r requirements.txt
 
 # Artifactory read credentials (needed for byte downloads + Docker catalog)
 export ARTIFACTORY_TOKEN=<api-key-or-identity-token>
-export ARTIFACTORY_USER=<username>          # optional if token is a bearer
+export ARTIFACTORY_USER=<username>          # REQUIRED for Docker login; optional for pypi/npm/data REST downloads
 
 # GitHub auth (releases, ghcr, npm)
 gh auth login
@@ -237,3 +251,64 @@ One-time setup: **Settings → Pages → Build and deployment → Source: GitHub
 
 To refresh the index after a new migration: re-run `migrate.py inventory --type pypi`, commit the
 updated `manifests/pypi-inventory.json`, and push — the workflow redeploys automatically.
+
+## Resuming the Docker migration
+
+npm/data/pypi are done. Docker is the only remaining type. One image was migrated as a
+pilot; the full run is **175 images / 569 tags / ~281 GB**.
+
+**Decisions to settle with the team first:**
+1. **Tag scope** — all 569 tags, or `tag_selection: one` (one representative tag per image →
+   ~175 tags, all images kept). Note tags of an image share layers, so fewer tags mainly cuts
+   push/manifest operations, not necessarily total bytes.
+2. **Runner** — a hosted GitHub runner has ~14 GB disk and a 6 h job limit. The toolkit is now
+   **disk-bounded** (`docker rmi` after each image) and **resumable** (skips tags already on
+   ghcr), so it can run as **repeated hosted jobs** that each make progress, *or* on a
+   **self-hosted / large runner** in fewer passes. ~281 GB at the observed throughput is several
+   hours.
+3. **Visibility** — ghcr packages published via `GITHUB_TOKEN` start **private**. Decide whether
+   images should be made **public** (anonymous `docker pull`, matching old Artifactory behavior).
+   A post-publish auto-public step is noted as a future enhancement, not yet implemented.
+
+**Prerequisites (already satisfied):** `ARTIFACTORY_TOKEN` + `ARTIFACTORY_USER` secrets set
+(Docker login requires the username); ghcr login handled by the workflow.
+
+**To run it** (Actions → "Run migration", or `gh workflow run migrate.yml`):
+
+```bash
+# optional: set a bounded scope first in migration.yaml -> types.docker.tag_selection: one
+# full run (repeat until it reports everything already on ghcr):
+gh workflow run migrate.yml --ref main -f phase=publish -f type=docker -f dry_run=false
+
+# a single image / subset (what the pilot used):
+gh workflow run migrate.yml --ref main -f phase=publish -f type=docker -f dry_run=false \
+  -f image=idmtools/container-rocky-runtime
+
+# verify afterwards:
+gh workflow run migrate.yml --ref main -f phase=verify -f type=docker -f dry_run=false
+```
+
+Because publish skips tags already on ghcr, re-dispatching after a timeout/partial run simply
+continues. Confirm completeness any time with `make discover` and a fresh `report`.
+
+## Lessons learned (issues found & fixed during the real migrations)
+
+Captured for the record — each was discovered by running the real publishes and is now handled:
+
+- **Stale summary** — the live instance had drifted (e.g. `docker-staging-public`'s ~65 images
+  were missing from the old summary). Fixed by live discovery + a coverage gate (`discover`).
+- **npm hardcoded list** → replaced with live package discovery.
+- **npm irregular tarball URL** (`comps-ui-auth@2.1.0` lacked the `/-/` path) → download via the
+  authoritative `dist.tarball` URL.
+- **npm version ordering** — publishing versions out of order tripped npm's "can't move `latest`
+  backward" → publish under a non-`latest` tag, then set `latest` explicitly; skip duplicates.
+- **GitHub 0-byte assets rejected** (`400 Bad Content-Length`) — 2 empty data files recorded in
+  the manifest (`"empty": true`) and skipped.
+- **GitHub secondary rate limit** on bulk release-asset uploads — uploads are now resumable
+  (skip existing) + batched with backoff.
+- **Docker registry = subdomain method** — `packages.idmod.org/v2/` root is misconfigured (400);
+  the real host is `<repo>.packages.idmod.org`. Docker login also requires `ARTIFACTORY_USER`
+  (REST downloads only needed the token).
+- **Empty env vars from unset secrets** — GitHub injects `""` for an unset secret; config now
+  falls back to defaults/`None` instead of blanking values.
+- **CI runner limits** — disk and 6 h job cap drove the disk-bounded + resumable Docker design.
