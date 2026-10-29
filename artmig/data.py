@@ -108,7 +108,15 @@ def publish(ctx: Context) -> None:
         for f in items:
             asset = sanitize_asset_name(f["path"])
             src = ctx.staging(TYPE, f["path"])
-            if f["size"] > cap:
+            if f["size"] == 0:
+                # GitHub Releases reject 0-byte assets (HTTP 400 Bad Content-Length).
+                # Record it so it's fully accounted for; recreate with `touch`.
+                manifest["assets"].append({
+                    "original_path": f["path"], "asset_name": asset,
+                    "sha256": f.get("sha256"), "size": 0, "empty": True})
+                log.info("data: %s is empty (0 bytes) — recorded in manifest, not uploaded",
+                         f["path"])
+            elif f["size"] > cap:
                 entry, part_paths = _handle_split(ctx, f, asset, out_dir, chunk)
                 manifest["assets"].append(entry)
                 upload.extend(part_paths)
