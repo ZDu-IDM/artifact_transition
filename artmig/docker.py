@@ -107,11 +107,14 @@ def _ensure_login(ctx: Context, repo: str) -> None:
         return
     auth = ctx.cfg.artifactory
     if not auth.token:
-        log.warning("docker: no ARTIFACTORY_TOKEN — pulls from %s will likely 401", reg)
-        return
-    # Artifactory accepts the access token as the password; username is the real
-    # user when set (required for API keys), else a placeholder for access tokens.
-    subprocess.run([resolve_exe("docker"), "login", reg, "-u", auth.user or "token",
+        raise RuntimeError(f"docker: no ARTIFACTORY_TOKEN — cannot log in to {reg}")
+    # This registry validates the username against the token (it rejected a
+    # placeholder with "Wrong username was used"), so ARTIFACTORY_USER is required.
+    if not auth.user:
+        raise RuntimeError(
+            f"docker: ARTIFACTORY_USER is required to log in to {reg} "
+            "(the registry rejects a placeholder username). Set the ARTIFACTORY_USER secret.")
+    subprocess.run([resolve_exe("docker"), "login", reg, "-u", auth.user,
                     "--password-stdin"], input=auth.token, check=True, text=True)
     _LOGGED_IN.add(reg)
     log.info("docker: logged in to %s", reg)
