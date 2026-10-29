@@ -60,8 +60,34 @@ def _dest_ref(ctx: Context, repo: str, image: str, tag: str) -> str:
     return name
 
 
+def _src_registry(ctx: Context, repo: str) -> str:
+    """Subdomain method: each repo is its own registry host <repo>.<registry>.
+    (The plain <registry>/v2/ root is misconfigured and returns 400.)"""
+    return f"{repo}.{ctx.cfg.artifactory.docker_registry}"
+
+
 def _src_ref(ctx: Context, repo: str, image: str, tag: str) -> str:
-    return f"{ctx.cfg.artifactory.docker_registry}/{repo}/{image}:{tag}"
+    return f"{_src_registry(ctx, repo)}/{image}:{tag}"
+
+
+_LOGGED_IN: set[str] = set()
+
+
+def _ensure_login(ctx: Context, repo: str) -> None:
+    """`docker login` to a repo's subdomain registry once (needs Artifactory creds)."""
+    reg = _src_registry(ctx, repo)
+    if ctx.dry_run or reg in _LOGGED_IN:
+        return
+    auth = ctx.cfg.artifactory
+    if not auth.token:
+        log.warning("docker: no ARTIFACTORY_TOKEN — pulls from %s will likely 401", reg)
+        return
+    # Artifactory accepts the access token as the password; username is the real
+    # user when set (required for API keys), else a placeholder for access tokens.
+    subprocess.run([resolve_exe("docker"), "login", reg, "-u", auth.user or "token",
+                    "--password-stdin"], input=auth.token, check=True, text=True)
+    _LOGGED_IN.add(reg)
+    log.info("docker: logged in to %s", reg)
 
 
 def download(ctx: Context) -> None:
@@ -76,6 +102,7 @@ def download(ctx: Context) -> None:
             if ctx.dry_run:
                 log.info("[dry-run] docker pull %s", ref)
                 continue
+            _ensure_login(ctx, meta["source_repo"])
             subprocess.run([resolve_exe("docker"), "pull", ref], check=True, text=True)
             ctx.state.set(key, "downloaded")
 
@@ -93,6 +120,7 @@ def publish(ctx: Context) -> None:
             if ctx.dry_run:
                 log.info("[dry-run] docker tag %s %s && docker push %s", src, dst, dst)
                 continue
+            _ensure_login(ctx, repo)
             subprocess.run([resolve_exe("docker"), "pull", src], check=True, text=True)
             subprocess.run([resolve_exe("docker"), "tag", src, dst], check=True, text=True)
             subprocess.run([resolve_exe("docker"), "push", dst], check=True, text=True)
