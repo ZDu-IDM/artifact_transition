@@ -16,8 +16,26 @@ log = get_logger()
 TYPE = "docker"
 
 
+def _select_tags(tags: list[str], selection: str) -> list[str]:
+    """Apply the configured tag_selection to an image's tag list.
+
+    - "all"    : every tag (default).
+    - "one"    : a single representative tag — 'latest' if present, else the first;
+                 keeps every image (unlike "latest", which drops images lacking it).
+    - "latest" : only the 'latest' tag (images without it migrate 0 tags).
+    """
+    if selection == "all" or not tags:
+        return tags
+    if selection == "latest":
+        return [t for t in tags if t == "latest"]
+    if selection == "one":
+        return ["latest"] if "latest" in tags else tags[:1]
+    raise ValueError(f"unknown docker tag_selection '{selection}' (all|one|latest)")
+
+
 def inventory(ctx: Context) -> dict:
     repos = ctx.cfg.types[TYPE]["repos"]
+    selection = ctx.cfg.types[TYPE].get("tag_selection", "all")
     images: dict[str, dict] = {}
     total_images = 0
     for repo in repos:
@@ -33,9 +51,14 @@ def inventory(ctx: Context) -> dict:
             except Exception as exc:  # noqa: BLE001
                 log.warning("docker: tags for %s/%s failed: %s", repo, img, exc)
                 tags = []
+            tags = _select_tags(tags, selection)
             images[f"{repo}/{img}"] = {"source_repo": repo, "image": img, "tags": tags}
             total_images += 1
             log.info("docker: %-45s %d tags", f"{repo}/{img}", len(tags))
+
+    if selection != "all":
+        log.info("docker: tag_selection=%s -> %d tags across %d images",
+                 selection, sum(len(m["tags"]) for m in images.values()), total_images)
 
     data = {"type": TYPE, "source_repos": repos,
             "image_count": total_images, "images": images}

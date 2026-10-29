@@ -36,6 +36,12 @@ types:
       - idm-docker-public
       - docker-staging-public    # LOCAL staging repo (~65 images) — was missed by the summary
     expected_count: 132          # soft hint; discovery is authoritative
+    # Which tags to migrate per image:
+    #   all    - every tag (default)
+    #   one    - one representative tag per image ('latest' if present, else the first);
+    #            keeps all images (only 66/175 have 'latest', so 'latest' would drop 109)
+    #   latest - only the 'latest' tag
+    tag_selection: all
 
   npm:
     enabled: true

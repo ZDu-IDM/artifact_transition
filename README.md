@@ -28,6 +28,11 @@ Current LOCAL repos → GitHub target:
 > formats) documenting the current instance structure + coverage, and **fails** if any LOCAL repo
 > is unhandled.
 
+**Docker tag scope:** by default all tags migrate. Set `types.docker.tag_selection` in
+`migration.yaml` to `one` (one representative tag per image — `latest` if present, else the first;
+keeps every image) or `latest` (only `latest`; note only 66/175 images have it, so 109 would be
+skipped) for a bounded pass.
+
 GitHub has no native PyPI registry, so Python wheels/sdists become **release assets** and a
 static **PEP 503 "simple" index** (`docs/simple/`, served via GitHub Pages) makes them
 `pip install`-able. The 568 data files aren't packages, so they also become release assets,
