@@ -120,7 +120,8 @@ def _rescope_tarball(src: Path, new_name: str, slug: str, namespace: str) -> Pat
 
 
 # Substrings that mean "this version already exists" — safe to skip (idempotent reruns).
-_CONFLICT = ("cannot publish over existing", "409", "epublishconflict")
+# GitHub Packages says "You cannot publish over the previously published versions: X".
+_CONFLICT = ("cannot publish over", "409", "epublishconflict")
 
 
 def _run_npm(*args: str) -> subprocess.CompletedProcess:
