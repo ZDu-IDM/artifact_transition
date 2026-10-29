@@ -18,6 +18,10 @@ on:
         description: "Dry run (log actions, change nothing)"
         type: boolean
         default: true
+      image:
+        description: "docker only: restrict to images matching these substrings (comma-sep)"
+        type: string
+        default: ""
 
 permissions:
   contents: write      # create / delete GitHub Releases (pypi, data)
@@ -62,7 +66,7 @@ jobs:
       # and `inventory` already do it themselves.)
       - name: Inventory (prerequisite)
         if: ${{ inputs.phase != 'inventory' && inputs.phase != 'run' && inputs.phase != 'discover' }}
-        run: python migrate.py inventory --type ${{ inputs.type }}
+        run: python migrate.py inventory --type ${{ inputs.type }} --image "${{ inputs.image }}"
 
       - name: Run migrate.py ${{ inputs.phase }} --type ${{ inputs.type }}
         run: |
@@ -71,7 +75,8 @@ jobs:
           else
             FLAG=--yes          # bypass the interactive guard in CI
           fi
-          python migrate.py ${{ inputs.phase }} --type ${{ inputs.type }} $FLAG
+          python migrate.py ${{ inputs.phase }} --type ${{ inputs.type }} $FLAG \
+            --image "${{ inputs.image }}"
 
       - name: Generate report
         if: ${{ always() && inputs.phase != 'report' }}
