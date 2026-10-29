@@ -5,12 +5,17 @@ piggybacks on the user's existing `gh auth login` (or GH_TOKEN).
 """
 from __future__ import annotations
 
+import json
 import subprocess
+import time
 from pathlib import Path
 
 from .util import get_logger
 
 log = get_logger()
+
+# gh/API output substrings meaning "slow down" (secondary/abuse limit on content creation).
+_RATE_LIMIT = ("rate limit", "secondary rate", "abuse detection", "retry your request")
 
 
 class GitHub:
@@ -44,14 +49,55 @@ class GitHub:
         self._run(["release", "create", tag, "-R", self.slug,
                    "--title", title, "--notes", notes or title])
 
-    def upload_assets(self, tag: str, files: list[Path], clobber: bool = True) -> None:
+    def existing_asset_names(self, tag: str) -> set[str]:
+        """Names of assets already on a release (for resumable, idempotent uploads)."""
+        try:
+            out = subprocess.run(["gh", "release", "view", tag, "-R", self.slug,
+                                  "--json", "assets"],
+                                 check=True, capture_output=True, text=True)
+            return {a["name"] for a in json.loads(out.stdout).get("assets", [])}
+        except subprocess.CalledProcessError:
+            return set()
+
+    def upload_assets(self, tag: str, files: list[Path], batch: int = 50) -> None:
+        """Upload only assets not already present, in rate-limit-aware batches.
+
+        Skipping existing assets makes reruns cheap and keeps us under GitHub's
+        secondary (content-creation) rate limit; each batch retries with backoff
+        when that limit is hit, so a large publish self-paces instead of failing.
+        """
         if not files:
             return
-        args = ["release", "upload", tag, "-R", self.slug,
-                *[str(f) for f in files]]
-        if clobber:
-            args.append("--clobber")
-        self._run(args)
+        if self.dry_run:
+            log.info("[dry-run] upload %d assets to release %s", len(files), tag)
+            return
+        existing = self.existing_asset_names(tag)
+        todo = [f for f in files if f.name not in existing]
+        if not todo:
+            log.info("%s: all %d assets already present", tag, len(files))
+            return
+        if len(todo) != len(files):
+            log.info("%s: %d assets already present, uploading %d",
+                     tag, len(files) - len(todo), len(todo))
+        for i in range(0, len(todo), batch):
+            self._upload_batch(tag, todo[i:i + batch])
+
+    def _upload_batch(self, tag: str, chunk: list[Path]) -> None:
+        # --clobber so a retry after a partial batch is safe (overwrites, no dup error).
+        args = ["gh", "release", "upload", tag, "-R", self.slug,
+                *[str(f) for f in chunk], "--clobber"]
+        waits = [30, 60, 120, 300, 600]
+        for attempt, wait in enumerate([*waits, None], start=1):
+            r = subprocess.run(args, capture_output=True, text=True)
+            if r.returncode == 0:
+                return
+            blob = f"{r.stderr}\n{r.stdout}".lower()
+            if any(s in blob for s in _RATE_LIMIT) and wait is not None:
+                log.warning("%s: secondary rate limit — sleeping %ds (attempt %d)",
+                            tag, wait, attempt)
+                time.sleep(wait)
+                continue
+            raise RuntimeError(f"upload to {tag} failed: {(r.stderr or '').strip()[-300:]}")
 
     def asset_download_url(self, tag: str, asset_name: str) -> str:
         return f"https://github.com/{self.slug}/releases/download/{tag}/{asset_name}"
