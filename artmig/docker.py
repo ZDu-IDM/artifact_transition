@@ -160,15 +160,26 @@ def _manifest_inspect(ref: str) -> tuple[str, str, str]:
 
 
 def verify(ctx: Context) -> None:
-    """Probe that a migrated image exists on ghcr.io (needs docker login + tags)."""
+    """Probe Docker access without pulling layers: confirm we can read a SOURCE
+    image (login + subdomain registry) and whether its ghcr DESTINATION exists."""
     inv = ctx.read_inventory(TYPE)
-    ref = None
+    sample = None
     for meta in inv["images"].values():
         if meta["tags"]:
-            ref = _dest_ref(ctx, meta["source_repo"], meta["image"], meta["tags"][0])
+            sample = (meta["source_repo"], meta["image"], meta["tags"][0])
             break
-    if ref is None:
-        results = [("SKIP", "docker image", "no tags in inventory — run an authed inventory first")]
-    else:
-        results = [_manifest_inspect(ref)]
+    if sample is None:
+        report_probes(TYPE, [("SKIP", "docker image",
+                              "no tags in inventory — run an authed inventory first")])
+        return
+
+    repo, image, tag = sample
+    results = []
+    src = _src_ref(ctx, repo, image, tag)
+    try:
+        _ensure_login(ctx, repo)
+        results.append(_manifest_inspect(src))      # source readable? (validates subdomain + auth)
+    except Exception as exc:  # noqa: BLE001
+        results.append(("SKIP", f"source login {repo}", str(exc).splitlines()[-1][:90]))
+    results.append(_manifest_inspect(_dest_ref(ctx, repo, image, tag)))  # ghcr destination
     report_probes(TYPE, results)
