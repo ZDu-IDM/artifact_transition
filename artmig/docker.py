@@ -121,26 +121,33 @@ def _ensure_login(ctx: Context, repo: str) -> None:
 
 
 def download(ctx: Context) -> None:
-    """For Docker, 'download' == docker pull into the local daemon."""
-    inv = ctx.read_inventory(TYPE)
-    for _, meta in inv["images"].items():
-        for tag in meta["tags"]:
-            ref = _src_ref(ctx, meta["source_repo"], meta["image"], tag)
-            key = f"docker:{ref}"
-            if ctx.state.is_done(key, "downloaded"):
-                continue
-            if ctx.dry_run:
-                log.info("[dry-run] docker pull %s", ref)
-                continue
-            _ensure_login(ctx, meta["source_repo"])
-            subprocess.run([resolve_exe("docker"), "pull", ref], check=True, text=True)
-            ctx.state.set(key, "downloaded")
+    """No-op for Docker: pulls happen per-image during publish and are removed
+    right after push, so images never all land on disk at once."""
+    log.info("docker: download is a no-op — publish pulls+pushes+removes per image")
+
+
+def _dest_exists(ctx: Context, dst: str) -> bool:
+    """True if the destination tag already exists on ghcr (cross-run resume)."""
+    if ctx.dry_run:
+        return False
+    r = subprocess.run([resolve_exe("docker"), "manifest", "inspect", dst],
+                       capture_output=True, text=True)
+    return r.returncode == 0
+
+
+def _rmi(refs: list[str]) -> None:
+    """Remove local images to free disk (best-effort)."""
+    if not refs:
+        return
+    subprocess.run([resolve_exe("docker"), "rmi", "-f", *sorted(set(refs))],
+                   capture_output=True, text=True)
 
 
 def publish(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     for _, meta in inv["images"].items():
         repo, image = meta["source_repo"], meta["image"]
+        local_refs: list[str] = []
         for tag in meta["tags"]:
             src = _src_ref(ctx, repo, image, tag)
             dst = _dest_ref(ctx, repo, image, tag)
@@ -148,14 +155,22 @@ def publish(ctx: Context) -> None:
             if ctx.state.is_done(key, "published"):
                 continue
             if ctx.dry_run:
-                log.info("[dry-run] docker tag %s %s && docker push %s", src, dst, dst)
+                log.info("[dry-run] docker pull %s && tag -> %s && push", src, dst)
+                continue
+            # (b) resume across fresh runners: skip tags already on ghcr.
+            if _dest_exists(ctx, dst):
+                log.info("docker: %s already on ghcr — skipping", dst)
+                ctx.state.set(key, "published", dest=dst)
                 continue
             _ensure_login(ctx, repo)
             subprocess.run([resolve_exe("docker"), "pull", src], check=True, text=True)
             subprocess.run([resolve_exe("docker"), "tag", src, dst], check=True, text=True)
             subprocess.run([resolve_exe("docker"), "push", dst], check=True, text=True)
             ctx.state.set(key, "published", dest=dst)
+            local_refs += [src, dst]
             log.info("pushed %s", dst)
+        # (a) free disk before moving to the next image.
+        _rmi(local_refs)
 
 
 def transform(ctx: Context) -> None:
