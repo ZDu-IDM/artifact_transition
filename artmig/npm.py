@@ -119,26 +119,55 @@ def _rescope_tarball(src: Path, new_name: str, slug: str, namespace: str) -> Pat
     return out
 
 
+# Substrings that mean "this version already exists" — safe to skip (idempotent reruns).
+_CONFLICT = ("cannot publish over existing", "409", "epublishconflict")
+
+
+def _run_npm(*args: str) -> subprocess.CompletedProcess:
+    return subprocess.run([resolve_exe("npm"), *args], capture_output=True, text=True)
+
+
 def publish(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     slug = ctx.cfg.github_slug
     for pkg, meta in inv["packages"].items():
+        new_name = meta["new_name"]
         for v in meta["versions"]:
             key = f"npm:{pkg}:{v['version']}"
             src = ctx.staging(TYPE, pkg, f"{pkg}-{v['version']}.tgz")
             if ctx.dry_run:
-                log.info("[dry-run] rescope %s and npm publish %s@%s -> npm.pkg.github.com",
-                         src.name, meta["new_name"], v["version"])
+                log.info("[dry-run] rescope %s and npm publish %s@%s -> %s",
+                         src.name, new_name, v["version"], REGISTRY)
                 continue
             if not src.exists():
                 log.warning("npm: missing tarball for %s@%s — download first", pkg, v["version"])
                 continue
-            scoped = _rescope_tarball(src, meta["new_name"], slug, ctx.cfg.namespace)
-            subprocess.run(
-                [resolve_exe("npm"), "publish", str(scoped), f"--registry={REGISTRY}"],
-                check=True, text=True)
+            scoped = _rescope_tarball(src, new_name, slug, ctx.cfg.namespace)
+            # Publish under a non-'latest' tag so version order never trips npm's
+            # "can't move latest backward" check; 'latest' is set explicitly below.
+            r = _run_npm("publish", str(scoped), f"--registry={REGISTRY}", "--tag", "imported")
+            if r.returncode != 0:
+                blob = f"{r.stderr}\n{r.stdout}".lower()
+                if any(s in blob for s in _CONFLICT):
+                    log.info("npm: %s@%s already present — skipping", new_name, v["version"])
+                    ctx.state.set(key, "published")
+                    continue
+                log.error("npm publish %s@%s failed:\n%s", new_name, v["version"],
+                          (r.stderr or "").strip()[-400:])
+                raise RuntimeError(f"npm publish failed for {new_name}@{v['version']}")
             ctx.state.set(key, "published")
-            log.info("published %s@%s", meta["new_name"], v["version"])
+            log.info("published %s@%s", new_name, v["version"])
+
+        # Point 'latest' at the real latest version (best-effort).
+        latest = meta.get("latest")
+        if latest and not ctx.dry_run:
+            dt = _run_npm("dist-tag", "add", f"{new_name}@{latest}", "latest",
+                          f"--registry={REGISTRY}")
+            if dt.returncode == 0:
+                log.info("npm: set %s dist-tag latest -> %s", new_name, latest)
+            else:
+                log.warning("npm: could not set latest for %s: %s",
+                            new_name, (dt.stderr or "").strip()[-200:])
 
 
 def transform(ctx: Context) -> None:
