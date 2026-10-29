@@ -54,15 +54,8 @@ jobs:
       - name: Log in to ghcr.io
         run: echo "${GH_TOKEN}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      # Only needed to pull images during a real Docker publish — not for
-      # discover/inventory/report/verify. Best-effort so a login quirk never
-      # blocks those phases; a real docker pull would surface the error itself.
-      - name: Log in to the Artifactory Docker registry
-        if: ${{ env.ARTIFACTORY_TOKEN != '' && (inputs.phase == 'publish' || inputs.phase == 'run') }}
-        continue-on-error: true
-        run: |
-          echo "${ARTIFACTORY_TOKEN}" | \
-            docker login packages.idmod.org -u "${ARTIFACTORY_USER:-token}" --password-stdin || true
+      # Artifactory Docker login is handled inside the toolkit per-repo using the
+      # subdomain registry (<repo>.packages.idmod.org) — the plain root is misconfigured.
 
       # publish / verify / cleanup / report read manifests that `inventory`
       # writes; a fresh runner has none, so inventory the type first. (`run`
