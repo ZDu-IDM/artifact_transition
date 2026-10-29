@@ -98,6 +98,9 @@ def main() -> None:
                         help="log mutating actions without executing them")
     parser.add_argument("--yes", action="store_true",
                         help="skip the confirmation guard for a real --type all publish/run")
+    parser.add_argument("--image", default="",
+                        help="docker only: comma-separated substrings to restrict which "
+                             "images are processed (e.g. idmtools/container-rocky-runtime)")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -112,7 +115,11 @@ def main() -> None:
     art = Artifactory(cfg)
     gh = GitHub(cfg.github_slug, dry_run=args.dry_run)
     state = State(cfg.manifests_dir / "state.json")
-    ctx = Context(cfg=cfg, art=art, gh=gh, state=state, dry_run=args.dry_run)
+    image_filter = [s.strip() for s in args.image.split(",") if s.strip()]
+    ctx = Context(cfg=cfg, art=art, gh=gh, state=state, dry_run=args.dry_run,
+                  image_filter=image_filter)
+    if image_filter:
+        log.info("docker image filter: %s", image_filter)
 
     # `discover` and `report` are single, type-agnostic, read-only — handle up front.
     if args.phase == "discover":

@@ -36,6 +36,7 @@ def _select_tags(tags: list[str], selection: str) -> list[str]:
 def inventory(ctx: Context) -> dict:
     repos = ctx.cfg.types[TYPE]["repos"]
     selection = ctx.cfg.types[TYPE].get("tag_selection", "all")
+    only = ctx.image_filter or []
     images: dict[str, dict] = {}
     total_images = 0
     for repo in repos:
@@ -46,6 +47,9 @@ def inventory(ctx: Context) -> dict:
                         "falling back to storage listing", repo, exc)
             names = _catalog_from_storage(ctx, repo)
         for img in names:
+            key = f"{repo}/{img}"
+            if only and not any(s in key for s in only):
+                continue
             try:
                 tags = ctx.art.docker_tags(repo, img)
             except Exception as exc:  # noqa: BLE001

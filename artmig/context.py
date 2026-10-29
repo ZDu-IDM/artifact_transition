@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from .artifactory import Artifactory
@@ -18,6 +18,8 @@ class Context:
     gh: GitHub
     state: State
     dry_run: bool
+    # Optional substrings to restrict Docker images (ephemeral, for bounded runs).
+    image_filter: list[str] = field(default_factory=list)
 
     def inventory_path(self, type_name: str) -> Path:
         return self.cfg.manifests_dir / f"{type_name}-inventory.json"
