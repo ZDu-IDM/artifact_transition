@@ -767,39 +767,48 @@ def _default_config_path() -> Path:
     return candidate if candidate.exists() else Path("migration.yaml")
 
 
-def app_icon() -> QIcon:
-    """Draw the app icon in-process (no bundled asset): an amber package on a
-    petrol tile with a teal 'migrate' arrow — the console's registry-ledger mark."""
-    size = 256
+def _render_icon_pixmap(size: int) -> QPixmap:
+    """Render the app mark at ``size`` px: an amber package on a petrol tile with
+    a teal 'migrate' arrow. Drawn in a 256-unit space and scaled, so every size
+    is crisp (the taskbar typically asks for 32px, the title bar for 16px)."""
     pm = QPixmap(size, size)
     pm.fill(Qt.transparent)
     p = QPainter(pm)
     p.setRenderHint(QPainter.Antialiasing)
+    p.scale(size / 256.0, size / 256.0)
 
     # rounded petrol tile
     p.setPen(QPen(QColor(LINE), 10))
     p.setBrush(QColor(GROUND))
-    p.drawRoundedRect(14, 14, size - 28, size - 28, 46, 46)
+    p.drawRoundedRect(14, 14, 256 - 28, 256 - 28, 46, 46)
 
     # package / crate outline (amber)
-    amber = QPen(QColor(ACCENT), 16, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
-    p.setPen(amber)
+    p.setPen(QPen(QColor(ACCENT), 16, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin))
     p.setBrush(Qt.NoBrush)
     bx, by, bw, bh = 58, 104, 140, 96
     p.drawRoundedRect(bx, by, bw, bh, 12, 12)
-    p.drawLine(bx, by + 30, bx + bw, by + 30)             # lid seam
+    p.drawLine(bx, by + 30, bx + bw, by + 30)                # lid seam
     p.drawLine(bx + bw // 2, by + 30, bx + bw // 2, by + bh)  # center seam
 
     # teal 'migrate' arrow rising out of the box
-    teal = QPen(QColor(DONE), 18, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
-    p.setPen(teal)
+    p.setPen(QPen(QColor(DONE), 18, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin))
     cx = bx + bw // 2
     p.drawLine(cx, 92, cx, 36)        # shaft
     p.drawLine(cx, 36, cx - 24, 60)   # left head
     p.drawLine(cx, 36, cx + 24, 60)   # right head
 
     p.end()
-    return QIcon(pm)
+    return pm
+
+
+def app_icon() -> QIcon:
+    """The console icon with explicit representations at the sizes Windows asks
+    for — a single large pixmap often leaves the taskbar showing the python.exe
+    icon, so bake in the standard shell sizes."""
+    icon = QIcon()
+    for s in (16, 20, 24, 32, 40, 48, 64, 128, 256):
+        icon.addPixmap(_render_icon_pixmap(s))
+    return icon
 
 
 def main() -> None:
