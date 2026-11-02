@@ -29,7 +29,7 @@ from .state import State
 from .util import get_logger
 
 try:
-    from PySide6.QtCore import QSize, Qt, QThread, Signal
+    from PySide6.QtCore import QSize, Qt, QThread, Signal, qInstallMessageHandler
     from PySide6.QtGui import (
         QAction,
         QBrush,
@@ -845,8 +845,24 @@ def _set_windows_app_id() -> None:
         log.warning("could not set AppUserModelID: %s", exc)
 
 
+def _install_qt_log_filter() -> None:
+    """Drop one benign Qt warning while passing everything else to stderr.
+
+    The QSS sizes fonts in pixels, so every widget font has pointSize == -1; on
+    some systems Qt's font resolution then calls setPointSize(-1), spamming
+    "QFont::setPointSize: Point size <= 0 (-1)". It's harmless (Qt falls back),
+    so we filter just that message and leave all other Qt output intact.
+    """
+    def handler(mode, context, message: str) -> None:
+        if "Point size" in message and "must be greater than 0" in message:
+            return
+        sys.stderr.write(message + "\n")
+    qInstallMessageHandler(handler)
+
+
 def main() -> None:
     config_path = _default_config_path()
+    _install_qt_log_filter()
     _set_windows_app_id()
 
     app = QApplication(sys.argv)
