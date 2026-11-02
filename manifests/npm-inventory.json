@@ -1,0 +1,121 @@
+{
+  "package_count": 4,
+  "packages": {
+    "comps-ui": {
+      "latest": "0.2.0",
+      "new_name": "@zdu-idm/comps-ui",
+      "versions": [
+        {
+          "path": "comps-ui/-/comps-ui-0.1.9.tgz",
+          "shasum": "30f59d2e0f0e8604527ea4046942f9a69c98c88f",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui/-/comps-ui-0.1.9.tgz",
+          "version": "0.1.9"
+        },
+        {
+          "path": "comps-ui/-/comps-ui-0.2.0.tgz",
+          "shasum": "5ab269ec9094b017abbbabab9c32bf9fff54f045",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui/-/comps-ui-0.2.0.tgz",
+          "version": "0.2.0"
+        }
+      ]
+    },
+    "comps-ui-auth": {
+      "latest": "2.1.1",
+      "new_name": "@zdu-idm/comps-ui-auth",
+      "versions": [
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-2.0.0.tgz",
+          "shasum": "10dcd859159956c483c46dc981f3c15ac23a8616",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-2.0.0.tgz",
+          "version": "2.0.0"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.3.1.tgz",
+          "shasum": "38bbea7af61000275cfcf0f20a7e393493c75bab",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.3.1.tgz",
+          "version": "1.3.1"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.4.0.tgz",
+          "shasum": "23dbbc23523a03cfefed88f3de0da9e43c7252ee",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.4.0.tgz",
+          "version": "1.4.0"
+        },
+        {
+          "path": "comps-ui-auth-2.1.0.tgz",
+          "shasum": "128c23e287668ca34e897659184fe92b0f8ffe2b",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth-2.1.0.tgz",
+          "version": "2.1.0"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.2.3.tgz",
+          "shasum": "2eab6f1a84717d89b360a1102ecda86bd3714f21",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.2.3.tgz",
+          "version": "1.2.3"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.4.1.tgz",
+          "shasum": "873ba1a4862ccb8cf927328c43c9841e63781aeb",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.4.1.tgz",
+          "version": "1.4.1"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.5.0.tgz",
+          "shasum": "a54a8ab8f58333cdb4908c7fbd47276a173f538d",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.5.0.tgz",
+          "version": "1.5.0"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.6.0.tgz",
+          "shasum": "ce5ecac0f64444da792b90d0c51a949ad58f2bfa",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.6.0.tgz",
+          "version": "1.6.0"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.5.1.tgz",
+          "shasum": "3d1e5061575780a3744608704efe97fc76522ff9",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.5.1.tgz",
+          "version": "1.5.1"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-1.4.2.tgz",
+          "shasum": "a65cc76745d72aaba97506172f24d09ac850e1f9",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-1.4.2.tgz",
+          "version": "1.4.2"
+        },
+        {
+          "path": "comps-ui-auth/-/comps-ui-auth-2.1.1.tgz",
+          "shasum": "e27fcae1748172c4493571b7babfb20170a1c1f3",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/comps-ui-auth/-/comps-ui-auth-2.1.1.tgz",
+          "version": "2.1.1"
+        }
+      ]
+    },
+    "microcomps": {
+      "latest": "0.1.0-build.42",
+      "new_name": "@zdu-idm/microcomps",
+      "versions": [
+        {
+          "path": "microcomps/-/microcomps-0.1.0-build.42.tgz",
+          "shasum": "5a4eb07fcd6a1cd67b8c46c385cf290c7c0c1071",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/microcomps/-/microcomps-0.1.0-build.42.tgz",
+          "version": "0.1.0-build.42"
+        }
+      ]
+    },
+    "postette": {
+      "latest": "0.4.1",
+      "new_name": "@zdu-idm/postette",
+      "versions": [
+        {
+          "path": "postette/-/postette-0.4.1.tgz",
+          "shasum": "74c01f90a3a6269e0d392ad96b417982b745e9a6",
+          "tarball": "https://packages.idmod.org/artifactory/api/npm/idm-npm-production/postette/-/postette-0.4.1.tgz",
+          "version": "0.4.1"
+        }
+      ]
+    }
+  },
+  "source_repo": "idm-npm-production",
+  "type": "npm"
+}

@@ -1,12 +1,13 @@
 # Local download cache — never commit artifact bytes
 staging/
 
-# Generated runtime artifacts: logs, dry-run output, most inventories.
-# Kept (committed): the PyPI inventory (GitHub Pages rebuilds the index from it)
-# and the resume ledger state.json (so published status is visible everywhere and
-# CI runs resume from it — the migrate workflow commits it back after each run).
+# Generated runtime artifacts: logs, dry-run output.
+# Kept (committed): the per-type inventories (so the console renders every category
+# from a fresh checkout; Pages also rebuilds the PyPI index from its inventory) and
+# the resume ledger state.json (so published status is visible everywhere and CI
+# runs resume from it — the migrate workflow commits them back after each run).
 manifests/*
-!manifests/pypi-inventory.json
+!manifests/*-inventory.json
 !manifests/state.json
 
 # Generated PEP 503 index — rebuilt from the inventory by CI / `migrate.py transform`.

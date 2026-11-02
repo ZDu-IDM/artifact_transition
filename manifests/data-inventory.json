@@ -1,0 +1,4564 @@
+{
+  "file_count": 568,
+  "files": [
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics.compiled.json",
+      "sha1": "b89e8c723f55ab491e8f6d1a99959ebb99701362",
+      "sha256": "7b97c7ca68deadab5bfd924ac6c4979e638de3621b1dd6747e4295f4dfdbd0b5",
+      "size": 6202
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics.json",
+      "sha1": "19254e9b8e88649d94b78f9a07042036610bd953",
+      "sha256": "997f21109a1f001b1f6ff8675e31a4250612f431eb9029b6414a30e8f3ce60f1",
+      "size": 13401
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_complex_mortality.compiled.json",
+      "sha1": "67af0b5b0413b7aec9387c12ac17dfa823759f12",
+      "sha256": "87c57204ac59b4508f0e4ce4d338000c3661041bbdbd44efa4871b794255bca1",
+      "size": 944
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_complex_mortality.json",
+      "sha1": "2c8c1349e9b2668923c7997dc2b9f0fcb2532f59",
+      "sha256": "020454468fa80d0e1129f7457d45bbce64149ec1279aaca53c4a7151baad00c5",
+      "size": 1376
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_immunity.compiled.json",
+      "sha1": "3d413d91bdc32aad93543529d7455fc422bc885b",
+      "sha256": "1796f4587c0dcf2837a1fcd8dd096addee5bece2879b864a7e2f08fff5c39bba",
+      "size": 8220
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_immunity.json",
+      "sha1": "3262cc8b67680cd717213f0709c16cf5f08d6247",
+      "sha256": "7125fc9925df03618ae359d74ebb7d70d013cbd0378c759b3501d869e53fd492",
+      "size": 12663
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_immunityV17.compiled.json",
+      "sha1": "895a3df177455bc939368022c55c4b16fc9e5de2",
+      "sha256": "49b286d7c2ec9260bb89bab8dbf2ddd9cae784c80880712eb87416717b7d1789",
+      "size": 23443
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_immunityV17.json",
+      "sha1": "63d334b242f5718d53e56ebcbcde08ac5254880b",
+      "sha256": "c2fa1a7d4c0debcdccde40b36ab7e0dfe278a96a445aa8886865953a2b0e30e1",
+      "size": 36874
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_old_immunity.compiled.json",
+      "sha1": "e0619189bc7cc14d03d3864fcdd7be65964049b0",
+      "sha256": "ad529540eb75fd0b8e3931cde7585b2ae98fc56aae68e9461085aa2634306fd5",
+      "size": 1942
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_demographics_old_immunity.json",
+      "sha1": "ec3e1686105378fc0c4fe4ae2a27f8b1d267ce92",
+      "sha256": "81deddb4b5788391601ae65d99ee8be4b11c0d9873eea47de79037bbd19d9e15",
+      "size": 4554
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_pool_overlay1.compiled.json",
+      "sha1": "9da7ad628ab2b9c23c0d2b45bd923f58c4a24697",
+      "sha256": "063fa649c819487b90dc6bea69c67b242003cbdd87cc9fb24e87e8175033f5ce",
+      "size": 712
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_pool_overlay1.json",
+      "sha1": "9ee43db44da774659ff0c81d34865e982dbf20d0",
+      "sha256": "1d7d35e8f1f606019d0c6601c15ca0c97dd6583a344b73d9a5dab96f1ebf5377",
+      "size": 956
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_pool_overlay2.compiled.json",
+      "sha1": "834dd22b10055bb3911275e679d08c8cb58f7ee5",
+      "sha256": "e651f465ddfadafdeb65c2bf9bf3654cc4cce7bb3e837c7fcb59a9571e074a93",
+      "size": 994
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_pool_overlay2.json",
+      "sha1": "f790dbafe500ae9e877f4003dfe64b7eaafeccab",
+      "sha256": "4d03f12342503ac7971ac678fcf595e34e82877a3a116c12e103a0d1d778b233",
+      "size": 1705
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_pool_overlay3.compiled.json",
+      "sha1": "ad90db8d2b09899f72986190a8b280de1a9dd207",
+      "sha256": "f33c28f99738c8732cc590a6c928b8bcf14712f226867435966b926160289516",
+      "size": 946
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_1_Node/Bihar_single_node_pool_overlay3.json",
+      "sha1": "61e2226a1a3b4b928f1ad699ce952d435c390c4e",
+      "sha256": "96ec5897d73cfbdc31675bc1a178543f3dedf68e0381cf9d725d9a131efcb8b7",
+      "size": 1459
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_demographics.compiled.json",
+      "sha1": "5d04c6be2895f67bac09e6bb36c7b5300d57befb",
+      "sha256": "3972c6be455fa70a2a37187c53a636bfe8b3a8835f64bb32113508128ceacd63",
+      "size": 2427
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_demographics.json",
+      "sha1": "1eff305e46c9e2af58703641ca34e67e854ce20b",
+      "sha256": "5633aa0734e7c8ad79c3ce9001816eafbcd8217413fe3cd4e47daf15adbc4e8c",
+      "size": 3928
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_demographics_complex_mortality.compiled.json",
+      "sha1": "f91391389d0c85f52a70e17bda075aa012e6b0cd",
+      "sha256": "5f58b92cc0329128e4815203d224560231f77d2b414b218d1416a07bde7bfee8",
+      "size": 1032
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_demographics_complex_mortality.json",
+      "sha1": "32a35f495c6f761b28b6204b2cab4778768478d6",
+      "sha256": "96b06fb1d14d0b5bdc4ece58ce9aa384c5b51a3f0d674cab0539060f6deaa0ca",
+      "size": 1462
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_local_migration.bin",
+      "sha1": "f461d004767813473b9f14cee6a6388ccdf699b3",
+      "sha256": "b232ba7fba61157a0178d95f484ac40c378a606f027d8e44b2574dfb6b158b86",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_local_migration.bin.json",
+      "sha1": "54ca138011c932705f56e29f476e799309fc838e",
+      "sha256": "5e5bf50776eceb74e1791b887b4fac42a1039f20a0548116f3ff19e26a5c0a51",
+      "size": 348
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_pool_overlay1.compiled.json",
+      "sha1": "364c5fbc01bd7c8eeebd70951904245d80b77282",
+      "sha256": "d35a5366f8d6cbe63e5d11aa214144e4d9fdf2542f8f6b4ced472b23a4762038",
+      "size": 809
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_2x2/Bihar_2x2_sandbox_pool_overlay1.json",
+      "sha1": "487e9a0c0008656137d078d8d21b88ec21c50c0e",
+      "sha256": "31c711ac862e315d69a150c05d0f9e2635c854af9fe9f90e9bb0f09bfa6b687b",
+      "size": 1790
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_Torus_10x10/Bihar_10x10_torus_demographics.compiled.json",
+      "sha1": "a6fe1d4139d5c16c6d4557f60a14b80635cfe35a",
+      "sha256": "4857c99d6e85684779879e68815af4103d584eb7268e97b188c9a603c3866d0d",
+      "size": 8219
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_Torus_10x10/Bihar_10x10_torus_demographics.json",
+      "sha1": "9d298d2fbfade82632c475a8eafe330a6f0e986a",
+      "sha256": "c24e3bb4d6a1ca432f4e177a0fee2a344e8f51f53a040b30590bada4e1f58a81",
+      "size": 20389
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_Torus_10x10/Bihar_10x10_torus_demographics_complex_mortality.compiled.json",
+      "sha1": "73c64b36865d433ea557eed759c70322d2ea1846",
+      "sha256": "4ad39f79c0fd0a106456344295e7f723cf5c2cf30bd06da3ad35b5ccd428a988",
+      "size": 3526
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_Torus_10x10/Bihar_10x10_torus_demographics_complex_mortality.json",
+      "sha1": "b1a2dbe8c5ea38b8bc306358f6fa0e0ff5c8a575",
+      "sha256": "21a456ca7a0723ed60fd21e6e00697044945aa43b3554d93cc9e8615b6521265",
+      "size": 5953
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_Torus_10x10/Bihar_10x10_torus_local_migration.bin",
+      "sha1": "9099d6205f8a0599aae2b881631d74c7d1b772a0",
+      "sha256": "84b98e0ef01a4a4943b6df8983c5599da22e315183fcd359b8f31fa31d9379bd",
+      "size": 129
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Bihar-Like_Torus_10x10/Bihar_10x10_torus_local_migration.bin.json",
+      "sha1": "d8e422cd4516fb55e614b6b4efa9326555829b96",
+      "sha256": "0ccad4c9a020679e2ca9859995ab4ff9d6c73b0dd8b0518128c866032d6de0a5",
+      "size": 1886
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Calibration/birth_cohort_demographics.compiled.json",
+      "sha1": "92e59d062ef75fd5c0c2480400adfd1f32d5c073",
+      "sha256": "e4070873370b41cb75e96b41844f4aa3430a75c16717125617dc7ef10a93b9a2",
+      "size": 1574
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Calibration/birth_cohort_demographics.json",
+      "sha1": "010230af802efe3af5156307633e2b5f33e432ec",
+      "sha256": "c03725aa82af61b66d7c0c7cafcaf7129bc0357393ff2fa239f8d35ead58523c",
+      "size": 2704
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Common/regression_pool_types.json",
+      "sha1": "9badedc8c9fbabe5858349ca069edd0bdb801e5b",
+      "sha256": "eb99c72399d627d46ee734dfacb723a6ce099028ad5e44edf59f1cb1fd7cbc01",
+      "size": 3491
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_air_temperature_daily.bin",
+      "sha1": "8a7b6efa5f6e837ddc339c76e5f32d1cf47d7c79",
+      "sha256": "3b31a50afe0df109566b7ca36303fc22c6367b50948633d926a818c42f91a3a6",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_air_temperature_daily.bin.json",
+      "sha1": "3d4efe977ccd9bf68c6a118a1eae180d188411ac",
+      "sha256": "93ba14727e1ce5402cced4017a0dc4f4afd7a923b18ecf7bbf1f40763a0daee5",
+      "size": 23402
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_demographics.compiled.json",
+      "sha1": "e592cc6e930133dadc396e6c7303fee169aaa362",
+      "sha256": "85069d7adfdd3d32d0868f034dc0f837c17a907cd413b34188bd96329aec4fbc",
+      "size": 96429
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_demographics.json",
+      "sha1": "58be65832400911ce68ab92cd7f805a7640cae30",
+      "sha256": "5a98ddb85c3e0a520d81ff96fad4d4ce4285f7696a306335a1935c52bf52a63d",
+      "size": 284751
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_land_temperature_daily.bin",
+      "sha1": "8a7b6efa5f6e837ddc339c76e5f32d1cf47d7c79",
+      "sha256": "3b31a50afe0df109566b7ca36303fc22c6367b50948633d926a818c42f91a3a6",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_land_temperature_daily.bin.json",
+      "sha1": "66b2627ec175f717fbcded35b9955f37d6e50005",
+      "sha256": "8a66024101b4b86c5ab58294624ed57d3d54fb11b336a38cec99ce0b5e3d24e0",
+      "size": 23428
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_load_balancing_16procs.bin",
+      "sha1": "17c15428e3ab67813ed67d58cc0c9557b7fb5cdd",
+      "sha256": "f1d6ad340f1dd078c1d7c5ac087c9209094a7a035e7f78dee9da5971485e3e67",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_load_balancing_32procs.bin",
+      "sha1": "729b602985aecee04280f5917b8d116aecf57137",
+      "sha256": "861f268d657a773e9d2d8768067ba2cf373c661bcc7da702b89a60514fc4130b",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_load_balancing_8procs.bin",
+      "sha1": "838a7919e8345f48cacee5c2d339eac33e75d8d0",
+      "sha256": "11f1f80d460c54b9875d2b836768a57b06ab1f6511c97a2dd0601dddb2bb3652",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_local_migration.bin",
+      "sha1": "4dd067c43819b8ed1e2f6c7e4bad761ec80a5fe9",
+      "sha256": "dce5dfb42731d2cc2614e086ad37f5816679a8d4d15967b1b2013db01204ea65",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_local_migration.bin.json",
+      "sha1": "847320851a009a3f6ca68834a4e5334100ddf047",
+      "sha256": "8c60b26507ee87ea175dd4d1a2c7229e2ea877c69d23367e8a01000c1eaeb039",
+      "size": 23076
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_rainfall_daily.bin",
+      "sha1": "f3064fa378ccc2c646dc24eba1eb9e29b901df8a",
+      "sha256": "c954733b32663be8c93741872a3de483b57d0d84b5fbe394c7ff4920e7988159",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_rainfall_daily.bin.json",
+      "sha1": "3096ab991f095d5b7025f1f683f7b9493785687e",
+      "sha256": "819bc9ead558c647b2070ea85ae7bd063811745e5c5bdc90f0955056069a626e",
+      "size": 23451
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_relative_humidity_daily.bin",
+      "sha1": "790960c162cbb8c36743f9f7960040b95e020932",
+      "sha256": "92c2a79b9374ca8d48ca7a730bf39e83a6856c83b714b8f9575260692a8246e1",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki/Garki_30arcsec_relative_humidity_daily.bin.json",
+      "sha1": "3d4efe977ccd9bf68c6a118a1eae180d188411ac",
+      "sha256": "93ba14727e1ce5402cced4017a0dc4f4afd7a923b18ecf7bbf1f40763a0daee5",
+      "size": 23402
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_demographics.compiled.json",
+      "sha1": "15b39f303862d8d56c61316973720662944823c4",
+      "sha256": "275754f0281f13287832890ffd71412c9892474de5c2a9fa0f198225ebcc7ebd",
+      "size": 1601
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_demographics.json",
+      "sha1": "fb1761d2c6ba5d40307ff0b583b55f1e02b46442",
+      "sha256": "de6732627a37e6d2bbda1dc193bf5e12aab082199b9e1241f7dce2d0bfa589c1",
+      "size": 2220
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_humidity.bin",
+      "sha1": "4a26a44b7c2fb49976b3b7f7426bbc6c43391ba9",
+      "sha256": "11b7863f47bc88ac769d7af5a1ebef504fe1a51de5843be029c88f9124b3a92d",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_humidity.bin.json",
+      "sha1": "fdb5255443fcf1541928033c53eff133f098db99",
+      "sha256": "0644fbc0900b6567d25eeccc351e02b27069d9f0ece02eaf23cb9201e1ca4212",
+      "size": 650
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_rainfall.bin",
+      "sha1": "a9fbee4ef5fa8d65052cb87474e8c2dadefcd15c",
+      "sha256": "248872e70f67eeaf17abda2d37ca398827a915b61b50e332c94eb5a5600d5796",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_rainfall.bin.json",
+      "sha1": "fdb5255443fcf1541928033c53eff133f098db99",
+      "sha256": "0644fbc0900b6567d25eeccc351e02b27069d9f0ece02eaf23cb9201e1ca4212",
+      "size": 650
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_rainfall1.bin",
+      "sha1": "5810f8a9d33ef690e54dceb1eaf27b1f4bfb6faa",
+      "sha256": "ddb0b477a6bd7f91b726f826e6902a864dd31b6b169cec638658481196da4d7b",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_rainfall1.bin.json",
+      "sha1": "eee328eccb2e0e5dc177cf6161f7e960fa702126",
+      "sha256": "591a60fd2af46ae02edb2cbf1bfedfb737e8ea48d6938c76d70defb6fc46c445",
+      "size": 679
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_rainfall4.bin",
+      "sha1": "9f3463caa343b4b5f72b1b40d702f982693afcb5",
+      "sha256": "2a97675ff79be03500d97156fb7c94e2722401fc75056f1de71ae24414e329da",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_rainfall4.bin.json",
+      "sha1": "763cac1ff9a4d4c804c135bd321d1d051ad727df",
+      "sha256": "30aee8388295fdec7e63ec7330e5b30f65a33f8c016a4a5a5e091abdeebbce2f",
+      "size": 679
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_temperature.bin",
+      "sha1": "730faacccc23667753e37b7be7025f24932d7d58",
+      "sha256": "01dc4a46c5568f7bac91df81b46c08feb448b5fda12cb23544819b36986b81e2",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Garki_Single/Garki_single_temperature.bin.json",
+      "sha1": "fdb5255443fcf1541928033c53eff133f098db99",
+      "sha256": "0644fbc0900b6567d25eeccc351e02b27069d9f0ece02eaf23cb9201e1ca4212",
+      "size": 650
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Demographics.json",
+      "sha1": "f4fdb3b84827c69989ce9f5e4630e09995b5eed0",
+      "sha256": "aec49f5c0520ac92de6297f1e8a3549e73266d7eb76bf28c07b4dc08876b9618",
+      "size": 12038
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Demographics_no_LHM.json",
+      "sha1": "1148cd2de0e280431e18ebd2809ab7b31ce6f394",
+      "sha256": "e189ba8b9f9f53bf74fd2a256acc5dd568ffb392a2b6ca3a04b34fab88e62811",
+      "size": 11881
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/LHM_Restructure_Demographics.json",
+      "sha1": "daf67bb6818af3d492e69939e4d405b3bf5f4b6c",
+      "sha256": "5a1541985b8a3e0707fc4add64f5d66fe06ac8269fe4e804e4c532bcace2cb97",
+      "size": 13681
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Load_Balance_2_cores.json",
+      "sha1": "4ab12e596423714ac8ab41cf303f0e752a9ec851",
+      "sha256": "fc6451e20afdc7c6afeafcd70968df927f28fe7708dac8a610e393b5638d8c8b",
+      "size": 163
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Local_Migration.bin",
+      "sha1": "67f979b28dcc1e94f9b643de13c3688034252b4a",
+      "sha256": "0809d8e4612142e4d42c10be02d9d0d6b43955d16a6d4b155f31b4731eb45e37",
+      "size": 2496
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Local_Migration.bin.json",
+      "sha1": "004c2fa8c11262cb870dbd78a35085a688caff97",
+      "sha256": "6aa63c52c0b249f7c13053a89ee6e90585ea0693566de59ce8e3e5e38e8bdfbd",
+      "size": 748
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Local_Vector_Migration.bin",
+      "sha1": "7d4a9291a74d1a8930d863829cb48d734a84458b",
+      "sha256": "4d991666345b601182c7c6991d4a7da37a99e7d02fe8d2dc479f18f35feecf6b",
+      "size": 2400
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Local_Vector_Migration.bin.json",
+      "sha1": "b8414a6f1f073ec0ec440b11c40f3645d25f3412",
+      "sha256": "11801e50edd4d29eb6e025c4e0ec2b7bbdb371e8d80306cc9ddbea4177e1a0d8",
+      "size": 732
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Regional_Migration.bin",
+      "sha1": "b34ecc670ae5b69713fda47d11d5a7682a63e90f",
+      "sha256": "f5fc311ba22fbee0492f15ed7104983166a72df0046d78f73984ec3320f97650",
+      "size": 9360
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Regional_Migration.bin.json",
+      "sha1": "32e785bd387fc9e26cdaa200928509156ea90cc0",
+      "sha256": "202f06f87303823d591376ed08ca4b7d0e5b71dc3746c654c04d35a240d028a6",
+      "size": 752
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Regional_Vector_Migration.bin",
+      "sha1": "462292d6a4cab41aa25cc089ea90d1654fa6e469",
+      "sha256": "0b6f8bfebd8eed94592daff13e9f90f4fbe90fc896c86912ce8d60933d0c1280",
+      "size": 6552
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Regional_Vector_Migration.bin.json",
+      "sha1": "1fad4df85bd6be96d0e14b2ec9946cc0a84b3ea0",
+      "sha256": "937ba3189ce9edd213b4584aca87e5bd1a113938304b4027bcdc84b138e2a998",
+      "size": 752
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Work_Migration.bin",
+      "sha1": "812936c3b4ad3367e3185e940524f5a4607702dc",
+      "sha256": "f4a866dfdef11cd3ceb940fb47c9618b7d43bfd7cd956203cb9c6fffd89c2215",
+      "size": 1560
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_5x5/Work_Migration.bin.json",
+      "sha1": "a690d64da06ecbe1b4378762a82716026376920c",
+      "sha256": "66a0366376b94eaffe91682aeb56c0ec2b7be16fe5cfd9979f2e8192518764c5",
+      "size": 749
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Demographics.json",
+      "sha1": "78b2468e232900e4acfea2fd47d447672ca29a00",
+      "sha256": "96193e067257eeccc63e8789e124b7733b363d1658b31f311d631f70fab67cee",
+      "size": 44335
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Family_Migration.bin",
+      "sha1": "09da1189d78fe9e32fce043e3d1594f9e0aaa597",
+      "sha256": "06d57dad859ab31f75a31b359315c50ac05ab82b233f6062f7a6f9075df3282d",
+      "size": 6000
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Family_Migration.bin.json",
+      "sha1": "a418e724418ffbf19d944689bbb0773a62b43f40",
+      "sha256": "7c77ca963f1ef6d6a074e3973afb53a7fb6a13c00be90648b9bfa7e74ee508c6",
+      "size": 1936
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/LHM_Restructure_Demographics.json",
+      "sha1": "02744968bb31b4fb5586391c0d6345343cdb6561",
+      "sha256": "ffe13cd5737a555420f2061976b6901cc7e6d88a4cc89a9b5c6e78d5b4af867b",
+      "size": 61929
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Load_Balance_4_cores.json",
+      "sha1": "9c0283d6f2511a707158a7d4163b79125ef700f7",
+      "sha256": "bed1d87110973e0caa81a487fa1f0ccc301f5e9ec9256d982a778856f9b5b860",
+      "size": 399
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Local_Migration.bin",
+      "sha1": "3c4c3658383a7b80cbe8428e122818a484ff3f9f",
+      "sha256": "e1cb49c6ed9ea034067bd299f35e9eb4600a9236bdd2f735e5eaae70cf8fa298",
+      "size": 6048
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Local_Migration.bin.json",
+      "sha1": "f513f6df562ed2aef87ae73a1917fc66efad9864",
+      "sha256": "fe90ad439a82f69376f11121f2648ed1b8e84e2bbe18d511869599151530acce",
+      "size": 1342
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Local_Vector_Migration.bin",
+      "sha1": "bebac42e9a2265a3f167d2caed8e267717fe7706",
+      "sha256": "deb5865af5b55393bc182e51bbd417de907cd1d8cd4701f1120f24f127e09f8c",
+      "size": 7872
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Local_Vector_Migration.bin.json",
+      "sha1": "e28b35a3fa9ffd0cfd003eee435a8a69b102b951",
+      "sha256": "270ba08e381cf1153bc5abcf1084910efcc7ed0765441dd04a271dbead267e4e",
+      "size": 1646
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Regional_Migration.bin",
+      "sha1": "a75ad3adb3a4e738ce42929d9ba7482e467f2ca0",
+      "sha256": "d16f358c766ce6fee716bbf3d5e549a76a6de015aac544c2abd0bfd30fc1ebe1",
+      "size": 15120
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Regional_Migration.bin.json",
+      "sha1": "e9eb13ddda378066003db1f7a90575097daf763d",
+      "sha256": "4c934fd4ae9861cacc45d83111e1057229160bdf15a45d1a7f190980e43f8690",
+      "size": 1346
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Regional_Vector_Migration.bin",
+      "sha1": "42b0f4f2626aea4c5e8049e8e7a2fa652cd0c8ad",
+      "sha256": "a866aaf02bf218df67ec85c8d7ef5ed6c86c27c12dc91f36453fde68b6775911",
+      "size": 29520
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Regional_Vector_Migration.bin.json",
+      "sha1": "9bc0e5a8226be0c875359a96253e793c1c51c18f",
+      "sha256": "d56591468a85b4ac55813151cc998a4be6ceca3e0e2f3b2e662dbce97daf92c2",
+      "size": 1650
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Work_Migration.bin",
+      "sha1": "09da1189d78fe9e32fce043e3d1594f9e0aaa597",
+      "sha256": "06d57dad859ab31f75a31b359315c50ac05ab82b233f6062f7a6f9075df3282d",
+      "size": 6000
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Household_MultipleVillages/Work_Migration.bin.json",
+      "sha1": "e8e1345d970449a6da149059dfdf0f769bc77abe",
+      "sha256": "c13ef51ed18c0198c2edf8d6c388e4d274f8abf28c752f1236a895173ee88729",
+      "size": 1933
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_air_migration.bin",
+      "sha1": "90bca4872497db0abf389a9cd1786e16d7cb257b",
+      "sha256": "ef3da8a562a30eb198d3f35168aefd27f073f3d20923e8e98bd90a02ea3b16df",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_air_migration.bin.json",
+      "sha1": "41686fd28bc1bfe40484a0cab62953597e550359",
+      "sha256": "586ad213bc59532053c91be2e92e58a505ae469cf9f3086880a8acca26ebbd2b",
+      "size": 2700520
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_demographics.compiled.json",
+      "sha1": "4c4eb5fa359aefb870a93bd5dae8daadac7e4e91",
+      "sha256": "572d6d1714c4fd1aedbcd3e6990a14aa684b53e70e298507f8dd3468a20b8b30",
+      "size": 17652552
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_demographics.json",
+      "sha1": "15060a76ef19e8043543cf57e9b457db59cf9a40",
+      "sha256": "eeb6aa6dc866fb3e0d80ff85f1e30fa0a1c2dced4c4aa5176372f1a1fb9339ac",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_koppen_climate.bin",
+      "sha1": "603f271accc6c5371be0e7389a103c5784bb091e",
+      "sha256": "eac23c1760ff8c88d4ef426aae5bd4dc50ddf0ff2c00520bfaba08962c155f48",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_koppen_climate.bin.json",
+      "sha1": "22b0f7ad492f246b0b2eb759472178e45f29615b",
+      "sha256": "61c27a2f65cb698ce147b4cec907828cddbf91f696be2868e786ee747b843fec",
+      "size": 2700595
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_load_balancing.bin",
+      "sha1": "42e83b51d14a988338b7bb9ef2ddb41db0b43dd2",
+      "sha256": "bd5b2936866357a72702f77b793e0d1c47211ab196d4cf0695b51a68e92a0a96",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_local_migration.bin",
+      "sha1": "5c24746dd22056bbc0c99c2ccdc3704745dbd02a",
+      "sha256": "ef815c6dc5717661b13bf89013d14dea78595cda86b960648f204bfd7eb58d73",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_local_migration.bin.json",
+      "sha1": "4fc88a7e0440e5a6f66f3d7a5ffec27440d2bf89",
+      "sha256": "9e954696b83f51d04be9a50d1f491be603d29f30735ac7998ed88d472a26aff2",
+      "size": 2700519
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_regional_migration.bin",
+      "sha1": "170564051f7d834dac86b89deae0ff2d923fefd3",
+      "sha256": "cb6527b408c3309c766191344c6ac4adeb3adefded6fe07b95c3f8aa6789051c",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/India/India_2_5arcmin_regional_migration.bin.json",
+      "sha1": "f2b3874d94d29ece9b8787cf7983cbed6e7b0456",
+      "sha256": "0e5d4ed42461e99afebd494d666562f5a59778834663413545ab4fc858e3f047",
+      "size": 2700520
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "9e199356403ab2099a44cdf35afe4df25d7c2b81",
+      "sha256": "714581adf8b59909e41761ff02502148b5357c8eae1aeb2a89ce45daa907e45a",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "3695ee4a194b08ec224f0da1dcbfa74f9d6b6ad8",
+      "sha256": "8210a5a7746341a81941e6366026489ab6785cdfde4fc9e57dfd60ce9184f714",
+      "size": 482976
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_demographics.compiled.json",
+      "sha1": "f0dbb6ac1441467ea1d3825f564d86fc019ee86c",
+      "sha256": "954f2d75cf4297e7b381922e61c5ba2472985a8d6df316c7a51c2c8e0ec39c49",
+      "size": 2507465
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_demographics.json",
+      "sha1": "b71008c787bb07e336c1b1e1d4c9440663c8d9b0",
+      "sha256": "c9843d7a59e7f0c1c09d0cb45bab32c104365a031424fa499b9e09e05044a62c",
+      "size": 7342296
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_koppen_climate.bin",
+      "sha1": "9ecb0293cafe1a3e9d8d1deff570a4fcdd1d430c",
+      "sha256": "2c6474413ccc48f44b368defea095d410c2c001126bdf0edb50a6d2ab52af70a",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_koppen_climate.bin.json",
+      "sha1": "ef2a1269a27a6aa35a3813ea89bdc864da215eb2",
+      "sha256": "ac647c9f45fada503404c987db31bd3a2a0b9ed667638b8c38ef2c26f9129194",
+      "size": 482706
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "9e199356403ab2099a44cdf35afe4df25d7c2b81",
+      "sha256": "714581adf8b59909e41761ff02502148b5357c8eae1aeb2a89ce45daa907e45a",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "769d0f66505c70694c2a0259c7b3553877516ef2",
+      "sha256": "c11bb5167f81711c2d1704efd9302033328e917044cb8de6b653b2f37e036085",
+      "size": 482988
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_load_balancing_comm.bin",
+      "sha1": "b4ff00d910d19cd45b8bcff6fd48a721ca69984c",
+      "sha256": "9192bb4b8d8481dda40f5fe82bc09e03a54cfb38a70e2f4d8876fb1939e03ccc",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_local_migration.bin",
+      "sha1": "712cae1e86504b199892f078cc8c2897b56cad97",
+      "sha256": "c39636279091c709ed4d4a6b98aec6f9153212454086c1b7c10e1d105050f3d5",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_local_migration.bin.json",
+      "sha1": "2ca5c749da5477b596ef2415af38e94f6919057a",
+      "sha256": "fa9a7c8e40e5c70ddc91ee2227388ed21eac2a044d46500cd31263eb27f3717e",
+      "size": 482630
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_rainfall_daily.bin",
+      "sha1": "a1fe3b7fe4f6b13f802f3b1cacbe1ba34288bc9b",
+      "sha256": "09745b83f289b5032749f089884c88b3d0c40a814e0fc84d1ac4cc1876628ea6",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "e4b111f925542a685fab188e8f33646c4ab439c8",
+      "sha256": "e2f96089d2fe358e6f3b1813a8f33e7e537d68b2eed4bd363f0761040fdd4729",
+      "size": 482958
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_regional_migration.bin",
+      "sha1": "28754c325059db0f1ad30091e3523c49ca113a9e",
+      "sha256": "bd32e66ad91270b4b837fcbc02705f4aadc77c726d226e13c94b948515a2cbd7",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_regional_migration.bin.json",
+      "sha1": "44bbe59180a3275e6844bf97c145811daa8a7f7e",
+      "sha256": "3a4223b4dd2af3a5761f82820fe31d981c34bf04343dd840d7cba079524ecaa6",
+      "size": 482631
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "244157b3e5b8bfc082def62a0ca169936933184c",
+      "sha256": "442d9f6ddf1af988ed52508af9824ae34d15b5a0c889eea3bea45d9a23b17650",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "3695ee4a194b08ec224f0da1dcbfa74f9d6b6ad8",
+      "sha256": "8210a5a7746341a81941e6366026489ab6785cdfde4fc9e57dfd60ce9184f714",
+      "size": 482976
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_sea_migration.bin",
+      "sha1": "fcb0e152c51b5720f8ec8b6b615cb6c39e2e3951",
+      "sha256": "ef1f16cfa3849669e83ea77078e6ad4d155d99a4517dcb196c1d95f7e44b24bf",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar/Madagascar_2_5arcmin_sea_migration.bin.json",
+      "sha1": "46d8ec2b165aa13b58fd7a1dc85da60fed296e54",
+      "sha256": "b2779bd39cb4a2e26142899dd50bcae4620c65835c1746060b0bf9a48921bf62",
+      "size": 370
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_air_temperature_daily.bin",
+      "sha1": "0f22494579c6adf1322d278ad9806cd1643815fe",
+      "sha256": "c9bad87c626fe1e0815dd882d9acf6ec1d807ed8d2e585e5d4aa16480c630ced",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_air_temperature_daily.bin.json",
+      "sha1": "0328b6efe9bfe31678813e11aefdfbae20e5a278",
+      "sha256": "e6bc7c7ee396194b8e3bd216387dda442a3f86634d454c1a2e673756d50233a8",
+      "size": 1117
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_demographics.json",
+      "sha1": "22b3169e564029627230e45cecdb6d62673ede16",
+      "sha256": "8c647f39f299a421e82baf0430bc2a1406a0c4b24aaf5890de3bfd0d4a17f3be",
+      "size": 8514
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_load_balancing_4procs.bin",
+      "sha1": "3455347d7a53e2889d18d71dab8281d1136bf8cc",
+      "sha256": "e7d2102721cf00376717e1bf4504ead0206f75971d8c8ec4ea6f8c8acac437ea",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_load_balancing_8procs.bin",
+      "sha1": "0a01c7193adc05d87b659506deda30d507f9289c",
+      "sha256": "c4e5bec15cb191090f007284241292b9a832b4555b670b6b1874c5424a0361cb",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_local_migration.bin",
+      "sha1": "518ba540e440e50b18275b9d66eeb6fb8e2a3a4a",
+      "sha256": "265e8228861b081472fb231551618f41af145e5717c8a5891dcea6d477cfcfb3",
+      "size": 129
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_local_migration.bin.json",
+      "sha1": "b472473a4de55a8542db0b4bf2b05a4915b5ab48",
+      "sha256": "0640ad7c7f3b54e72bc6450bd7f56af718d87800ee1448d12dd0b5902d20d0a8",
+      "size": 518
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_rainfall_daily.bin",
+      "sha1": "40c5cb0fd91ceb8f7122ffc6bc57aca355d5713f",
+      "sha256": "f9d515675a2a456cf68cfdf31696a80f175630e10303298a43980274fc8158ca",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_rainfall_daily.bin.json",
+      "sha1": "5489b7b8aa97a52e2bea39a503ca5ca3a8540730",
+      "sha256": "9323df76c1d26ca92401be39f13e51cb3c0fbc4604afdfde762ee2cb77ca6d8d",
+      "size": 1105
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_relative_humidity_daily.bin",
+      "sha1": "ffb9737732b4f98a928bd7bf6abd2c4e281123d6",
+      "sha256": "c01ec321ed805c093da2f4714d04f43a4ede3b96dd68ca79758a8bddda8c7422",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/Madagascar_Nosibe_2.5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "0328b6efe9bfe31678813e11aefdfbae20e5a278",
+      "sha256": "e6bc7c7ee396194b8e3bd216387dda442a3f86634d454c1a2e673756d50233a8",
+      "size": 1117
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/pfa_overlay.json",
+      "sha1": "a85dfc2a098b176883f062c7a3779fbbf08513c1",
+      "sha256": "fe59494ba05f891e205c26a3218e77f043fe55de9764378e1a67d09e1b5b4be4",
+      "size": 18602
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Madagascar_Nosibe/pfa_simple.json",
+      "sha1": "044b898306cfe995b17572a20f77b5653a64fa5e",
+      "sha256": "f9d21e203aee5b0824e9cf447e5f78e5eea980ac66ed76d14179fde87b959e95",
+      "size": 4991
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/1x3_demographics_migration_heterogeneity.json",
+      "sha1": "dc3c59404480a08a34d931471012d184003f675b",
+      "sha256": "22896fa872ffbbdc679c62b86efdd9a8841200d64b9dbef6cab5c25e875b7aa1",
+      "size": 1879
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/3X3_Age_Regional.bin",
+      "sha1": "0ef028aea3e650191de8b63378815f80a6a603a4",
+      "sha256": "a5ff619d9520db23da6fa16eda846a826c0dc841fe134cf82716aad24134b09c",
+      "size": 1944
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/3X3_Age_Regional.bin.json",
+      "sha1": "f2fac96e081ccc026e2b4bb542982af0cdcf7b99",
+      "sha256": "9bf0a0afa31f1ed542c5c87b00ce313dfc534bcc29d3113d85bec0cc57be27f8",
+      "size": 591
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/3X3_Gender_Local.bin",
+      "sha1": "41f2abd330df78b07bac35ecf9b724d8b4c4b88f",
+      "sha256": "812e1f22f8d901b55623a50ecf2c0650dd508d67154a137fae65f8e56db15c64",
+      "size": 864
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/3X3_Gender_Local.bin.json",
+      "sha1": "30030e226c74d953177b4e38da57a9142b771598",
+      "sha256": "ed59aa65d771b6502aa9b487265ff3418a2053cab70fe4ab9ce5ed97d5688a08",
+      "size": 597
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/3x3_demographics.json",
+      "sha1": "0a6df572dc833908136cd7bb99504e395b3ad79b",
+      "sha256": "b78db3e33e0b554b3984ba87830f9289cce81312a0742e4c57b14a59b7650267",
+      "size": 3262
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/3x3_demographics_migration_heterogeneity.json",
+      "sha1": "ea13d69d1eb5b0b574f17d6651d5a708670ce211",
+      "sha256": "389f99a1b978b2856565f9be18d649f62df0516d4e9cf41cdb6989820452f6f0",
+      "size": 2896
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/AirMigration_3_Nodes.bin",
+      "sha1": "2ff69135ffe36ecf9ba5572252e5eb3a06124732",
+      "sha256": "12bc826d40c52671523aa2b64788ca5c90233088135ebb3fcd8e86a4d8e4ee1b",
+      "size": 2160
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/AirMigration_3_Nodes.bin.json",
+      "sha1": "66534732fb86d284cf22d67f3f8564325ff74e3d",
+      "sha256": "7fcfd3fe2379526a0d00c00dbc8804f3fec79503345ad680978fbd2eeb05b06f",
+      "size": 312
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/AirMigration_3_Nodes.txt",
+      "sha1": "338ae9a4b37f0b0f0346e0c0e6516085685d5b03",
+      "sha256": "a5baa8aa987eebad98fe460b50fccbc584999d81a72b17a2610ffc108f89408c",
+      "size": 61
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/Dan_sea_migration.bin",
+      "sha1": "704063d92239daa83b1ee4832e488fc7ac0f0cb5",
+      "sha256": "2e74ec2d76349b8d22992af067fcb1f765ecc94c02f60669e681c40a89c169ab",
+      "size": 72
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/Dan_sea_migration.bin.json",
+      "sha1": "3f7b26ed00a7fd697b7a63c55823b8083c99a9ec",
+      "sha256": "48fd6ad74ce7e135e8a3e3d8003347e1d44cdd6ef11c313eee4b3581d54f8a7b",
+      "size": 365
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes.bin",
+      "sha1": "a5ff05f2053ab198380c2864d1b6c00120b84c5a",
+      "sha256": "00187bb24c8437f1ee47c56e30046c208139f686e392e3c5308469ef3b5db4c4",
+      "size": 192
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes.bin.json",
+      "sha1": "8a4a8b69ae4f17a0fe247c7afd7ab195cb077076",
+      "sha256": "29b89e57f0c9a001b8adc88f8491307db2b48f2aa6aa5759afec3ed15f3674ec",
+      "size": 295
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes.txt",
+      "sha1": "6e1e7a93921aa39c6bd34f2764634cd56dbe2d2b",
+      "sha256": "bc9f160fa5b25607f174a4c8631e43c88553886db91bf45baf78043bd6319887",
+      "size": 25
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes_update.bin",
+      "sha1": "b63c8ae8bab872a4d13277da62eec439de8bd451",
+      "sha256": "dfe1cb33a9baf69a7cdea6ea3f3ee480fb743d40a44ead267edacad2697df823",
+      "size": 192
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes_update.bin.json",
+      "sha1": "7b41cc74d99b7bffacb24ce0ddaf07a82a8c213b",
+      "sha256": "0c62fd1cc73fd6e222eb8ebdaffef47b1e724814a8bb6635e7210368d7067420",
+      "size": 295
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes_update.txt",
+      "sha1": "f54ad0a9f839795df21b597582f5bf9272fdfc2d",
+      "sha256": "b2c77141f70718557b6ef0623ba9e568c9f013b19527f2386ce2082a01c4e9db",
+      "size": 17
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes_update_0.01.bin",
+      "sha1": "88caf2b237c76d1b69388bb929122fbde2c834b6",
+      "sha256": "9be0fd33d1f5f4511d03ddc7c4a740f37eccc312a17f8cc2dd659da627b382b2",
+      "size": 192
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes_update_0.01.bin.json",
+      "sha1": "247fa51ce156fab390f5409e92c36ae7c623b13b",
+      "sha256": "e4caedee3ee5f4b6ecfc28dce28ea534c2af2533cde325557401aa2cae797635",
+      "size": 295
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_2_Nodes_update_0.01.txt",
+      "sha1": "09edb72e6a90dc3f83eaa99513c22e3db25e5baf",
+      "sha256": "20aad4207834a00d985a768fcb1a4237b6c4cadaf96686be75c63a3e47f8362f",
+      "size": 19
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_3_Nodes.bin",
+      "sha1": "07a2ac771ad710b45e70bdad1b9aa0eed9576eb0",
+      "sha256": "8b45cb4241c52a841c5023073022d60fd6a5f45acc0ecf5d1ad1682905d43306",
+      "size": 288
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_3_Nodes.bin.json",
+      "sha1": "339a03eabcd44b183ebe3ed7eb150b0b4ccb1a46",
+      "sha256": "0996b5100c2e21937dcc6a686b868d273f3113fd1fe9c992f70c24ae26d1cfab",
+      "size": 311
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_3_Nodes.txt",
+      "sha1": "338ae9a4b37f0b0f0346e0c0e6516085685d5b03",
+      "sha256": "a5baa8aa987eebad98fe460b50fccbc584999d81a72b17a2610ffc108f89408c",
+      "size": 61
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_9_Nodes.bin",
+      "sha1": "6e2349202552134d6267f156d62e3336021251dc",
+      "sha256": "a01a6598cd88299f0fa5f36ef16e38420b0d0d97a4dfc24cd07d2fd37eb4aeb3",
+      "size": 864
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_9_Nodes.bin.json",
+      "sha1": "c811e7d227623e2caa0e455af03ea6ca59df3747",
+      "sha256": "85abd64bd8db65bd95e3f0b63b483a19f51020bf03a249ec7409cb5b323550b1",
+      "size": 407
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/LocalMigration_9_Nodes.txt",
+      "sha1": "d1bff8d5741801308ccbcb954b2d83a93404446c",
+      "sha256": "0be86c949ebdb160351b09f69de99e6f681939a5b6bd05f29913c2a5dcc7a59d",
+      "size": 225
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/RegionalMigration_3_Nodes.bin",
+      "sha1": "710f79398c5da63fce7bc5b392c70dadf7aa4e61",
+      "sha256": "588d7f9796561dae6045a6ece69a843f0b7fb4978aedafe15cdc8a425ecb37fa",
+      "size": 1080
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/RegionalMigration_3_Nodes.bin.json",
+      "sha1": "7c2817f3c074a7dc29b95553e194d6253b46efbb",
+      "sha256": "23753f7541759f327ee58d3b09a9ebba5a8cbd93b220741e34cd6cdcb911efeb",
+      "size": 312
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/RegionalMigration_3_Nodes.txt",
+      "sha1": "338ae9a4b37f0b0f0346e0c0e6516085685d5b03",
+      "sha256": "a5baa8aa987eebad98fe460b50fccbc584999d81a72b17a2610ffc108f89408c",
+      "size": 61
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/SeaMigration_3_Nodes.bin",
+      "sha1": "668fade3b691bf364191585911a34607482c6782",
+      "sha256": "ee0c59d6b890a17acc4e744839445c86aec1774aaebedaee1897a29cf5c05bb8",
+      "size": 180
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/SeaMigration_3_Nodes.bin.json",
+      "sha1": "572f10a0e4c7d6cc60b64394df908ad2737c0591",
+      "sha256": "03947264bafe9e87bb28820f3b0a2d618fea3a28a67859e36f51d154513f79dc",
+      "size": 311
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationSFTs/SeaMigration_3_Nodes.txt",
+      "sha1": "338ae9a4b37f0b0f0346e0c0e6516085685d5b03",
+      "sha256": "a5baa8aa987eebad98fe460b50fccbc584999d81a72b17a2610ffc108f89408c",
+      "size": 61
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/3x3_Age_Regional.bin",
+      "sha1": "0ef028aea3e650191de8b63378815f80a6a603a4",
+      "sha256": "a5ff619d9520db23da6fa16eda846a826c0dc841fe134cf82716aad24134b09c",
+      "size": 1944
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/3x3_Age_Regional.bin.json",
+      "sha1": "dfeeb7194380fd51d13f91a4d828baa7350f723b",
+      "sha256": "7e7b8c37895d2c494f31e6d2a0af2173a2f6c425df40baa65ed527c3db6b833c",
+      "size": 578
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/3x3_Age_Regional.json",
+      "sha1": "4ff6cce38bc5767c9d2c63bb38055957c3a73dbf",
+      "sha256": "fdb560934aa29cca0ee38a33436228cb3f4892412adae544f5b7f3b76b2b5601",
+      "size": 9669
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/3x3_Gender_Local.bin",
+      "sha1": "41f2abd330df78b07bac35ecf9b724d8b4c4b88f",
+      "sha256": "812e1f22f8d901b55623a50ecf2c0650dd508d67154a137fae65f8e56db15c64",
+      "size": 864
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/3x3_Gender_Local.bin.json",
+      "sha1": "b12949c5eb0991742eba73c552939dda1c9f4613",
+      "sha256": "13461b1b1a479bd385ea994dd57dfded63115bed947d409a431f4a591c5ff15d",
+      "size": 582
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/3x3_Gender_Local.json",
+      "sha1": "53ced10dec9a474c3552dcf60b8fd9a1b58a6d64",
+      "sha256": "f7647da3ae7424928abe8147bc122d60a221e7083aad2729ffb14947391b60fb",
+      "size": 6299
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/3x3_demographics.json",
+      "sha1": "b72c61aaeddf2a09f3ec0653fc5ea0fbc830993e",
+      "sha256": "8534b7596e8d26f569e2d54e8149a409c117e3cce0103dc1588f85a69da6b881",
+      "size": 3143
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/LocalMigration_2_Nodes.bin",
+      "sha1": "a5ff05f2053ab198380c2864d1b6c00120b84c5a",
+      "sha256": "00187bb24c8437f1ee47c56e30046c208139f686e392e3c5308469ef3b5db4c4",
+      "size": 192
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/LocalMigration_2_Nodes.bin.json",
+      "sha1": "7df765b06c7ffe23b135632b1ace3f2f4ee0b19a",
+      "sha256": "f11eb95240e5cdbff9f15e8574c88b0d40a99b830838c343553c566518d3c8f2",
+      "size": 345
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/LocalMigration_4_Nodes.bin",
+      "sha1": "0a94fd4259bd87a42640b9c21fcb8b4adf39f240",
+      "sha256": "a0d39404a7cc646419efc3dfd6797d87a51380f63b710a01514b7dfae7a97841",
+      "size": 384
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/LocalMigration_4_Nodes.bin.json",
+      "sha1": "54ebc402c4b9b5ed26f64850b13862a30ace4226",
+      "sha256": "5e60b0b3581e566ab7f61e8971a62d6128a68f3e096b6814a49b3ba12c74eb53",
+      "size": 377
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_2_Nodes_One_Way.bin",
+      "sha1": "8c2f60890e11d6535ff00a7f275e9c865e388ad2",
+      "sha256": "66a0ada6d1d76297e6d3cc0a6c41aaf3571f6f56f8f09c89db3f7ededc8b1140",
+      "size": 127
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_2_Nodes_One_Way.bin.json",
+      "sha1": "0ce3aad40ecb12e179a020bf93bf23cab0e91e41",
+      "sha256": "b942b0c54b16b017c1eeadc5e6de03a8be1d43d9d2b514383fab92f859c7eeb0",
+      "size": 345
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_2_Nodes_Two_Way.bin",
+      "sha1": "02764d662444eebe36714de8b38fde1992beda8d",
+      "sha256": "dad8723ad7f59d03517bbcfaf6305ae83f8f3d132ea54c6f026076639af4ee58",
+      "size": 127
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_2_Nodes_Two_Way.bin.json",
+      "sha1": "a394777854e1b09bd92fe10cd3fadd98a6307467",
+      "sha256": "bd187556f5b44d802999a7c128755bd99ad35cd2c718974f09b99434b0abb72d",
+      "size": 346
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_3_Nodes_One_Way.bin",
+      "sha1": "ce59590f0cea9bc2341eefce49397805624135c0",
+      "sha256": "465ac067d83c03fce52faee6c9e10c79b4119c9a9a784112de9dc585779703c5",
+      "size": 127
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_3_Nodes_One_Way.bin.json",
+      "sha1": "c07461360feab66b4320a74c176922ae51e52202",
+      "sha256": "5e7d8ec5b7c90df340742ac5de5d283f2db9ea9ebb037b3fe18a241e56fda699",
+      "size": 362
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_9_Nodes_One_Way.bin",
+      "sha1": "f46666576d74d1c4c52506ed1d39d2b7169a0ccb",
+      "sha256": "ee0183eb91745102cdb67516ca1424e42a0c91634570fcfcd92da2a87eed1010",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/MigrationTest/Local_Vector_Migration_9_Nodes_One_Way.bin.json",
+      "sha1": "e9406aa19b732789c178ec426970c967e3333b3f",
+      "sha256": "5c7efbd0aacdf9a1e47bd1254c6f1d8cd0f0b40e8aa70e3b56009735ab023919",
+      "size": 458
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5_arcmin_loadbalance_8cores.bin",
+      "sha1": "dff59face2c311bd4c743ab531d898a4a226db3b",
+      "sha256": "cab59cb47143b2dfc0c6a40f6c2444b5032b232443fc8b0d269a8c366df98c1c",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "f943338534911a9af80ece3d8ef95ae69a12ce10",
+      "sha256": "01c2f043ffac7cdb7ce0d9e58530b243ea5598dcd4f04831dde1159aea3e16e5",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "854675e5404ceaef1c7c1f85199f72a91fdec110",
+      "sha256": "5bbea0545fe5081092ab0def47e6eddba687ed2b425704f95e34ac72d275d6b4",
+      "size": 84512
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_demographics.compiled.json",
+      "sha1": "8a2049d96c282ce7c8dabbb0ccb40e827178504a",
+      "sha256": "8cf64361e38fb8d8c259f4c347249fa0a9718212ccb3d9aa1e7c2ba2302b50dc",
+      "size": 397701
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_demographics.json",
+      "sha1": "843c8d6d02cf7bd84956556573f55d99aa8c9cda",
+      "sha256": "5aeb3c6c99b7ecce8d315f198d5173003e494655a6aa3cd656c6f97c88c38e67",
+      "size": 1147851
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "f943338534911a9af80ece3d8ef95ae69a12ce10",
+      "sha256": "01c2f043ffac7cdb7ce0d9e58530b243ea5598dcd4f04831dde1159aea3e16e5",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "b636106b924bfb2fa1f00b0b34aff89f6557fd3d",
+      "sha256": "49ab30fbb7031533570f5d537b63a1eb1513a71ee5218cc1ae9651700e120ed2",
+      "size": 84521
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_rainfall_daily.bin",
+      "sha1": "4f1470611bd99a421ba9a57c64f1e4ced04d5beb",
+      "sha256": "7708d52853773f2a4775a9a6564cdc95d230cf25ee3a3c24ff6a401e9975bb9a",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "854675e5404ceaef1c7c1f85199f72a91fdec110",
+      "sha256": "5bbea0545fe5081092ab0def47e6eddba687ed2b425704f95e34ac72d275d6b4",
+      "size": 84512
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "270d6f5fce121401cd276ce2fbf6c674bcd042e7",
+      "sha256": "e0de2321b73be6f90efece8109468c140806913148dd1eef46efed74755067bb",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "854675e5404ceaef1c7c1f85199f72a91fdec110",
+      "sha256": "5bbea0545fe5081092ab0def47e6eddba687ed2b425704f95e34ac72d275d6b4",
+      "size": 84512
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_Mocuba_single_node_demographics.compiled.json",
+      "sha1": "cc3eabfea9034d50b9d14f053568dc3d7962d371",
+      "sha256": "88148266de31f53ab8c335275dac2e5c0da560c2496f12bca74f7bbb518db251",
+      "size": 1602
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Mozambique_Zambezia/Mozambique_Zambezia_Mocuba_single_node_demographics.json",
+      "sha1": "641dd4f14f5c15a93d58293f491350d4f77f0b30",
+      "sha256": "c529486fc3c388010e0654c626837eb39fdacace3226a78db10bea560d9ada1f",
+      "size": 2090
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_air_temperature_daily.bin",
+      "sha1": "4eb9d7eca7a8cbb92d9cd75f947a48d98442ee05",
+      "sha256": "8c323e4a84b8cf6c1cb8f00901d515703569060822d5657c99b6d7d4386f3559",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_air_temperature_daily.bin.json",
+      "sha1": "3e7d40c9ac9c5ad96d328699fb20357bd7f783c6",
+      "sha256": "5681c7eea54c4a2441b683dfb09acf9273b21003b616bf9e07db055018949378",
+      "size": 660
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_demographics.compiled.json",
+      "sha1": "32f6c714e2cfba7db5989a857d75139a754bf3c9",
+      "sha256": "23a5698ceee6f54b1664c0029ff1a7217ca584b116fb362fe98a46e1711d1fd7",
+      "size": 1625
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_demographics.json",
+      "sha1": "eb4901494f85ffe935b1509c21ea1e4fd0a701d5",
+      "sha256": "40b5688bb9b7eb1bde701d6ac854bb521245613758907b5b67e61480121fc454",
+      "size": 2363
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_land_temperature_daily.bin",
+      "sha1": "4eb9d7eca7a8cbb92d9cd75f947a48d98442ee05",
+      "sha256": "8c323e4a84b8cf6c1cb8f00901d515703569060822d5657c99b6d7d4386f3559",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_land_temperature_daily.bin.json",
+      "sha1": "5c811b4bfef839cebe97f788552d6fadff03a96a",
+      "sha256": "2d6076301f262bb31b13784d52ef426c7c30acb04f3a591065933cea9cb87bf9",
+      "size": 668
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_rainfall_daily.bin",
+      "sha1": "ed98de6316bcf463b6babce9835265329129b3cc",
+      "sha256": "dcec0ff42f48a5115d53b268c4176db68d7d1e3de0dab5089fb725e5f72f5ee3",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_rainfall_daily.bin.json",
+      "sha1": "3e7d40c9ac9c5ad96d328699fb20357bd7f783c6",
+      "sha256": "5681c7eea54c4a2441b683dfb09acf9273b21003b616bf9e07db055018949378",
+      "size": 660
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_relative_humidity_daily.bin",
+      "sha1": "24446b2d7d6ec7ff6d87dd97b169b5861674b016",
+      "sha256": "ec257263eea77a8c82eb4a2d847d885cc9a1a7a49a99525734a49a5487164d6b",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Muheza/Muheza_single_node_relative_humidity_daily.bin.json",
+      "sha1": "0d0d55985c500e426d3e0bf06d1db8431a813ae7",
+      "sha256": "8af6ee51c76cf882ca92d368abe9f54c7828cead3707b3f6c8268cbfc4babdf8",
+      "size": 659
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_air_temperature_daily.bin",
+      "sha1": "b314e18b88da5cef318bf9ad8f34ab97e47aebee",
+      "sha256": "fdcac59d21162964394883365716932428ac72988b09fac32d5d02583f27c50a",
+      "size": 14600
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_air_temperature_daily.bin.json",
+      "sha1": "8ac8112f18b7827e9473c5db1904d8e74a0eefd5",
+      "sha256": "e496e6bb9b3b3fb7827b00a02ba117d3a380de71d4f95c491e7fb091974a0800",
+      "size": 703
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_demographics.compiled.json",
+      "sha1": "521cb33ce6a318f41202aa3a3644b0b8050e7f28",
+      "sha256": "29b2176e6edcdd13b95a6f667dafceee91b45419aba59759627633efe1c21722",
+      "size": 1618
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_demographics.immunity.compiled.json",
+      "sha1": "0a931437b10b8454ec5a3907bcccbfde227a1c48",
+      "sha256": "7a908c84443a68d259a75944cf338ffd19e26956367471f8ef66e98ebf5b834c",
+      "size": 2133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_demographics.immunity.json",
+      "sha1": "efa84ee3528a1f89d75d1a8978c4f402afeb4228",
+      "sha256": "cf175fee5d9c6282dd2c9ee6f2dd8540140fad295fbfe780d13a5b6ca765d837",
+      "size": 4278
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_demographics.json",
+      "sha1": "ca63a09dea3d22e6a817dbe3ea3505a13a339d2e",
+      "sha256": "73c446d0f8b677ad4fcffdd0423dede52a9ad3567911f9f605383edca9eadb48",
+      "size": 2342
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_demographics_complex_mortality.compiled.json",
+      "sha1": "81d97f8506faee0867f89f94e3063ee162a31593",
+      "sha256": "90ad285e93684db9a6f03ae742e61b52aaf2ae32d16449ff1193b711971ace79",
+      "size": 752
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_demographics_complex_mortality.json",
+      "sha1": "50c0071bc8a2de6f8150fe0c823f23dc151f6ea9",
+      "sha256": "7aa4e36edba07d2d76732b3a2b72320947e873facf9c10e4ffe4fff8cb012ce3",
+      "size": 1174
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_land_temperature_daily.bin",
+      "sha1": "b314e18b88da5cef318bf9ad8f34ab97e47aebee",
+      "sha256": "fdcac59d21162964394883365716932428ac72988b09fac32d5d02583f27c50a",
+      "size": 14600
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_land_temperature_daily.bin.json",
+      "sha1": "6160866e8ce12d0efc8f902359f883f18f621e43",
+      "sha256": "3e0785f8e9d09df285cdf7ba43542316f95735cebd50fd9482e397d16cd07923",
+      "size": 687
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_larval_habitat.compiled.json",
+      "sha1": "626667298595ad861245fb3d9180637f6e54ef34",
+      "sha256": "843cf22433ba558ad1fb2ca632b74f48ded2e4240fb24c78f88eec5091d0abfc",
+      "size": 322
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_larval_habitat.json",
+      "sha1": "1441e37e1c5c05f7065e428b92d2eafda6b7805d",
+      "sha256": "ed441649a829086fb874d9f6a2acaa9efde2ea22854afd12e3ef2f8fbbf8597f",
+      "size": 415
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_rainfall_daily.bin",
+      "sha1": "bd700c31cb02a4c5413d17f931ca711ba11a2539",
+      "sha256": "517d4e07707884cf6aaf43471fd6c668fc0bd68b484bcd2c949bff90544c95e8",
+      "size": 14600
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_rainfall_daily.bin.json",
+      "sha1": "7e489eefaa32fd7cfb0758cc7b7d79017ca9d1fd",
+      "sha256": "3276e7f9e7626d99e8b07a444a7cecdba37e8c7415bc1e7f2aa44f62c4cb6932",
+      "size": 655
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_relative_humidity_daily.bin",
+      "sha1": "8b835d057ee3cbb85575f0f91c15bc0ac8b1897d",
+      "sha256": "5172cfd8f3754a67b3c1d98c77514231a712dafd5e5993f446559e0e766f6672",
+      "size": 14600
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Namawala/Namawala_single_node_relative_humidity_daily.bin.json",
+      "sha1": "ffd5a40e6567860ca5ace37bec22ece084e44fd9",
+      "sha256": "bdc0c2e8adf42b2768cec6d6ce73e1daf519df7af38011ed71e0db67694d9479",
+      "size": 612
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Garki_single_demographics.json",
+      "sha1": "fb1761d2c6ba5d40307ff0b583b55f1e02b46442",
+      "sha256": "de6732627a37e6d2bbda1dc193bf5e12aab082199b9e1241f7dce2d0bfa589c1",
+      "size": 2220
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Garki_single_humidity.bin",
+      "sha1": "4a26a44b7c2fb49976b3b7f7426bbc6c43391ba9",
+      "sha256": "11b7863f47bc88ac769d7af5a1ebef504fe1a51de5843be029c88f9124b3a92d",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Garki_single_humidity.bin.json",
+      "sha1": "fdb5255443fcf1541928033c53eff133f098db99",
+      "sha256": "0644fbc0900b6567d25eeccc351e02b27069d9f0ece02eaf23cb9201e1ca4212",
+      "size": 650
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Garki_single_rainfall1.bin",
+      "sha1": "5810f8a9d33ef690e54dceb1eaf27b1f4bfb6faa",
+      "sha256": "ddb0b477a6bd7f91b726f826e6902a864dd31b6b169cec638658481196da4d7b",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Garki_single_rainfall1.bin.json",
+      "sha1": "eee328eccb2e0e5dc177cf6161f7e960fa702126",
+      "sha256": "591a60fd2af46ae02edb2cbf1bfedfb737e8ea48d6938c76d70defb6fc46c445",
+      "size": 679
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Garki_single_temperature.bin",
+      "sha1": "730faacccc23667753e37b7be7025f24932d7d58",
+      "sha256": "01dc4a46c5568f7bac91df81b46c08feb448b5fda12cb23544819b36986b81e2",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Garki_single_temperature.bin.json",
+      "sha1": "fdb5255443fcf1541928033c53eff133f098db99",
+      "sha256": "0644fbc0900b6567d25eeccc351e02b27069d9f0ece02eaf23cb9201e1ca4212",
+      "size": 650
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_air_temperature_daily.bin",
+      "sha1": "4eb9d7eca7a8cbb92d9cd75f947a48d98442ee05",
+      "sha256": "8c323e4a84b8cf6c1cb8f00901d515703569060822d5657c99b6d7d4386f3559",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_air_temperature_daily.bin.json",
+      "sha1": "3e7d40c9ac9c5ad96d328699fb20357bd7f783c6",
+      "sha256": "5681c7eea54c4a2441b683dfb09acf9273b21003b616bf9e07db055018949378",
+      "size": 660
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_demographics.json",
+      "sha1": "eb4901494f85ffe935b1509c21ea1e4fd0a701d5",
+      "sha256": "40b5688bb9b7eb1bde701d6ac854bb521245613758907b5b67e61480121fc454",
+      "size": 2363
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_land_temperature_daily.bin",
+      "sha1": "4eb9d7eca7a8cbb92d9cd75f947a48d98442ee05",
+      "sha256": "8c323e4a84b8cf6c1cb8f00901d515703569060822d5657c99b6d7d4386f3559",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_land_temperature_daily.bin.json",
+      "sha1": "5c811b4bfef839cebe97f788552d6fadff03a96a",
+      "sha256": "2d6076301f262bb31b13784d52ef426c7c30acb04f3a591065933cea9cb87bf9",
+      "size": 668
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_rainfall_daily.bin",
+      "sha1": "ed98de6316bcf463b6babce9835265329129b3cc",
+      "sha256": "dcec0ff42f48a5115d53b268c4176db68d7d1e3de0dab5089fb725e5f72f5ee3",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_rainfall_daily.bin.json",
+      "sha1": "3e7d40c9ac9c5ad96d328699fb20357bd7f783c6",
+      "sha256": "5681c7eea54c4a2441b683dfb09acf9273b21003b616bf9e07db055018949378",
+      "size": 660
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_relative_humidity_daily.bin",
+      "sha1": "24446b2d7d6ec7ff6d87dd97b169b5861674b016",
+      "sha256": "ec257263eea77a8c82eb4a2d847d885cc9a1a7a49a99525734a49a5487164d6b",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Muheza_single_node_relative_humidity_daily.bin.json",
+      "sha1": "0d0d55985c500e426d3e0bf06d1db8431a813ae7",
+      "sha256": "8af6ee51c76cf882ca92d368abe9f54c7828cead3707b3f6c8268cbfc4babdf8",
+      "size": 659
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_air_temperature_daily.bin",
+      "sha1": "37c5bd5b005980f726b1bdc0dc07e47cbddb95b5",
+      "sha256": "ae8f087d349673574c702b94939cccd7b0f779252a15f9848dada9d9a942630e",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_air_temperature_daily.bin.json",
+      "sha1": "29da744d7fce38ec6bfac9dc617cf2aff3f92dd7",
+      "sha256": "c96b4f170ef390bff66741321fe10bcaa62607ae25a79fcf3e10750df853edb7",
+      "size": 686
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_demographics.json",
+      "sha1": "50ac917e13afead56f0215c857c32ef57c33983e",
+      "sha256": "a7e45289743e94269136ae02461aac6954b70c4aba3d2075eb7ce844d51772ba",
+      "size": 2237
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_land_temperature_daily.bin",
+      "sha1": "37c5bd5b005980f726b1bdc0dc07e47cbddb95b5",
+      "sha256": "ae8f087d349673574c702b94939cccd7b0f779252a15f9848dada9d9a942630e",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_land_temperature_daily.bin.json",
+      "sha1": "a66a06e69c2423be173cecec64ca2bd849bc726e",
+      "sha256": "147d548c0704ffe19573d81fa2cdf8313d255d06a8f651d00e53d8572ab45257",
+      "size": 670
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_rainfall_daily.bin",
+      "sha1": "e1eb1daecac4612d4dfec04bec2d391710dffd60",
+      "sha256": "cd16167f7684cbbc9341abed3897bcfa9d3257765a73afa9cfff0a0d6337d897",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_rainfall_daily.bin.json",
+      "sha1": "fb9bf51feaeadfe9f847c9936cfebcaf6862ab71",
+      "sha256": "a61be321fa9da5f4862db605b988a506291450063bd7b319928c62c94915631b",
+      "size": 638
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_relative_humidity_daily.bin",
+      "sha1": "56baa784ca40773c50fec93da31857092ab2017a",
+      "sha256": "4b4a69753d59355722c5e848cda77e821778ca0fba6d4bafe562479c212d19e2",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Namawala_single_node_relative_humidity_daily.bin.json",
+      "sha1": "4aaa918ca375a1bb5c400a2ab5136685d4323572",
+      "sha256": "d4ce631655c89a73cb77e3ba6c58aa507d910691d95f87752cacae52de3908a0",
+      "size": 595
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_Add_Informal_Marital.json",
+      "sha1": "3492e907f14dd4df8a9d31a753cbd6de5b83776c",
+      "sha256": "bc192dc37a40ee517c2f7a7c0718589c1e9f6f9055976fb5b8e15eb3cca0a919",
+      "size": 1632
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_Extra_Rel_Rate_10M_10F.json",
+      "sha1": "d2eb02727d5e34e8ecc192d3d10bf5a3b62355eb",
+      "sha256": "1a0e498ffa5edab1a6f72df9736ac5d2cf92a0ae3803593c2f6f5c18e142d1db",
+      "size": 1008
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_Extra_Rel_Rate_4M_2F.json",
+      "sha1": "76a03a2448572846f3c968733690001c8dda1d27",
+      "sha256": "e6a9f1ecd4277bfedebedfa4b433d88152e710f63b2f1265d1e104b4276d7e3e",
+      "size": 1002
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_overlay_rates_02.json",
+      "sha1": "dac69b4ed031dc46b26bc57a95e215d8dda64254",
+      "sha256": "8bfe31015ae2f9b8e0be683e3e688fd38e7e9ce066a261cd841e6d16b4deb86f",
+      "size": 1816
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_overlay_rates_03.json",
+      "sha1": "90fe933a45f770ea2887793202ba873b8a99f0b0",
+      "sha256": "b050c04618d6c1e8d5e2ea66c445d1c38bc0bc24911294e98638d096b7cef64c",
+      "size": 1481
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_overlay_rates_04.json",
+      "sha1": "ef888c604c7d9c9bfc92319c3718351bc331ac80",
+      "sha256": "036ff8a7a760f05a3249b4300d927b9a859c44acd4b87c1047cd3b1322e6bcb1",
+      "size": 425
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_overlay_scenario5_rates.json",
+      "sha1": "bda868397877d124f05824664be49e47dfa002d7",
+      "sha256": "239b554bd01f4a6df7634932d3c13bdba4fa05df534df31f1f5488fa300f3a73",
+      "size": 3876
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/PFA_overlay_scenario_rates.json",
+      "sha1": "e929457b2087a8941505ba2d5e7043c4ff54c3b7",
+      "sha256": "85843ca16c035985a533f8b533232e8839dc01629d16c418cfff874e4ea4cf00",
+      "size": 853
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/SSA_Demographics.json",
+      "sha1": "ca7726aadc843ad6d7ee9a8175f219c831823a13",
+      "sha256": "9432cc19186ac16dbc876d14e0ca0beeeb015362a74fa1ae8237ac7687fb094e",
+      "size": 39817
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/SSA_Demographics_3G.json",
+      "sha1": "5f125257f4b3f207a0f637b9f3dc431180316d07",
+      "sha256": "89ee2c64b1d141bd4d293795d81820f21ca52b70319fc1561e5152d32c0f684a",
+      "size": 40086
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/SSA_Demographics_With_Properties.json",
+      "sha1": "8b23a4558e83653b788c3e40cd24c30599854e7c",
+      "sha256": "23471c92d65b6e6c7e31e30a7adf551d26ef36c47b2fe0d74632208e86eed6bd",
+      "size": 41296
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/SSA_Demographics_With_Risk_Group.json",
+      "sha1": "512217ae13e7641fe29b956c1ce3a4329188e856",
+      "sha256": "32b6251f0ddfcda4854d9bcc85fe129283c62df1c636cb24301612f1d5ac7410",
+      "size": 40023
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Seattle_30arcsec_demographics.json",
+      "sha1": "4da8040e71a1fd9324f70ca6610f4a54c004ea14",
+      "sha256": "9ecd4eed98eddd05a792e7ab25c3d7498afacac51bee49574f11da77b8bf9bf2",
+      "size": 37302
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Seattle_30arcsec_demographics_zoonosis.json",
+      "sha1": "328e8043da3d55baff34e124b601b194c149c544",
+      "sha256": "7f5f4e9d8fe875062a3e514c33844038764d0e44b4cecd95d9176035f3153ec5",
+      "size": 6248
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Seattle_30arcsec_local_migration.bin",
+      "sha1": "78d64ac6e8e31a56e685127cc38a91ba2282c957",
+      "sha256": "ca8d1e639c05549b7728bc7729033458bf7d6f4857e2eeb39fb9f678e55662f9",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Seattle_30arcsec_local_migration.bin.json",
+      "sha1": "12395013c20b8d4909e1355134a217e2fef366fa",
+      "sha256": "b260b6b12d3ba0f7f8aec3065ca285834a6a0f12552772c33f7fc7e359ba0370",
+      "size": 2277
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Seattle_30arcsec_regional_migration.bin",
+      "sha1": "3a386b17a13fe0faf151d582eb52220e17d28021",
+      "sha256": "b5587c8e916a5a62e65abeaa5b61eed2b4679248ba08b4de58100975350ec0c3",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Seattle_30arcsec_regional_migration.bin.json",
+      "sha1": "9b821bb026a0f0ede734bea8070fe98f43bf72e5",
+      "sha256": "baec2efbee2d0b78ef6344092764fb2c068c8760f51f55d112e86543c6cd3bcd",
+      "size": 2278
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/Seattle_singlenode_mixingpools.json",
+      "sha1": "a201883237a84272e0eed7abcd9fa37656fba634",
+      "sha256": "46b2480691f523bb77683835e2196963df7274a0ed2338b69149a497ec4eaea3",
+      "size": 783904
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/TB_01_BasicModel_demographics.json",
+      "sha1": "6c80d15cbaf6004e70fd3cc9875b3a8e94a87ddd",
+      "sha256": "1220011da225306171b99f410b053555fe9fd652c335c0ca438fb491da1ecc70",
+      "size": 2493
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/TB_02_AgeDependentImmunity_demographics.json",
+      "sha1": "bc68a08212c7a953645d27f0a553925e6cf14f40",
+      "sha256": "e1ef4a7f8064f75d26acc8fafc4a58a729dc941b1a4842072d81f04e56960446",
+      "size": 4601
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/TB_03_HealthSystems_demographics.json",
+      "sha1": "1a9782772d1e23acd347a2d2a1cdc7f9534c7cf6",
+      "sha256": "8f93023d5df0c5b817c64283e70f81a82da30467b1cf2a090ae475b5300437c1",
+      "size": 2502
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/TB_04_CascadeOfCare_demographics.json",
+      "sha1": "b3f7a083282478feb4f2317a0f61b0d282a064f2",
+      "sha256": "4529bb79209f6834d38a7a7e083e9c88aab930c4bde9db396e082c15804ef0cc",
+      "size": 3124
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/TB_05_MDR_demographics.json",
+      "sha1": "59ce4b184693f2fb663aaec0a41b22b98953a825",
+      "sha256": "5b02324892f2b4420d46d741abfce9d72fb4b4763cfac3a9d6bc469039dfeef1",
+      "size": 2464
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/TB_06_PopulationBurnIn_demographics.json",
+      "sha1": "1068953d35121803de09f904ae1584e10aff4006",
+      "sha256": "828821d57b11a3a6e624a4a7142029d6bf9f81abb5e80a7fb0a4fe41661d40c0",
+      "size": 3865
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/generic_densityscaling_demographics.json",
+      "sha1": "e244796c8bf31aad55bcd7a76d8d43698996f099",
+      "sha256": "3c31364ea43fded87dbd3a64e5b6050e1e0f211a2f78bf4edd04be43a3e39715",
+      "size": 2130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/generic_scenarios_demographics.json",
+      "sha1": "4c3f762413da6c2b45fe4f2d878113b48b15173e",
+      "sha256": "6f69508533197cebb31461b74053b6ee63f7c735ff1b8084d10547402033c8f6",
+      "size": 2135
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/generic_scenarios_individualproperties_demographics.json",
+      "sha1": "86b324570c8a43b650551edc59739b6ca30f248e",
+      "sha256": "7a3d9444d680bd7cca67aeb91dbe1631fd91f9b2c8907bd21a21a56b6846b08a",
+      "size": 2303
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_ageandaccess_demographics.json",
+      "sha1": "442a71d72c48b2039bc4d593d6e4a002a7b7a5da",
+      "sha256": "0fa73d549f5bf320da301491619d165b036831d3726683f05d20f2646a21ff6f",
+      "size": 2214
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_ageandaccess_overlay.json",
+      "sha1": "3ee8bde29c1476647ee7ca650cb88bee0e0575d0",
+      "sha256": "238a6ed41a4c4505dcc836ea6ea0f24e29a4b2fea9590fcc9ead9eb15bebd8f6",
+      "size": 1246
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_riskgroups_demographics.json",
+      "sha1": "d8826330b450023f343c8917d64484f44158f8ed",
+      "sha256": "0d6c2943279dc0ffb9037750a2ab487ea622be653bcbc6dc8b6502e86cad34f8",
+      "size": 2549
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_schoolclosure_demographics.json",
+      "sha1": "6954a9439871af19c3f7a4acde698e35dcd0f7f4",
+      "sha256": "70ab0f9d34ce96577abf448bdeb5697f176d22167ac8ff78e9611d958a4ac346",
+      "size": 3427
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_seattlecommuting_demographics.json",
+      "sha1": "0d60db1aa98f138a7f72c1870795bea9705d477b",
+      "sha256": "18b0cc7e2beaeb6e94897654f359b845d812ca51017ce1fa883ee6e937fb565d",
+      "size": 786991
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_wapertussis_demographics.json",
+      "sha1": "058d489f5c22989a8a8842297073b1d23bc58178",
+      "sha256": "665eedad1522add8a5a4182bdfff1748b3775c86c4008e372d2226d8bb42c711",
+      "size": 12318
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_wapertussis_demographics_overlay.json",
+      "sha1": "a00696b01a0428f3c5b8c172ccdb42090c29508a",
+      "sha256": "2171b1b64dbf32a19807be97a0c5e1d0a110a25276f49eb5989a7d73039f2141",
+      "size": 3024
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_wapertussis_regional_migration.bin",
+      "sha1": "d50a1b7775cbb82cf31b6d8e984019ba6f5957e0",
+      "sha256": "47c2996e5b9c125b50d0ef92362c4df0d20126307f6438c6558d1bf3d9514e35",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/hint_wapertussis_regional_migration.bin.json",
+      "sha1": "f2e66f4addc484bab287f33920f0032eafa5dcc0",
+      "sha256": "896142c1b96fb0e4248e150b3f0046921071ed537a92ec38718418cbcfdc61a7",
+      "size": 915
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/newborn_cohort_demographics.json",
+      "sha1": "6de8d679a004e75b51fc5a7e321caac25f096127",
+      "sha256": "90141f8b6694fcaac039b9411f7eb995688af1cc2ea5a4c963caee7118026e80",
+      "size": 2141
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/pfa_overlay.json",
+      "sha1": "77cb9443b7363b5b86c2b58c368a6f07aa5ce6a0",
+      "sha256": "4f91a98c26428841ec6ded5754c9621d2276deab612254553ae8238c3a435aae",
+      "size": 22368
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/pfa_overlay_risk_assortivity.json",
+      "sha1": "a91a4142cf0f261ef31bb61e674d28a8f32d7c17",
+      "sha256": "a89dc8f867d4ba69b69eb0a5932c614be37ba75c17e7cfe89eaed1ea2a48c5f7",
+      "size": 2086
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/pfa_simple.json",
+      "sha1": "40f3195e754f6af79f41e990c0401f0445cd81d9",
+      "sha256": "5cb01ecf462c48ed95a39f8bf9573372aac572882e7fadc370c3b74f2b117aaf",
+      "size": 8680
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/pfa_transitory_2x2.json",
+      "sha1": "5781888097f3df92fd6688f3a7adf639cdca5646",
+      "sha256": "553e2c3271ea66f1a06d770888e8e0853701e2c938ba88ac36f24e4fe21410ae",
+      "size": 8777
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/python_demographics.json",
+      "sha1": "5f586a3c9778b2ab09bb69c8cdb8aaad30a52304",
+      "sha256": "52669e937607c3cb1d312bae42b631d169ace6545a3886ed3199f25b02eef075",
+      "size": 2150
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput/uniform_demographics.json",
+      "sha1": "177cfde5a682b612faabcdbb9e87f21cf8f5ef82",
+      "sha256": "4296735a59a5e5907446f678d01db7c616cfe757a560394b83c5b003ccb9bf8d",
+      "size": 2114
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_Add_Informal_Marital.json",
+      "sha1": "3492e907f14dd4df8a9d31a753cbd6de5b83776c",
+      "sha256": "bc192dc37a40ee517c2f7a7c0718589c1e9f6f9055976fb5b8e15eb3cca0a919",
+      "size": 1632
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_Extra_Rel_Rate_10M_10F.json",
+      "sha1": "d2eb02727d5e34e8ecc192d3d10bf5a3b62355eb",
+      "sha256": "1a0e498ffa5edab1a6f72df9736ac5d2cf92a0ae3803593c2f6f5c18e142d1db",
+      "size": 1008
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_Extra_Rel_Rate_4M_2F.json",
+      "sha1": "76a03a2448572846f3c968733690001c8dda1d27",
+      "sha256": "e6a9f1ecd4277bfedebedfa4b433d88152e710f63b2f1265d1e104b4276d7e3e",
+      "size": 1002
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_overlay_rates_02.json",
+      "sha1": "dac69b4ed031dc46b26bc57a95e215d8dda64254",
+      "sha256": "8bfe31015ae2f9b8e0be683e3e688fd38e7e9ce066a261cd841e6d16b4deb86f",
+      "size": 1816
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_overlay_rates_03.json",
+      "sha1": "90fe933a45f770ea2887793202ba873b8a99f0b0",
+      "sha256": "b050c04618d6c1e8d5e2ea66c445d1c38bc0bc24911294e98638d096b7cef64c",
+      "size": 1481
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_overlay_rates_04.json",
+      "sha1": "ef888c604c7d9c9bfc92319c3718351bc331ac80",
+      "sha256": "036ff8a7a760f05a3249b4300d927b9a859c44acd4b87c1047cd3b1322e6bcb1",
+      "size": 425
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_overlay_scenario5_rates.json",
+      "sha1": "bda868397877d124f05824664be49e47dfa002d7",
+      "sha256": "239b554bd01f4a6df7634932d3c13bdba4fa05df534df31f1f5488fa300f3a73",
+      "size": 3876
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/PFA_overlay_scenario_rates.json",
+      "sha1": "e929457b2087a8941505ba2d5e7043c4ff54c3b7",
+      "sha256": "85843ca16c035985a533f8b533232e8839dc01629d16c418cfff874e4ea4cf00",
+      "size": 853
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/SSA_Demographics.json",
+      "sha1": "ca7726aadc843ad6d7ee9a8175f219c831823a13",
+      "sha256": "9432cc19186ac16dbc876d14e0ca0beeeb015362a74fa1ae8237ac7687fb094e",
+      "size": 39817
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/SSA_Demographics_3G.json",
+      "sha1": "5f125257f4b3f207a0f637b9f3dc431180316d07",
+      "sha256": "89ee2c64b1d141bd4d293795d81820f21ca52b70319fc1561e5152d32c0f684a",
+      "size": 40086
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/SSA_Demographics_With_Properties.json",
+      "sha1": "8b23a4558e83653b788c3e40cd24c30599854e7c",
+      "sha256": "23471c92d65b6e6c7e31e30a7adf551d26ef36c47b2fe0d74632208e86eed6bd",
+      "size": 41296
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/SSA_Demographics_With_Risk_Group.json",
+      "sha1": "512217ae13e7641fe29b956c1ce3a4329188e856",
+      "sha256": "32b6251f0ddfcda4854d9bcc85fe129283c62df1c636cb24301612f1d5ac7410",
+      "size": 40023
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/pfa_overlay.json",
+      "sha1": "77cb9443b7363b5b86c2b58c368a6f07aa5ce6a0",
+      "sha256": "4f91a98c26428841ec6ded5754c9621d2276deab612254553ae8238c3a435aae",
+      "size": 22368
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/pfa_overlay_risk_assortivity.json",
+      "sha1": "a91a4142cf0f261ef31bb61e674d28a8f32d7c17",
+      "sha256": "a89dc8f867d4ba69b69eb0a5932c614be37ba75c17e7cfe89eaed1ea2a48c5f7",
+      "size": 2086
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/pfa_simple.json",
+      "sha1": "40f3195e754f6af79f41e990c0401f0445cd81d9",
+      "sha256": "5cb01ecf462c48ed95a39f8bf9573372aac572882e7fadc370c3b74f2b117aaf",
+      "size": 8680
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/pfa_transitory_2x2.json",
+      "sha1": "5781888097f3df92fd6688f3a7adf639cdca5646",
+      "sha256": "553e2c3271ea66f1a06d770888e8e0853701e2c938ba88ac36f24e4fe21410ae",
+      "size": 8777
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/SamplesInput_InterventionStatus/uniform_demographics.json",
+      "sha1": "177cfde5a682b612faabcdbb9e87f21cf8f5ef82",
+      "sha256": "4296735a59a5e5907446f678d01db7c616cfe757a560394b83c5b003ccb9bf8d",
+      "size": 2114
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Seattle/Seattle_30arcsec_demographics.json",
+      "sha1": "fd908fa6d9e5335203cfe415d9c81c884322963c",
+      "sha256": "a76f6840a9089e4e20bc462cc927c6823cf5715ba332865b32186b072a8274d0",
+      "size": 37323
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Seattle/Seattle_30arcsec_local_migration.bin",
+      "sha1": "78d64ac6e8e31a56e685127cc38a91ba2282c957",
+      "sha256": "ca8d1e639c05549b7728bc7729033458bf7d6f4857e2eeb39fb9f678e55662f9",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Seattle/Seattle_30arcsec_local_migration.bin.json",
+      "sha1": "24e0ce787f56e11bb74cbc062d93c082c857ae8b",
+      "sha256": "26b557253db808066b59bfed7c9215d3c73df13049ff4158925fe7261077984b",
+      "size": 2270
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Seattle/Seattle_30arcsec_regional_migration.bin",
+      "sha1": "3a386b17a13fe0faf151d582eb52220e17d28021",
+      "sha256": "b5587c8e916a5a62e65abeaa5b61eed2b4679248ba08b4de58100975350ec0c3",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Seattle/Seattle_30arcsec_regional_migration.bin.json",
+      "sha1": "bef6f9f5181666e84d9f800a42ec60a7bc113858",
+      "sha256": "0ee5d234f233003e108dc2ec571fcbc98bd9fc1fb8ac862cf54c5e9b858b8a50",
+      "size": 2271
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "78b392aaa0324fd83559da0fb120eb35a06a6f6a",
+      "sha256": "b483a5b3120e972e11764436b8bda2950b67560d79b8658e93459947a4bbe8bd",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "425282590b62e178e5c21c3d3e36fa1fad81fa37",
+      "sha256": "8909378d52ada03fc88ce096b9d45cbc05ff9c7df60ed4fda262bfa587267e24",
+      "size": 781
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "78b392aaa0324fd83559da0fb120eb35a06a6f6a",
+      "sha256": "b483a5b3120e972e11764436b8bda2950b67560d79b8658e93459947a4bbe8bd",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "56b4788d3fff40118c1ba58fd106e6a9c38d7a02",
+      "sha256": "a86f67b6ffda253f58ce09d8102bcdd0a59e5848eae7564348bb802543059566",
+      "size": 791
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_rainfall_daily.bin",
+      "sha1": "537647e8e1969e9b684ef268bfd6128c9ae1c507",
+      "sha256": "6658cf75dfb51de02480275e69b337259db3c9032535309ed50ee9f3fb7e9d6c",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "818e3d82476b4891a2f8c8b2e9619db8f2f7c8ea",
+      "sha256": "49b1d61059a18b6f63c1b950107e7ab1aa446a06af9f1babc58fe0841a3ff034",
+      "size": 781
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "1c9f580d375db4a248268d66305f7291ba35e1c7",
+      "sha256": "cc45b9aac26d3cd4a174755e5993bc92226f8a57d196709bca1e22774bb108b3",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "425282590b62e178e5c21c3d3e36fa1fad81fa37",
+      "sha256": "8909378d52ada03fc88ce096b9d45cbc05ff9c7df60ed4fda262bfa587267e24",
+      "size": 781
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_single_node_demographics.compiled.json",
+      "sha1": "13712ef527d677fa392d42c113ee7bb881373e78",
+      "sha256": "e24887f6141c3cc00774c2ee1599404c5682a44b121c873b796f0026a7c219d5",
+      "size": 1966
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_single_node_demographics.json",
+      "sha1": "8ca341186a922349f137c335735b92bdf3f6dc4b",
+      "sha256": "17287c049532b1bab963be7ea72916029c1ff1f938f10525feab8b8d7b7991dd",
+      "size": 2596
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_single_node_demographics.static.compiled.json",
+      "sha1": "f37c47b1c05b5f1007b19b6045e573195dab36a1",
+      "sha256": "29a408c1aab68844a4fb8cbdb25a198eea62f557a7344ff11ef880963058b360",
+      "size": 1929
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Bakau/Gambia_Bakau_single_node_demographics.static.json",
+      "sha1": "9fb91f81194bafcd2af7298c6db73382dfdeed9d",
+      "sha256": "efa1270b7af98602a1e2a116bcf8772cdd6e3ea55bd97f654c577ceb991bcfc4",
+      "size": 2445
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "1c4304a80ab5b1f489a632d3c32a1a194c22efe1",
+      "sha256": "584273ab884ef49a88f0e49dd7dbb5bdbe2eea92840856ed9f4f9b27170aa271",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "4366cf69e7ecd828172f2af836cb88c43115d809",
+      "sha256": "71420773647f88a0742df4ed920a1141d85b40c2144071e814a024f61db4bcbd",
+      "size": 797
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "1c4304a80ab5b1f489a632d3c32a1a194c22efe1",
+      "sha256": "584273ab884ef49a88f0e49dd7dbb5bdbe2eea92840856ed9f4f9b27170aa271",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "2793fe042bec7bbeb9ae689dfe22e16f6fd139a3",
+      "sha256": "73a13496bc122943068de83831bb884496e749c45ab2f5aa5a7d3076b72c7e62",
+      "size": 814
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_rainfall_daily.bin",
+      "sha1": "5fb1a791419d5ba854d8a9231f0ae482587f920e",
+      "sha256": "af9d6950194074f3a82f52cedb800cfb88b3e8bd23303f656f40c4c497e362a2",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "c78c7b501ceef0613e59085de5f14ae8a3dcbc06",
+      "sha256": "c2e4e80927ef97c7a8219be9d368d91d1001eaf2d2bc3e60b3f0726c5257e7ef",
+      "size": 797
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "b1b2937326e5d5f694cc35ac99ece853bacc9794",
+      "sha256": "f76e397bd89961bb5109b639f5b23b0c27daddb65765fbe37ab3f3d5b304b69f",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_Ndiop_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "4366cf69e7ecd828172f2af836cb88c43115d809",
+      "sha256": "71420773647f88a0742df4ed920a1141d85b40c2144071e814a024f61db4bcbd",
+      "size": 797
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_single_node_demographics.compiled.json",
+      "sha1": "c2bc8840702e1b10925892e23e3de4b20b81a9d4",
+      "sha256": "0922893cfa7e1099ef5f9e92ea77bd1ccade4e9f70a16845099d4c936d29cb9a",
+      "size": 1977
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_single_node_demographics.json",
+      "sha1": "1f0144aea0404900137b4aa6d511a803e3476fd2",
+      "sha256": "367d3fc4186e92aed9d2c03e51111b6aec4f079d8a932e2ddf0ecfa17071656b",
+      "size": 2608
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_single_node_demographics.static.compiled.json",
+      "sha1": "ddbff588f9b02ae8c71911ee8219a2aaaf7cb1ba",
+      "sha256": "e3c951a27c84805439c8ec10e5fae49ac4b4ea9c233066d306faa565a7d4c49c",
+      "size": 1941
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Dielmo_single_node_demographics.static.json",
+      "sha1": "51c305c2ca35589ec8a3919fbb76944813264876",
+      "sha256": "6ce3cfeb4c346504252999f1a742d2333992287acb56fbb86fc5b93940734eb6",
+      "size": 2457
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Ndiop_single_node_demographics.compiled.json",
+      "sha1": "0813e646371ffdaa52aa6b38a8a086ae2b52c4ac",
+      "sha256": "4d5585d202eda14cedbe7269c0ad40dd1ef36bfebb78fcb14453b766d9191a79",
+      "size": 1977
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Ndiop_single_node_demographics.json",
+      "sha1": "0f5d97f40635d2b0c20df964cb84f24ecde8224c",
+      "sha256": "50bf0cfaebd0af0f425915198c618c0a44ecd4d7d0a4be34923e8b72a2b61d41",
+      "size": 2608
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Ndiop_single_node_demographics.static.compiled.json",
+      "sha1": "154b5a765fd53ad14162f426678e788129184b3f",
+      "sha256": "f1871af1196bf73cdf944deea992e5ef3e917c1ca4d63c2547195713028a0026",
+      "size": 1941
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Dielmo_Ndiop/Senegal_Ndiop_single_node_demographics.static.json",
+      "sha1": "7cb3c0521ce46e028ad7cfb6a556fab2d0f99fee",
+      "sha256": "60bab91011bb747ee90747a33b9cf9368ed621bce09ddbcd5f105a057fdbe3d1",
+      "size": 2457
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "e118c10d5530387b57f439c367e787a67e55fd6a",
+      "sha256": "1d9163b832c3c994e239d7d9b3e1c4ad794cfc23678f8b570d2744c58a6d0e7e",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "0520b8d6d422e53e7ae9f08fa1ad62e8a7aa14e8",
+      "sha256": "1f63ef13878c0f92bbcbaecbe1b5b225993d2499cb4ca30b1bae4b2d5f6bbb2c",
+      "size": 781
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "e118c10d5530387b57f439c367e787a67e55fd6a",
+      "sha256": "1d9163b832c3c994e239d7d9b3e1c4ad794cfc23678f8b570d2744c58a6d0e7e",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "b4025543b97de77874241c2de4ef57c4dc45977c",
+      "sha256": "1cbd9bed2b25c0152b98916e8989969ff1634348d2413a572d26da4e75b87779",
+      "size": 791
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_rainfall_daily.bin",
+      "sha1": "5e2e72aac38f8b1d3e368904b4cd459e560a87db",
+      "sha256": "b823bbce91bb13b0532f30acd57cc49296613b9bd97180b12a2e04396250dad7",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "97ef9a4e7fe10a898c4f8249373c28b8a42f92df",
+      "sha256": "69887c847916dd917fa55f8a06a4a6c0c3394796767a0bf7aedcd912a4066b92",
+      "size": 781
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "d68ba468a5b2fd830839606bfea7eebcb11d500a",
+      "sha256": "d04da45b0e0389a1c68d737797bc89a9faba2201ea1afa30822700c25a9844c1",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "0520b8d6d422e53e7ae9f08fa1ad62e8a7aa14e8",
+      "sha256": "1f63ef13878c0f92bbcbaecbe1b5b225993d2499cb4ca30b1bae4b2d5f6bbb2c",
+      "size": 781
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_single_node_demographics.compiled.json",
+      "sha1": "aa80966600a53b62c2e6565fadb22916771bc92f",
+      "sha256": "533194ee8d7eb1fc13568afc68ace20d9f866c6b1176c039643fe13be17119d3",
+      "size": 1978
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_single_node_demographics.json",
+      "sha1": "79d66e0b065639daae04bdae9f01821d5f7ce736",
+      "sha256": "d324d4801d27d7edaa6e28b90a295abad18848c579ae66142568f39fbdba01d8",
+      "size": 2608
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_single_node_demographics.static.compiled.json",
+      "sha1": "98a43e8266ece449f3c0fcfeedc446f7a0742ede",
+      "sha256": "41fb5dd3245b11d0f69343003799184fab1158ae1c32605509d50a8cf0150ae3",
+      "size": 1941
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Thies/Senegal_Thies_single_node_demographics.static.json",
+      "sha1": "8e93317f18ea93140aafb2fdc2e03bf60b8c8d65",
+      "sha256": "99004167e9b4fdc8c3ff1a5ab643e87b4c04f9546bf15574f0466744b566afd8",
+      "size": 2456
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "d183959b3eb101dc1c833b064e6115abc20b5e56",
+      "sha256": "c4cea25465986751500773fd62d3a740b37bdad5ee8cee355e1deefb77e98ee2",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "7b6b576f990cc9cc32bfca5a7d458d111e68bb61",
+      "sha256": "a41f3025080cdfd87054cbfd5ec5955e3631b9360b98eac51b8b572b1894d8b4",
+      "size": 166610
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_demographics.compiled.json",
+      "sha1": "0abeca0e1aded9ce18005ecd9ebc0fc52647afd2",
+      "sha256": "f3c51009dcf5656d5a4c7de437e71f85aecd2844f9e01e0627e7ff72f4ccfeef",
+      "size": 1628734
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_demographics.json",
+      "sha1": "da36cb6cee1ad79a22495e9a47d40ea8836a06b6",
+      "sha256": "819a4404a569bd2e4f2953f41905329dd7f9dac6af5a0856083dcc04ecf64c7c",
+      "size": 4189386
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "d183959b3eb101dc1c833b064e6115abc20b5e56",
+      "sha256": "c4cea25465986751500773fd62d3a740b37bdad5ee8cee355e1deefb77e98ee2",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "e2e834d22232384c1f8deb07f47285991e3add63",
+      "sha256": "855a6d033f1e39f938da264c28f2f2c54e002d0c17aa95909869c33c0f3089a9",
+      "size": 166614
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_rainfall_daily.bin",
+      "sha1": "a518346534ff53bc09e7b4a1f2d47fd994246035",
+      "sha256": "bb972858c36fb581d2ad1a0b335a49d8ce7a272d2a9e384d2ddde2eef10bbc65",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "35dab31423ad72d793c0fe0e83dff14193d10a3d",
+      "sha256": "e99468c8818b9c4252bb645e206b4722cee8ce3a26b1fb92f13239a29bee02b0",
+      "size": 166610
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "a435bef33c4ea37cd56a1b7ddde8cea1e3548573",
+      "sha256": "71432a23c09246d550b30869136cc42c3001fc7ffa95f6ad9fa089d9a54581e5",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Senegal_Gambia/Senegal_Gambia_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "7b6b576f990cc9cc32bfca5a7d458d111e68bb61",
+      "sha256": "a41f3025080cdfd87054cbfd5ec5955e3631b9360b98eac51b8b572b1894d8b4",
+      "size": 166610
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Singleton_Single_Node_Sandbox/Standard_single_node_demographics.compiled.json",
+      "sha1": "7ba793e714639925dc4a1c5474605c855efca180",
+      "sha256": "fe59d384777f7b8fa1465c8634e8b6d536285a578a7910450708bb9bbb1ba8db",
+      "size": 1091
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Singleton_Single_Node_Sandbox/Standard_single_node_demographics.json",
+      "sha1": "1da1573bc13369ec51de4df4e465cdc593d8983f",
+      "sha256": "5493f285bed9f7deee71fc748fe3440543d17dca8eaf6d630401673f3cfb72d2",
+      "size": 1508
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_humidity_daily10y.bin",
+      "sha1": "a807f50f371bbe1b088ca07debbce910ae8256fe",
+      "sha256": "d66d47dfd4ce7732a8a5ccde3533e39710fea5f96b4153c556f17ba26c6d5d41",
+      "size": 29200
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_humidity_daily10y.bin.json",
+      "sha1": "6fa60580c03fabb3efdaff3fbfc10c3864e949cb",
+      "sha256": "9a0951f3e810ecc03cedbe7045a51b5c06df4a6356eb55e6ba8e970ff5b26b10",
+      "size": 520
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rainfall_daily10y.bin",
+      "sha1": "5f9b44068de731d1b2cb9b4afdbb2ee478532934",
+      "sha256": "71ee6db70f994184efdb4797631c51c3dfe5fe2815f94aaf507aa7c78687fc79",
+      "size": 29200
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rainfall_daily10y.bin.json",
+      "sha1": "6fa60580c03fabb3efdaff3fbfc10c3864e949cb",
+      "sha256": "9a0951f3e810ecc03cedbe7045a51b5c06df4a6356eb55e6ba8e970ff5b26b10",
+      "size": 520
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rand_humidity_daily30y.bin",
+      "sha1": "aedf402b7bdcd43096d6ff2d0890454fc71d4d1b",
+      "sha256": "4bf94236ba2aace43ac493428dc1fc89c5459569aac0a896f62de2207e04296e",
+      "size": 87600
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rand_humidity_daily30y.bin.json",
+      "sha1": "ae53ae647284dd25a04115ee0f72ce760a940100",
+      "sha256": "3ea2a3c7560d0ec0dc77b74c12b057381593eb07e4fc64d70407019b90ea3097",
+      "size": 521
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rand_rainfall_daily30y.bin",
+      "sha1": "30a4a36c57394267195fd69f3477dbab03b9585d",
+      "sha256": "b4e54b7084c411178b8f51c015fe4fc5fa063910c140531dc68b1220d514615f",
+      "size": 87600
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rand_rainfall_daily30y.bin.json",
+      "sha1": "ae53ae647284dd25a04115ee0f72ce760a940100",
+      "sha256": "3ea2a3c7560d0ec0dc77b74c12b057381593eb07e4fc64d70407019b90ea3097",
+      "size": 521
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rand_temperature_daily30y.bin",
+      "sha1": "eafdb742a5e99babf74f1eead0dda5b8c9b615c2",
+      "sha256": "c0dd968c4171e145b0da6b4b0af4e429fe759b199c178b2fddff8f05accbd2a5",
+      "size": 87600
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_rand_temperature_daily30y.bin.json",
+      "sha1": "ae53ae647284dd25a04115ee0f72ce760a940100",
+      "sha256": "3ea2a3c7560d0ec0dc77b74c12b057381593eb07e4fc64d70407019b90ea3097",
+      "size": 521
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_temperature_daily10y.bin",
+      "sha1": "21e31eac119f68585dac6325e3f040e2e71ec313",
+      "sha256": "265b28eb178f355d0aa898c06b0a3967d3fb1026a229e9deb07be410afba5e20",
+      "size": 29200
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_temperature_daily10y.bin.json",
+      "sha1": "6fa60580c03fabb3efdaff3fbfc10c3864e949cb",
+      "sha256": "9a0951f3e810ecc03cedbe7045a51b5c06df4a6356eb55e6ba8e970ff5b26b10",
+      "size": 520
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_two_node_demographics.compiled.json",
+      "sha1": "cd9e3e34c8983b24cec20e08733043400d53cdb3",
+      "sha256": "6365be722d107bf2214da1385beb99bd0fbee288127b51a4955721fb4e82aa76",
+      "size": 1746
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_two_node_demographics.json",
+      "sha1": "010799c3abeea09cc882c76300b5eccef8fa77b3",
+      "sha256": "dc280bbadfe9aa3684d469ef45a1f5c2cc61032c570a45573015d82ce494b74d",
+      "size": 2361
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_two_node_local_migration.bin",
+      "sha1": "89a8aae2d28b18e4d064f45b4a0c4947ec86e7cf",
+      "sha256": "8244765a35ae2ca8a7cfa66ec515ea430b285316d52e837196dc3394f8e446dd",
+      "size": 192
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Solomon_Islands/Honiara/Honiara_Haleta_two_node_local_migration.bin.json",
+      "sha1": "8c0f0ae786a52175edec8e910b21585b26d0ce20",
+      "sha256": "d5778e28c8c2923807fe98dcf94a8ad7c9ade8a40abec83c1a4053fcff90316b",
+      "size": 338
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TBHIV/4nodes_local_migration.bin",
+      "sha1": "38b87c64e102dc549dcf07f2a5944622331df17b",
+      "sha256": "a5ef25b0b6d76b89f3c2f147db602d5dc0f3c9076030f856f1ab98a66597ca6e",
+      "size": 127
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TBHIV/4nodes_local_migration.bin.json",
+      "sha1": "3dcb31cae8489096932006535e9b1260dad96b3d",
+      "sha256": "5a893618eacc53a80072f2690a31fab7f4618187942000e615b325c1e2b2f264",
+      "size": 385
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100.compiled.json",
+      "sha1": "3fb844d1171008e05ab98700d21b32e946778409",
+      "sha256": "e45ae63cd9894e302b29f09a7fdfb65ca8bb52c27628556cae0e0cd5b7557fbb",
+      "size": 1760
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100.json",
+      "sha1": "bee66002e23ef3c6a0d55c38e7d79d24d391c3e3",
+      "sha256": "f838c976a271293b617b7fa149671d87e00d05a65db702049e93cdcd4bd4ddba",
+      "size": 2484
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_10000.json",
+      "sha1": "c9b15425ecba8d4750ce1846fcae7ab49fe02cad",
+      "sha256": "155f60c1098ab939dcc199d7783511908878eeaff593a3bf2402d4af7145efaf",
+      "size": 2483
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_age_dist.compiled.json",
+      "sha1": "1101cd247d7aab6f4890b01dfacfc3c44bf6804b",
+      "sha256": "33a9c76995576847f40733316f2a131739f53504ffe16518b4a58d0844dd36fe",
+      "size": 2033
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_age_dist.json",
+      "sha1": "397b0b9f715cfe0a7b3d8fa2c071a5cce9439955",
+      "sha256": "406c27075eb3bce0eb77b47218112cf2f834bad2f16a8d7d60c273dedae09e69",
+      "size": 2994
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_births.compiled.json",
+      "sha1": "b2c6feb6c508e08021af292059a1d2a2e04910e3",
+      "sha256": "0f83007d77ddfddb994ec15259db32ba5a6ee7c835b2739d1ea0cd8a8ec1dd22",
+      "size": 2375
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_births.json",
+      "sha1": "26a3df14e6c1043780060516d820231f587df9fc",
+      "sha256": "c92efb8a87da76e09487123299342b4fb03c517d5b52752591e646d394c389a6",
+      "size": 2984
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_mod.compiled.json",
+      "sha1": "14721e4ce977454a76ecb1aae5e8dc072509bfd2",
+      "sha256": "0b6b8e9f1f2f46a8ab4c73b749738ac5f1774ad423aedf41dcbf189e1a276838",
+      "size": 1809
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_mod.json",
+      "sha1": "0a4ff412d0fd43991ff2827cc2c486b5e7359d93",
+      "sha256": "194c1b2db9a1ad5ec56844c7b5278a64aeafb421b8196842c51cf1d94fd7f20c",
+      "size": 2218
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_young.compiled.json",
+      "sha1": "a627a317f9106b08c0d8e6a3a1626e70b1f18d64",
+      "sha256": "d56a8685ba83731fb9dcd2d2864dbff1b7a827f4b89345a39cab20a621aed397",
+      "size": 2375
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/TB_single_node/Single_node_demographics_100_young.json",
+      "sha1": "f13bb086247349e5d2b70126036076b3fe96369f",
+      "sha256": "e1dfd0814e8212edac21f85c8ef6aa73136d38277ba0803a9200b6ad5cf92f83",
+      "size": 2941
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/LHM_Restructure/Munyumbwe_households_all_demographics_MN.json",
+      "sha1": "15bc048c5cb11976252402bd6808bc794559ec51",
+      "sha256": "7b28df7487a79645827ca310f4a893c32da301e5415c33d8042d1cd643c25688",
+      "size": 1947974
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/DefaultGeography_LoadBalanceScheme_8_cores.json",
+      "sha1": "c1a007a8cf61703d8ba725182aeae4e21c7d9433",
+      "sha256": "4e8a3f13074f613367ac44e6f4e22a588f55980460343480c10006a5b5670793",
+      "size": 443
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/GitHub_426_LoadBalance.json",
+      "sha1": "bcc7d6929ddf014b21dd45c368b5cdf885d21253",
+      "sha256": "731986d64a2e8c01f78a34d43b9f626a73b0285f3cdfb8393ec070df2109eb38",
+      "size": 118
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Kenya_Regional_Migration_from_Census.bin",
+      "sha1": "e548568f6f8c4a9e9a6e020dfc79a6e5bdfdbb6a",
+      "sha256": "cab61c74af357c1d6be564314f7af62a7376b5373d1ba1dee9d2360963ce02b7",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Kenya_Regional_Migration_from_Census.bin.json",
+      "sha1": "f85ee1fbd900472dff4b70b5826cc8078f24ea62",
+      "sha256": "c9b7968f2cdaa6d48ab6518f7a882e0da6b54e07346e9c18a0f9cc4d9348c8a3",
+      "size": 783
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_air_temperature_daily.bin",
+      "sha1": "698fd4670e6ede1f4e1e65e3dbc00539e93f295c",
+      "sha256": "fd77dfe1102cf3b629f1ac055ad7f1338b05af09f2d2937145ac1cbdb4e9a2d9",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_air_temperature_daily.bin.json",
+      "sha1": "1126c0bad9746d87c64dceec89054cb2c6275cc6",
+      "sha256": "712a62b1c840724c8942cbe96c236e44d20bdf79be65d4569816b6fb5b211dcd",
+      "size": 2183
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_demographics.json",
+      "sha1": "7c765ab7b832d81a8bf7a905089e6be465c9278a",
+      "sha256": "39d91255777de2dca9aaafcbcf246f90a501a53e8634f8fe1f5b2348de5619fd",
+      "size": 36446
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_load_balancing_16procs.bin",
+      "sha1": "db7af0ccb467220fdd9831a057a02c5b6eff2381",
+      "sha256": "df133c396384b57e6b86905238c1c0b443669ae44ec75666d469e6ec4f8512a3",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_load_balancing_32procs.bin",
+      "sha1": "996a5a193d601f999425558b402a05a0bcc79041",
+      "sha256": "c7a39a178e852dd2feef8eb1abf25a37bf3851afad0727b8bed130551431dab4",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_load_balancing_4procs.bin",
+      "sha1": "90feab52a3fad64f3aab5ea2f0d216c12d5dc186",
+      "sha256": "1587eae94416f33dab79e764e46951534c2d81b28a608aea1ce22f116961b3dc",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_load_balancing_8procs.bin",
+      "sha1": "cc75a2f890c5b61c27cb6d39468a275b4c472cc9",
+      "sha256": "313f4b3fb3692aa1671d2905c5944c6855d92bd619cdd4771d4ec154e431a5cd",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_rainfall_daily.bin",
+      "sha1": "29e5bb011de188a1433e4313c219cd880716ca12",
+      "sha256": "e12269676188778b8148df6728252fdfa8bf869e979ae24275a96a24a8670c33",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_rainfall_daily.bin.json",
+      "sha1": "78bb5483ca891f4d9a3787afeeb9cabfebfc674d",
+      "sha256": "ecab64125eab3c841341ec34bc3aa5984792704a9013435db7e837738ddb14bc",
+      "size": 2171
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_relative_humidity_daily.bin",
+      "sha1": "80581f7f01c05283bd8a59021d0c95617d8e5ea0",
+      "sha256": "77569893a0b23688c36f65dd51748f523f3fc91ef1e648ca672b194418c9ff22",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_2.5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "1126c0bad9746d87c64dceec89054cb2c6275cc6",
+      "sha256": "712a62b1c840724c8942cbe96c236e44d20bdf79be65d4569816b6fb5b211dcd",
+      "size": 2183
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_local_migration.bin",
+      "sha1": "3e6e79fb7bdf594185ea1db2418035e0d3049d3b",
+      "sha256": "0fb6c5ae864b42b7a5b8c03042cfb91f278356dce4c74a08b0cf1044d7605c13",
+      "size": 129
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_local_migration.bin.json",
+      "sha1": "08bb7de4ef8a5ca4c3889a8aa32a17b7b84ca1f1",
+      "sha256": "bd497f58a3dab0df2ca233ccbad335309e3ab58c071987dc315d7f05cda44bdf",
+      "size": 1606
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_sea_migration.bin",
+      "sha1": "85a41d40ba19cbb86cdbc56bf1032f43b124d61f",
+      "sha256": "c605c0f3962aa2412a0f9bce82136bf235ebb3dad64e31196c83eabe78baedf6",
+      "size": 129
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Comoros_sea_migration.bin.json",
+      "sha1": "dc62e7f889867a03834ce59359eb209091eadea4",
+      "sha256": "648f87ce83f6cd2c70ed368785a5a79acb09f575d5ab0aa944ca427fab7d1a1a",
+      "size": 1606
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_air_temperature_daily.bin",
+      "sha1": "0f22494579c6adf1322d278ad9806cd1643815fe",
+      "sha256": "c9bad87c626fe1e0815dd882d9acf6ec1d807ed8d2e585e5d4aa16480c630ced",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_air_temperature_daily.bin.json",
+      "sha1": "36e0cf8f37e8f97f1de84a109c2aab2fa300f8c1",
+      "sha256": "f7d316b44f79883f9473b5fb35db57f1a0759a879c79a28f89607cca78c18659",
+      "size": 1096
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_demographics.json",
+      "sha1": "2fdd80cc97db582a0013a2713d53e21fd65ba27f",
+      "sha256": "aa4cb9d513b98fea1974dd12f57215871fe8887bad70d35be924565572b9ebf5",
+      "size": 8472
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_load_balancing_4procs.bin",
+      "sha1": "3455347d7a53e2889d18d71dab8281d1136bf8cc",
+      "sha256": "e7d2102721cf00376717e1bf4504ead0206f75971d8c8ec4ea6f8c8acac437ea",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_load_balancing_8procs.bin",
+      "sha1": "0a01c7193adc05d87b659506deda30d507f9289c",
+      "sha256": "c4e5bec15cb191090f007284241292b9a832b4555b670b6b1874c5424a0361cb",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_local_migration.bin",
+      "sha1": "518ba540e440e50b18275b9d66eeb6fb8e2a3a4a",
+      "sha256": "265e8228861b081472fb231551618f41af145e5717c8a5891dcea6d477cfcfb3",
+      "size": 129
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_local_migration.bin.json",
+      "sha1": "b472473a4de55a8542db0b4bf2b05a4915b5ab48",
+      "sha256": "0640ad7c7f3b54e72bc6450bd7f56af718d87800ee1448d12dd0b5902d20d0a8",
+      "size": 518
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_rainfall_daily.bin",
+      "sha1": "419957072798872d52df1cdea2520efb62b6dfd7",
+      "sha256": "8e2357613dcaf308689a0cf5ea2279fb02371623d6c694c564fe15b714babf83",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_rainfall_daily.bin.json",
+      "sha1": "6fb55b0a72743d0b269619386e7ba05acfdaf31f",
+      "sha256": "7a32aa488f37a5cd7fa1dff57e9b98e0ea0bcf3f3ef574b2cc4210fc8ff191d9",
+      "size": 1084
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_relative_humidity_daily.bin",
+      "sha1": "ffb9737732b4f98a928bd7bf6abd2c4e281123d6",
+      "sha256": "c01ec321ed805c093da2f4714d04f43a4ede3b96dd68ca79758a8bddda8c7422",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Madagascar_Nosibe_2.5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "36e0cf8f37e8f97f1de84a109c2aab2fa300f8c1",
+      "sha256": "f7d316b44f79883f9473b5fb35db57f1a0759a879c79a28f89607cca78c18659",
+      "size": 1096
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/Munyumbwe_households_all_demographics_MN.json",
+      "sha1": "717f7013b99665550b79342cc1b7f38962517a12",
+      "sha256": "8da9f8eba605b71f1c1f304dcfdfd5c122ba17ab23879643d72e7154fa8ad6d2",
+      "size": 1203035
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/munyumbwe_24_cores.json",
+      "sha1": "f86c97df1c8e62437e629f72fff341413cf0ecff",
+      "sha256": "431cfe21658f195e65a6df6a0cd4b78ee72c1c3609a9f6be5a643c833b29272c",
+      "size": 8070
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/pfa_infectious_test_overlay.json",
+      "sha1": "82cc86dac8264535216b01cd6fd82ad97e1d7d49",
+      "sha256": "c8c628da5d07320870e6e3e889949d754d73d2db9bcc669a7c7048e58745107f",
+      "size": 12261
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/pfa_infectious_test_overlay_f2m.json",
+      "sha1": "3c89d8e7a0f901c95b0fd34f703ee66676528722",
+      "sha256": "b8ce1bfb9f90961849692fc71a468f122cbb94d687773a772797c53332fd3204",
+      "size": 12278
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/pfa_infectious_widows_female.json",
+      "sha1": "dc8a22ab73a77f68a4fda674c93a02e8c2d9d6a1",
+      "sha256": "353f2974a3a5afffc5602a3a8dca7f42b0ebb3e30587afbe0ed3a5dbab18dd25",
+      "size": 12720
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/pfa_infectious_widows_test_overlay.json",
+      "sha1": "6ef4f595766a90ccde626639d95118450ec92bc8",
+      "sha256": "26633f6ee636ae44dfbe756cafd93458faf68ff20812a40c0ffce840b24c3665",
+      "size": 12380
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/pfa_overlay.json",
+      "sha1": "adee887a2fd8fab5c3592dea310f3dd2a3bcd77a",
+      "sha256": "62659d7b05622a2b9dae5cf7e2b66530a28eb042813afc4b0951f8148dd891d2",
+      "size": 15538
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/test_single_node_demographics.json",
+      "sha1": "10fa778dfcc1c48d8b8238cb08145250ae70b446",
+      "sha256": "b7d9c068280cc7da4315f90ac22dfd73dd12d8adf1ffb8f2d205109156526d9f",
+      "size": 2211
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/three_property_overlay_transition_demographics.json",
+      "sha1": "541b4660fc36c5782f3efec08f0d4436a9b3c0de",
+      "sha256": "d3dd3c29789e063e4d642809c5b6065138a8ea5c83eaa1e3a90f208dfd80eae2",
+      "size": 1886
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/uniform_20_to_21_overlay.json",
+      "sha1": "10057d5d50873d0780583670e379e2f16a80dab1",
+      "sha256": "496378542abdd8c91e9fc0013aaa15649bff9a98db096ab060f9c915ee37269f",
+      "size": 479
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/uniform_20_to_30_overlay.json",
+      "sha1": "dcf18169a8d26f41c788bce61e272df16ec16f05",
+      "sha256": "71696ff82b537cc3ea7a1997980a567dac21c9341db1fc9afbf98d74fcd27a09",
+      "size": 480
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Test/vital_dynamics_test_demographics.json",
+      "sha1": "8a9c526c259d576d85292d105aac8a313b1856c5",
+      "sha256": "329e0f2f419ca452b432458e7717098ab272dedbbba35f8e78982609e57e5b22",
+      "size": 6124
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_air_migration.bin",
+      "sha1": "c690ca714f641f283829ae4e5b97a42124a47c0d",
+      "sha256": "b23ecdedc4c8afbbd02de51394dec85272de1755c628c947bf236f6e519a90cf",
+      "size": 133
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_air_migration.bin.json",
+      "sha1": "9d2dfcbc686b79d045d12b2444320fe646d04b90",
+      "sha256": "877bb6d6d17094590d6da52a7cb46a9b238b5ad17bd8a6736c5b2347ea6e4030",
+      "size": 289157
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_demographics.compiled.json",
+      "sha1": "7b0842d1af4c2aedf2e617dede0496c0fb30470b",
+      "sha256": "f1f3bd73c93ab91c53a3d0004263628cb29b81f5b8d497b37b6302c72cb482f5",
+      "size": 1257079
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_demographics.json",
+      "sha1": "1ba6c416dbf195e740051b853a7c6877d69f1f64",
+      "sha256": "4880c03aa6e53b3e9ce716c51baca23f3ee79d69ea59cadd218ca1a9d373ac43",
+      "size": 4297703
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_koppen_climate.bin",
+      "sha1": "33321cea11152d28002741693e98acf44bbef45c",
+      "sha256": "00c566fddc29f32d1a94a997a22d51b1af9c5965d80aa3e81eb8162443ce9fd0",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_koppen_climate.bin.json",
+      "sha1": "5ad6d43a1c5cbd119f984a8622711d2e1cd39e1d",
+      "sha256": "f6e67335943d295393787e90261b0ae7d52a1efc1aafb601d73ab879b5e21237",
+      "size": 289232
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_load_balancing.bin",
+      "sha1": "c72b9d33dff3bf16c15fa851bcf513d992483169",
+      "sha256": "dbac5c6317288f5f89b5de0d3d11cdf7a53628d15a8a5e2454e9e5f0d3d1f248",
+      "size": 131
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_local_migration.bin",
+      "sha1": "e44fb62ceb60887229b5cf63a3e841a13898dca5",
+      "sha256": "27e0e3a1927bbf91ff48420269ef4c784bb2edb812428173d6909fa2020f23c5",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_local_migration.bin.json",
+      "sha1": "257d2c91b9fafa51acb5385832ee4290dd1c6a7a",
+      "sha256": "58df2a396121bfe113b4dca74be47a8e4de815dc4c38ed64a7d5362cfe319afa",
+      "size": 289156
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_sea_migration_1918.bin",
+      "sha1": "49bc5614fde8b11992a0907d6e2aceabcd017566",
+      "sha256": "0018e2d92af20ea7be5273ddf842aa962ceb3b32e53ae7efd7f3094701d0f193",
+      "size": 129
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/World/Global_1degree_sea_migration_1918.bin.json",
+      "sha1": "e2021ad12009edeb94bd715171e63353ddaad6b0",
+      "sha256": "de1acf10492ff0f23418a7a45678e3a9271c7a32281477e604d5618249391e05",
+      "size": 577
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_1_node/Zambia_30arcsec_air_temperature_daily.bin",
+      "sha1": "0a9272c51d15d99d1842603d8f3bf599a9f0df39",
+      "sha256": "dca9eedbe356bd0cb53d70429e9036fe52795842b99149314afe39e0fbe95c58",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_1_node/Zambia_30arcsec_air_temperature_daily.bin.json",
+      "sha1": "b8df8dfae68a348d8014b2c2b12c2b70b963f12b",
+      "sha256": "2c0144de64b3987b763285fe8b0f5d2707535ff36f59cf9ee155b649dc3d0dfa",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_1_node/Zambia_30arcsec_rainfall_daily.bin",
+      "sha1": "c1e8d42b37eae8cc44b7f31b79bd82418b15b1bf",
+      "sha256": "972cbee6020ec670ebe21be740d176a199150aa384f0042ed4f4a1686506ef9c",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_1_node/Zambia_30arcsec_rainfall_daily.bin.json",
+      "sha1": "1c5f3e42dcb2347ed6fa1ed2a1c351339d9b2906",
+      "sha256": "bdb388409e7e942f90442cf063790f5d963dbea43de054cd728e88e7c0aec69e",
+      "size": 885
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_1_node/Zambia_30arcsec_relative_humidity_daily.bin",
+      "sha1": "6d30103513c4426c31e18aac6bd8e907f4b682a2",
+      "sha256": "e34405f8a608174f0124d37ae54719b956133e0767118893b583600b0590d852",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_1_node/Zambia_30arcsec_relative_humidity_daily.bin.json",
+      "sha1": "b8df8dfae68a348d8014b2c2b12c2b70b963f12b",
+      "sha256": "2c0144de64b3987b763285fe8b0f5d2707535ff36f59cf9ee155b649dc3d0dfa",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_1_node/gwembe_30arcsec_demographics_alt_1300.json",
+      "sha1": "57f1df27c1c66f41a2c041ec1456d2ecfe2108ce",
+      "sha256": "8fe984c7ebc7dc982d1f60820b5e303264b1adfd6927e60137636374624a83bf",
+      "size": 1992
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_121_nodes/Zambia_30arcsec_air_temperature_daily.bin",
+      "sha1": "79876e629d4a2cbbf9ee62da96be0d5fc32a9cdf",
+      "sha256": "fa137bdae87ae93294aa4ad7e7131a77a59d14411a3b26da29b58331e8d05f41",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_121_nodes/Zambia_30arcsec_air_temperature_daily.bin.json",
+      "sha1": "67bfc5aa343e00e3c23988dd5e79bd6c402c6a24",
+      "sha256": "1dfdb6f1e7c3b83753be822aa2b05df6f109d5f8da2c395a1775ebfe30796dcb",
+      "size": 2782
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_121_nodes/Zambia_30arcsec_demographics.json",
+      "sha1": "3137991a6d6afbeb4f9d1e9721482f081a0101ea",
+      "sha256": "425b5ef2d2c6a8113ed9c73ccfa218557953939576628dbcdb5b9ec11cb0181e",
+      "size": 36684
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_121_nodes/Zambia_30arcsec_rainfall_daily.bin",
+      "sha1": "8d630462394765d1b062a79eb060057a1c46a9a0",
+      "sha256": "4e2fb540234459c71edc8fe61397cc24c057befb947640def53e24f0a541126d",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_121_nodes/Zambia_30arcsec_rainfall_daily.bin.json",
+      "sha1": "49763ae452a3701f548faff95c06691d9430f993",
+      "sha256": "77d0185c5af2a1ab468fcc00a11bc57aec5d05be0f5a64c9d690bf3c2e0f680d",
+      "size": 2811
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_121_nodes/Zambia_30arcsec_relative_humidity_daily.bin",
+      "sha1": "2fe18884630c88e045b3944392d215a15d4df178",
+      "sha256": "715a8ecc771af39d791fcc918155588ebce01839e46e24401267fc1f4e3dfee1",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_121_nodes/Zambia_30arcsec_relative_humidity_daily.bin.json",
+      "sha1": "67bfc5aa343e00e3c23988dd5e79bd6c402c6a24",
+      "sha256": "1dfdb6f1e7c3b83753be822aa2b05df6f109d5f8da2c395a1775ebfe30796dcb",
+      "size": 2782
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_air_temperature_daily.bin",
+      "sha1": "8aac9ce14f5d91ace2de7a6f4b0fea21c13a4765",
+      "sha256": "4144d899b749fd6b9e959939860c0d7f6de6e5f9fb61757b7cb8c29680056a7d",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_air_temperature_daily.bin.json",
+      "sha1": "519d107c38419c90518f5a2fea20502e2cda1d89",
+      "sha256": "20d1dac1f513510412410c5edf86cd207e05e6bd8a6cd7a7937c28f09a212d38",
+      "size": 2707
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_land_temperature_daily.bin",
+      "sha1": "8aac9ce14f5d91ace2de7a6f4b0fea21c13a4765",
+      "sha256": "4144d899b749fd6b9e959939860c0d7f6de6e5f9fb61757b7cb8c29680056a7d",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_land_temperature_daily.bin.json",
+      "sha1": "9568f6421f8d5fe249671c8e73c8862bd80fbf88",
+      "sha256": "dfdc22f8870eb746190ed6338df37561fb6ac520d0b5cde111394cb51e43c335",
+      "size": 2721
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_rainfall_daily.bin",
+      "sha1": "3aaf647ab08ca1883ee976d3d9b92c797787d435",
+      "sha256": "12c5097dec425d673ff3da23bec1aaa103f3f39a67c34aeb3441f47a27a565b1",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_rainfall_daily.bin.json",
+      "sha1": "ef7be86001cc70b2c2c4e11b075769bf7cc1658a",
+      "sha256": "b65843f0e84c0e6081b94e38bd7e43e57c31ac758423815b2f37c0303c1fddf0",
+      "size": 2707
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_relative_humidity_daily.bin",
+      "sha1": "b693e581c6b6be205843a841aab954fed5edb8d4",
+      "sha256": "1267234b1837390fe5c5e2e6a96b0d409463feabcb1790da4c39eda7681a535b",
+      "size": 132
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_30arcsec_relative_humidity_daily.bin.json",
+      "sha1": "519d107c38419c90518f5a2fea20502e2cda1d89",
+      "sha256": "20d1dac1f513510412410c5edf86cd207e05e6bd8a6cd7a7937c28f09a212d38",
+      "size": 2707
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_demographics.compiled.json",
+      "sha1": "dc15d533dbab094770d066fe7732af5b4f9c9f6c",
+      "sha256": "a4f8f4e52c9f27a3707b663b34d0dc893229a71f1b8a4da9220f581d2e6cf81f",
+      "size": 17742
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_demographics.json",
+      "sha1": "0997d491c018b54d9e718c8eb522719eed511928",
+      "sha256": "fee82121b30c0fdbfab5e0dd9ae1332889c114a533e224eaeb1a14c7679e0757",
+      "size": 41187
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_loadbalance_12procs.bin",
+      "sha1": "6179f63c3a97b497d56dc728b9714c544ab3dfca",
+      "sha256": "0a36da67ba035b2424da69c90723256026c64ed4f0daab1b093247c879e12bd7",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_loadbalance_24procs.bin",
+      "sha1": "72e9109a8eab81005f949a69a6411c2e5ca23f30",
+      "sha256": "c7852b05d719c6bcc99491041bc6f1abd814781b305809ee3c6d9718e156ac0e",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_loadbalance_4procs.bin",
+      "sha1": "7d02700e70ce7c685f258e788457aebf10e911ab",
+      "sha256": "39de8506c5900eb985c049826bd5c1ec01b7c5150fe260dd9e271cab8abbc4b7",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_loadbalance_8procs.bin",
+      "sha1": "5be37856f02b2d78e33093c1e7dd329d41b4c76a",
+      "sha256": "1c7bf57231a7791054e82a4e021c34c44f27c0240b5bac9fc0eabcff979a562b",
+      "size": 128
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_local_migration.bin",
+      "sha1": "b8a0f5780367a48b3fefd6fd952b0180c7576c8a",
+      "sha256": "4043bc90c1dc02b013fa6fa5ce375a04605417b64df826622179dc025c075da0",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Gwembe_Sinazongwe_pop_cluster/Zambia_Gwembe_Sinazongwe_pop_cluster_local_migration.bin.json",
+      "sha1": "4df7d01a7b5881305f1e68ce50d7cd9c19330af6",
+      "sha256": "8fe3b04d4e3a0190b265a6f5a0296df3e9b3395877bd67b0e19db0cc55034996",
+      "size": 2163
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Lukonde_1_node/Zambia_30arcsec_air_temperature_daily.bin",
+      "sha1": "52ab8b4fb90d6ed168f2c0a92aa43ed6e6b396c4",
+      "sha256": "28dfae052d963f91cdccf71fda6b36bcb5d481e5a6b2790ec209fec55e5ecbcf",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Lukonde_1_node/Zambia_30arcsec_air_temperature_daily.bin.json",
+      "sha1": "6278b9c7f176f15a38d00a699081c951a57f1d68",
+      "sha256": "108afc77d6587fe6dc589e6615a690e66d0241de9a98ec0cc12537a0f46db9e4",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Lukonde_1_node/Zambia_30arcsec_rainfall_daily.bin",
+      "sha1": "7413a0c1158d42c5e23f713062b0bfc2e81e46ca",
+      "sha256": "8f93a54028f07f08d264289d3c50ffe45ca0721d8be503151f8ef0dba291ca20",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Lukonde_1_node/Zambia_30arcsec_rainfall_daily.bin.json",
+      "sha1": "1feba1f71f6cf6f14ae8357f087711ee5ad32492",
+      "sha256": "f11f6f10a4a632d02ee3160ab53ff0fe108b5862c527254bb284a536cc2e908d",
+      "size": 885
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Lukonde_1_node/Zambia_30arcsec_relative_humidity_daily.bin",
+      "sha1": "9f68c02be17901b3ad212b3001cd90ed3761ac89",
+      "sha256": "6c995b2fc652a06ed867bf751f6bc5a5df40abcddb08dbe445cf1112c7b780f5",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Lukonde_1_node/Zambia_30arcsec_relative_humidity_daily.bin.json",
+      "sha1": "6278b9c7f176f15a38d00a699081c951a57f1d68",
+      "sha256": "108afc77d6587fe6dc589e6615a690e66d0241de9a98ec0cc12537a0f46db9e4",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Lukonde_1_node/lukonde_30arcsec_demographics_alt_1000.json",
+      "sha1": "caf183d2e2bdc0c5f492959c72199696befe65d6",
+      "sha256": "9e0384c71ce1209e79fe7a664fbcdb50279ff9004039bc31610af59acbd000f2",
+      "size": 1992
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/Zambia_30arcsec_air_temperature_daily.bin",
+      "sha1": "5f1dc9594051afbbf5711f4e7893eca958a48f75",
+      "sha256": "e707e1a85b1c73abb648203cd95f5c7ab4fc56ca29eec27f9f24eb22e95fdd83",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/Zambia_30arcsec_air_temperature_daily.bin.json",
+      "sha1": "5311d8c2a5afcedf88c16c77d65f592eb87e137d",
+      "sha256": "0481a6e0dcefb90a667ffa29fb3e663464afc1a6238181c787f64e8daec72ab4",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/Zambia_30arcsec_rainfall_daily.bin",
+      "sha1": "491376dec375aef63f172116d90882b22cf3b88a",
+      "sha256": "b9e4f4e270708fbd886c3e73a61e6015c7b26c0222094b4a365215d34f7c79a7",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/Zambia_30arcsec_rainfall_daily.bin.json",
+      "sha1": "c9b3965bff9909111970eb8ceeecc5e403726af2",
+      "sha256": "a25a9e14857cfb42dafd1895a84d90223f1c8d5a113c31502ca5c8f447185e93",
+      "size": 885
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/Zambia_30arcsec_relative_humidity_daily.bin",
+      "sha1": "cbaea740ae8b522fac502d56fa652ec984063070",
+      "sha256": "da221e77af70b0b9c7a6cf78ece32566ab2df91cb472e9ce5c5b9a740adaa136",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/Zambia_30arcsec_relative_humidity_daily.bin.json",
+      "sha1": "5311d8c2a5afcedf88c16c77d65f592eb87e137d",
+      "sha256": "0481a6e0dcefb90a667ffa29fb3e663464afc1a6238181c787f64e8daec72ab4",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/munumbwe_30arcsec_demographics_alt_800.json",
+      "sha1": "4b0a68aaf688ef9efe3449a76020a2bae0092dd8",
+      "sha256": "6c0f182a986d8aa5322e50379bd675c2cbff853e92e3b1e84f7ecfe675ca5a6f",
+      "size": 1994
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Munyumbwe_1_node/munyumbwe_30arcsec_demographics_alt_800.json",
+      "sha1": "e05ec6a50cb8c932f6d84a0ccbdddc9a40a49282",
+      "sha256": "0a10fcd2b67d0e4df949a11d92cbc275a9890fb0ded43581d5e1dd99046c89df",
+      "size": 1953
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_1_node/Zambia_30arcsec_air_temperature_daily.bin",
+      "sha1": "b43f724efd098ef5ce2ca4b7119947eeb7c13b31",
+      "sha256": "57c63a9acfbb6aa4eac0c5b17f7950e5589d9234af9bd453536d87b6520fcc2b",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_1_node/Zambia_30arcsec_air_temperature_daily.bin.json",
+      "sha1": "bfeda0e463d4e8afeb3ebd645ac0cadb847a861d",
+      "sha256": "f391f44e816d5cda265c72c52a370e2f20da42568e7528d9cbb99cbf9313312c",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_1_node/Zambia_30arcsec_rainfall_daily.bin",
+      "sha1": "6fc038fbacd0ba72977076b8a6603975ab0ed6eb",
+      "sha256": "ae8f846bc4badec3f2566678ad944d0699d9345a17c95f5855bf46bf3a5bcf11",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_1_node/Zambia_30arcsec_rainfall_daily.bin.json",
+      "sha1": "f62247d0208c8b76df6432afcc1f84bc99bd05b2",
+      "sha256": "dc172e96a14defb2683b415f349fd2cea3897d249cf0fca35aca76389d6089b3",
+      "size": 885
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_1_node/Zambia_30arcsec_relative_humidity_daily.bin",
+      "sha1": "cf41a5a5132b1e53bb1302194ec9df5785dd0253",
+      "sha256": "2f900417b68931f07b9f5565c41e53e36a85e7f631b6d5e81a10fa6fe02af89e",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_1_node/Zambia_30arcsec_relative_humidity_daily.bin.json",
+      "sha1": "bfeda0e463d4e8afeb3ebd645ac0cadb847a861d",
+      "sha256": "f391f44e816d5cda265c72c52a370e2f20da42568e7528d9cbb99cbf9313312c",
+      "size": 856
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_1_node/sinamalima_30arcsec_demographics_alt_600.json",
+      "sha1": "03e559e16b7239d8a8df1a2166e522632f31c341",
+      "sha256": "5d247736ad1c0adccb995e41f7b23dbb2bd56f359ed24c2c674e3ad0a5a01951",
+      "size": 2000
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "fd1a4fd93987328a02022e7d9ed5b05d510ab788",
+      "sha256": "10eeee72ec6775e92bf014fd9886ce96850852f964b1b2e342b1c8280798ad0c",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "f4ad224dd1a4b3c2ca3dba368da38c9435b1df43",
+      "sha256": "8505ba5e080a61dbc30e6ace763702ce8790a861892271996c053e814c37377a",
+      "size": 858
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "fd1a4fd93987328a02022e7d9ed5b05d510ab788",
+      "sha256": "10eeee72ec6775e92bf014fd9886ce96850852f964b1b2e342b1c8280798ad0c",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "b720b952322fcbe662b66dddbe789de7556ebc1d",
+      "sha256": "8ac9d94a2bb78122cdbc0f1e6698c06df85bdbcb3c4e264609e69f036da5bbe4",
+      "size": 865
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_rainfall_daily.bin",
+      "sha1": "1919aa36482525f78bf08fa0b48a656c0f04e7b9",
+      "sha256": "185e27689a0bf671a32ce4727eeda5532b8fd498024763e9f7391e0f2512c6c0",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "7435685f3e394e108709b1c4483277830bb3db37",
+      "sha256": "d9ea72a800aceb927456fc8de9ad79d92b780dc5ad9c89efc4496d95d4b80a85",
+      "size": 858
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "666ae400305ac6d34c7db4aa8bd2d23ce446b743",
+      "sha256": "a781a3e50bfec0dae1c305ce2a607ffedb3dc5bcd321594de89595c28468bbd5",
+      "size": 130
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "f4ad224dd1a4b3c2ca3dba368da38c9435b1df43",
+      "sha256": "8505ba5e080a61dbc30e6ace763702ce8790a861892271996c053e814c37377a",
+      "size": 858
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_single_node_demographics.compiled.json",
+      "sha1": "a31c07ad9460c64f8495449488dfcfdaca76dc89",
+      "sha256": "56129441ccf2a198005ac99dae73f83ea159ebd92a264a367a90940f46dc202f",
+      "size": 1680
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_single_node_demographics.json",
+      "sha1": "ed8f9c8c7e089e423cbbe5ce17578a71de769177",
+      "sha256": "49ce6839dfafac7bf050bf1b366e83d3a7c9be7008fddef751af6d1a6be5fd71",
+      "size": 2386
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_single_node_demographics.static.compiled.json",
+      "sha1": "fec10506892f7b5e9af9a9847e6b8e554fd10afa",
+      "sha256": "1a925b32ea51f8058d926119794c9384dd386506f0b50910089759e1ab8afd96",
+      "size": 1619
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Sinamalima_single_node/Zambia_Sinamalima_single_node_demographics.static.json",
+      "sha1": "dacf45f6948e5e657939b6a13c6a2f0df21138e9",
+      "sha256": "9df9c19317b9f44435295ed99d563a76e8ecad006e8eef9dc965c2e87c5504bc",
+      "size": 2174
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_air_temperature_daily.bin",
+      "sha1": "8e31b6e1615f8cdbde1fb53499a38356fed4398e",
+      "sha256": "998246743cd06819738cfaae43c233840ee26c5de79917143cf5927cb0a6a01e",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_air_temperature_daily.bin.json",
+      "sha1": "21882f4ce53e058acf2757259f0a2e9574477ea8",
+      "sha256": "405aa1afd6104182b5923b58d69b5813d552c2e794ec7bb7e521475b8b7adbe1",
+      "size": 591143
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_demographics.compiled.json",
+      "sha1": "858079bbfa587702fffe85a595f6a58750067709",
+      "sha256": "590e074e24ade08690f5084bdca2f89b958e839f0683f59b7ae4e20bedacc622",
+      "size": 5747881
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_demographics.json",
+      "sha1": "8dbca21c44f0c194f1bab53f4f53c678dbe05832",
+      "sha256": "6a1fd7482febd39096d0b5a0f432a4056d89bcd58d16edfe5ba69ed0820f925f",
+      "size": 14787590
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_land_temperature_daily.bin",
+      "sha1": "8e31b6e1615f8cdbde1fb53499a38356fed4398e",
+      "sha256": "998246743cd06819738cfaae43c233840ee26c5de79917143cf5927cb0a6a01e",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_land_temperature_daily.bin.json",
+      "sha1": "9489560f3fcef2884eabd8a2ad83fb3096bce9f5",
+      "sha256": "6220a3314d5a5dd97cfe064df35a8b75e16ea7bead6085226491ede41ca87759",
+      "size": 591139
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_rainfall_daily.bin",
+      "sha1": "c32bf2cee47c34b65becf5368f288a4725a25b5b",
+      "sha256": "76e86a6414e5378a1072918e478136e34ff58b442214602c54990be7a0f90b89",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_rainfall_daily.bin.json",
+      "sha1": "52c4142047540036c7e68768d21fbaf8bbde9239",
+      "sha256": "1056fc8bf9c52f6d884bc26f616dfb8199ead0a95d70db42c3eaa93ca402f075",
+      "size": 591143
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_relative_humidity_daily.bin",
+      "sha1": "d55d3679a767d26fd25e0f3b9b8a46d42410aa6a",
+      "sha256": "afaa60d4c7d812bda48a072b07e0106f65e2969cc9e41f0d2857324e4d60c3ab",
+      "size": 134
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/Zambia/Zambia_2_5arcmin_relative_humidity_daily.bin.json",
+      "sha1": "21882f4ce53e058acf2757259f0a2e9574477ea8",
+      "sha256": "405aa1afd6104182b5923b58d69b5813d552c2e794ec7bb7e521475b8b7adbe1",
+      "size": 591143
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "DtkInput",
+      "path": "DtkInput/catalog.txt",
+      "sha1": "c4a14cf13605cf2e73c0c5ca4a8ea16d52b5264d",
+      "sha256": "d72b9260166a34d657b5385f37e77d56c48eac31fa3307645b0046fffde1efb7",
+      "size": 32290
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "HIV",
+      "path": "HIV/1cf76785-fd30-ec11-9ecd-9440c9bee941.tgz",
+      "sha1": "2c27cc398f91ac2bcc8c0bd9830044a343af0343",
+      "sha256": "3d056a7392516c83a16ad72cd3b466bea9cce3d9e5cfa4edb603b5bc686e4660",
+      "size": 598128004
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "HIV",
+      "path": "HIV/emod_output_calibration_first_diagnosis_events.tgz",
+      "sha1": "0acfc9a8435cf9d7ac59e0131e8e99d526a0a6d9",
+      "sha256": "b30091941afef9fe28ee497ae5e8328b3531ef5536dc1398400d77a0dbc4fdc6",
+      "size": 823901279
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/engwal_800k_full.csv.gz",
+      "sha1": "d61776219d0ccdf3f0e8d5e1fbb6cb6176c58090",
+      "sha256": "a0600d50dddc361b9dceaeb3dda7f8fcc030fb90abdf8f78b4752f46be057711",
+      "size": 19979578
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/engwal_empty_fits.npy",
+      "sha1": "d93603f819d2be46c59c3f9738961a10e1500133",
+      "sha256": "d5aea5e70af56b867c864cc6c05643a5091a5c5a08adba5a8799ecd7a63567bb",
+      "size": 46803
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/fits_london.npy",
+      "sha1": "9684663e4a1187962d46853d22c3226345480319",
+      "sha256": "cfd0f7718440b06177fbf0ee57df08f01f375d15bbb076b502bb7d31385a7c41",
+      "size": 382
+    },
+    {
+      "created_by": "nmchugh@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/foo.bin",
+      "sha1": "60bdc15754d9190c3b3606122596ea237bb2832f",
+      "sha256": "ecbb824849771cc711a61107ee12b27e23ce840c8e1874c144e415839e5928f3",
+      "size": 92639444
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/hello",
+      "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/laser_measles_calib_tutorial.tgz",
+      "sha1": "2b42a06027ba03ed5607e8cb7bd4505d4267f4ca",
+      "sha256": "e678c8471147c796bf223823233d35e470d5ecd4f89c921672aa280753fc9039",
+      "size": 2023404
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/londonish.csv.gz",
+      "sha1": "72993a6ba72a6f353b27a0469c57f30374fe94a7",
+      "sha256": "5f2ea068d69baab5cc693f382babdb389cf9a0fc3c61f91430d8b325494d9b1e",
+      "size": 1891581
+    },
+    {
+      "created_by": "nmchugh@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/network-testing.txt",
+      "sha1": "649357bbf275b9c5b2a421d42503a5e61f7586ff",
+      "sha256": "69b2aa8190bdf1dedbd5d98e46f5c30085ac405e7d56c77b537358c65ce95bda",
+      "size": 44
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/nga_adm_osgof_20190417.zip",
+      "sha1": "cbde00aab732409598b9ba8b3f3ae2a1b5338a1e",
+      "sha256": "a74f96693cbabc07ab1952a04001f9db818e5522d943fd53396954c7bd9c990a",
+      "size": 7411670
+    },
+    {
+      "created_by": "nmchugh@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/random.bin",
+      "sha1": "641e9c2a61df4ef650052a4123f264d21f6e6d6e",
+      "sha256": "72e31c13302d085bb839b491adf573de62e0ca5dd0c346b1fbed7b387387b55d",
+      "size": 8388608
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/sim_ew_jb_animation.html.gz",
+      "sha1": "60bdc15754d9190c3b3606122596ea237bb2832f",
+      "sha256": "ecbb824849771cc711a61107ee12b27e23ce840c8e1874c144e415839e5928f3",
+      "size": 92639444
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/ssa_shapes.zip",
+      "sha1": "e9ba79061913e098ad4956dd0769282b3d30bbae",
+      "sha256": "6089f9d465944e2dfeb33d6b7aa27e64d8482ddf7f5925d8b643ea8da3bb7a39",
+      "size": 23349680
+    },
+    {
+      "created_by": "jsteinkraus@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/test.exe",
+      "sha1": "28133ccde5c352bd321af3ed71bace79af693e90",
+      "sha256": "ac34498799c26b14709093610813d938363fd35ff45e9429b1d056f19c70e471",
+      "size": 8501168
+    },
+    {
+      "created_by": "jsteinkraus@idmod.org",
+      "folder": "LASER",
+      "path": "LASER/test.txt",
+      "sha1": "df46b2b3756cf37263149017eaf69315cb8eb20f",
+      "sha256": "8072b0584a38dc2c57786b95ce4f0787fe5d7551971c63491c8751e7d9f58c06",
+      "size": 10
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "MEASLES",
+      "path": "MEASLES/NGA_MERGED.csv.gz",
+      "sha1": "42a1bd21a4ecb7ce9105f04bf0ceeb0c791cac46",
+      "sha256": "ea0d455ddfabf696fe6f30b58b32f7c164e53edcc7db3a4199663bf0d3bc2bf9",
+      "size": 7186536
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "MEASLES",
+      "path": "MEASLES/prevac.pkl",
+      "sha1": "9dbac0068d9943f8e4d7ae47e4b791f5f7f4f116",
+      "sha256": "dc7a1e6a67440c61f9336b55390f9a443356c274a06a2bbf31889b0edafda9e0",
+      "size": 537110755
+    },
+    {
+      "created_by": "qifang.bi@gatesfoundation.org",
+      "folder": "MEASLES",
+      "path": "MEASLES/prevac_104bins.pkl",
+      "sha1": "af9087ad5ba8d1d192c33a112ae02030604e545a",
+      "sha256": "737d7f232b6d5f6ceeca781bb424a84e7160932652979a1bcd53dd04dded87ce",
+      "size": 1469877366
+    },
+    {
+      "created_by": "qifang.bi@gatesfoundation.org",
+      "folder": "MEASLES",
+      "path": "MEASLES/prevac_1960.pkl",
+      "sha1": "b7c59c45757c300cc0de6212d8a80b8f0c6a2a9b",
+      "sha256": "219128ebb2d2c36f6db8aac6ba0419684955574667d1013d70000584f2fa3b56",
+      "size": 537110759
+    },
+    {
+      "created_by": "qifang.bi@gatesfoundation.org",
+      "folder": "MEASLES",
+      "path": "MEASLES/prevac_1960_20260712.pkl",
+      "sha1": "ed41d787db30e7e99ab8b02e0da2b5612ecb04cc",
+      "sha256": "c26625ef5de045f62807e96838da42c4a0d50eb95d1dc7eb76c36854e909d56b",
+      "size": 33468133
+    },
+    {
+      "created_by": "qifang.bi@gatesfoundation.org",
+      "folder": "MEASLES",
+      "path": "MEASLES/prevac_20260710.pkl",
+      "sha1": "e46373bed0ea8b0b5373f18fca09b3d29815d2bf",
+      "sha256": "76a09f27a3020332c7790750286d12f4002fe082404df7873a92db7fb5dd507d",
+      "size": 1469877365
+    },
+    {
+      "created_by": "qifang.bi@gatesfoundation.org",
+      "folder": "MEASLES",
+      "path": "MEASLES/prevac_71bins.pkl",
+      "sha1": "b52ebc6856aa36adc5b49b5e9a318adfbab8f4ff",
+      "sha256": "4ccd92c4d45faf5bae963bf9bc2e787fbec8a75e4fc53204396d70571c7b1b80",
+      "size": 1003494057
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "Malaria",
+      "path": "Malaria/kyle_malaria_data.tgz",
+      "sha1": "618e354a10c1f6e38d0d684de78758511fe04d76",
+      "sha256": "dbfce3598ec79094c342af977f6abbb6274af9227271a3fe5fcf614867a702ce",
+      "size": 950255764
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "Malaria",
+      "path": "Malaria/kyle_malaria_matlab.tgz",
+      "sha1": "f9a0707deaff9977cd975327183ffb34e3d15ac6",
+      "sha256": "397305c628d65163875d75fe392062d76153cf6ed8b562d5b9e2b9ab7087c9da",
+      "size": 1000523372
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "Malaria",
+      "path": "Malaria/matlab_output_data_for_testing.tgz",
+      "sha1": "f7dad51a254877aeaeccd61b913f56337a3d29ef",
+      "sha256": "dfc50e92ddd2d9940f210bf8035abb64943a3d778d55d33f0f2d295c841f8f29",
+      "size": 555935981
+    },
+    {
+      "created_by": "jonathan.bloedow@gatesfoundation.org",
+      "folder": "gadm",
+      "path": "gadm/gadm4.1/shp/gadm41_ETH_shp.zip",
+      "sha1": "b43e803e7a6dcde9e2949dcced57b8a2d396153a",
+      "sha256": "e903a31d4abe546c7b5ea3340a49f83f255054b6c01a6add66729af1c308d569",
+      "size": 1338970
+    },
+    {
+      "created_by": "jonathan.bloedow@gatesfoundation.org",
+      "folder": "gadm",
+      "path": "gadm/gadm4.1/shp/gadm41_LUX_shp.zip",
+      "sha1": "8e9f065158f14d7f1dbe3b7e316749f92795133e",
+      "sha256": "ce3bd130575613b2931756fa17a9b2981a0f1176b6790d0d1b270932306bc8ca",
+      "size": 364132
+    },
+    {
+      "created_by": "jonathan.bloedow@gatesfoundation.org",
+      "folder": "gadm",
+      "path": "gadm/gadm4.1/shp/gadm41_NGA_shp.zip",
+      "sha1": "3216baf8d9319d788480ecd5c8b99eeed3555ef8",
+      "sha256": "50d40c3ee7831ef30d319dd92c58882e0cb093a1111599c198690dafc68a93ca",
+      "size": 3465524
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "general",
+      "path": "general/pip.conf",
+      "sha1": "52970324c967164b0df24e7518e33606c4c5372b",
+      "sha256": "6a6a327a92c8483ebf7fab16ad3039f60997f10149cff4ceccbcd7fd31bef732",
+      "size": 80
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/attraction_probabilities.csv.gz",
+      "sha1": "f708c9741dd2226ef01a34199640b124b8b4ba74",
+      "sha256": "e63f186848ba2302522729b747bbb16616890cc4f5b35d60db195ec6233f614b",
+      "size": 7838979
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/cbrs_ew.csv",
+      "sha1": "f5d0bf8049793f6a17b587f12f7f7b5389826587",
+      "sha256": "5b65ff47c91a357e93892dd06cb03dc890760c65bfbe8005cdcdcc2ffc7e006f",
+      "size": 728717
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/cities.csv",
+      "sha1": "b9eb36cfe9c3aaba8dece94c98abfbacb4a64959",
+      "sha256": "d4f12930523c48ff5b1708cfa84773bb2d67311fb7ad4014eee7691d28a51254",
+      "size": 27540
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/engwal_cities.csv",
+      "sha1": "b9eb36cfe9c3aaba8dece94c98abfbacb4a64959",
+      "sha256": "d4f12930523c48ff5b1708cfa84773bb2d67311fb7ad4014eee7691d28a51254",
+      "size": 27540
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/engwal_modeled.csv.gz",
+      "sha1": "0427951bf6fd61a0991ced4804dbedc7f47a92ca",
+      "sha256": "a3e9e43cf93ba51dc25a91127025a6bbe77291508e49e733debbddfc835edb99",
+      "size": 7835501
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/engwal_pops.csv",
+      "sha1": "27be56064a5e33d7ab8ae9b61b4f23a696c2bd32",
+      "sha256": "baa6579b6f385f0b8c433370688f89cfbd45acde9ed0c4244369155995e35582",
+      "size": 443402
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/fits_ew.npy",
+      "sha1": "c34ee31ca598da914dee71553649431a3682d460",
+      "sha256": "c280b3f316edeb4caf6f5805675345eff25ab68b0cbba2872df9b1facbbc65fd",
+      "size": 69007
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/measles_ew_animation.html.gz",
+      "sha1": "7e2aa25a7d3f4dcc58c1ca6d9197a4eb0d503bc4",
+      "sha256": "4fa8ad4e7d5dfcf559e87cddd32c8400fe66fc5614de37772f8a4111d6f060af",
+      "size": 15645791
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/modeled_pop.csv.gz",
+      "sha1": "86e810039edb2c970973f97ca06f238b367e7dab",
+      "sha256": "9e071d8c01f73466f716829cb30fcd71aef5f2f498bbf6125584f10875a2cad0",
+      "size": 8156926
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "laser",
+      "path": "laser/sim_ew_jb_animation.html.gz",
+      "sha1": "60bdc15754d9190c3b3606122596ea237bb2832f",
+      "sha256": "ecbb824849771cc711a61107ee12b27e23ce840c8e1874c144e415839e5928f3",
+      "size": 92639444
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "malaria",
+      "path": "malaria/jb_kyle_malaria_octave.tgz",
+      "sha1": "036fc6533ddec74c5913c2d20faef98d86d8c9bb",
+      "sha256": "23192834e0913874774b734472d341b42c0889dae5915c808ccf8f9bf12f00d6",
+      "size": 2633456129
+    },
+    {
+      "created_by": "dsutliffe-x@idmod.org",
+      "folder": "oc-proj",
+      "path": "oc-proj/mysql-persistent-idm-caltb.json",
+      "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "created_by": "dsutliffe-x@idmod.org",
+      "folder": "oc-proj",
+      "path": "oc-proj/oc.tar",
+      "sha1": "45631e8a0dab9a5aa71d0295fa24219d1f29ad1e",
+      "sha256": "a30340531c65a7b4e9be86e0e678003e43f6a715f6f5415de2472309e17a58db",
+      "size": 125091840
+    },
+    {
+      "created_by": "jbloedow@idmod.org",
+      "folder": "tb",
+      "path": "tb/India_mortality_1990_to_2017.csv",
+      "sha1": "de21c473465f56ae9920a674a45126f7e99cae3e",
+      "sha256": "eb3885902f8e6c18335945943e103502005033fe0bf4db39cef55e48916c1bce",
+      "size": 3426
+    }
+  ],
+  "folders": {
+    "DtkInput": 524,
+    "HIV": 2,
+    "LASER": 14,
+    "MEASLES": 7,
+    "Malaria": 3,
+    "gadm": 3,
+    "general": 1,
+    "laser": 10,
+    "malaria": 1,
+    "oc-proj": 2,
+    "tb": 1
+  },
+  "source_repo": "idm-data",
+  "type": "data"
+}
