@@ -28,6 +28,8 @@ make install          # pip install -r requirements.txt
 make lint             # ruff check artmig migrate.py   (same as CI; `pip install ruff` first)
 make check            # byte-compile sanity check (python -m compileall)
 make auth-check       # report whether ARTIFACTORY_TOKEN / gh / docker are ready
+make install-gui      # install the desktop console's deps (PySide6; CLI doesn't need it)
+make gui              # launch the PySide6 migration console (python -m artmig.gui)
 ```
 
 There is **no test suite** — CI (`.github/workflows/ci.yml`) runs only `ruff` + a
@@ -87,8 +89,10 @@ themselves — they pull everything off `ctx`.
 
 1. `inventory(ctx)` crawls Artifactory and returns a dict that the CLI writes to
    `manifests/<type>-inventory.json`. This is the **immutable plan** — all later phases read it
-   (`ctx.read_inventory`) and never re-crawl. `manifests/pypi-inventory.json` is committed so
-   Pages can rebuild the index offline; the others are gitignored and regenerated.
+   (`ctx.read_inventory`) and never re-crawl. **All four `*-inventory.json` and `state.json` are
+   git-tracked** (`.gitignore` keeps them; only logs are ignored), so a fresh checkout — and the
+   GUI — see real status without re-crawling. The `migrate.yml` workflow commits them back after
+   any run that changes them.
 2. `manifests/state.json` (`artmig/state.py`) is the **resume ledger**: per-item status keyed by
    a stable id like `pypi:emodpy:emodpy-2.1.16.whl`. Every phase checks `state.is_done(key, ...)`
    and skips finished work, so an interrupted migration resumes cleanly and reruns are cheap.
@@ -110,6 +114,16 @@ on ghcr") rather than redoing it.
   `gh auth login`. Uploads skip existing assets and self-pace against GitHub's secondary
   (content-creation) rate limit with escalating backoff. `delete_package` failures are warnings,
   not errors, so a partial rollback continues.
+
+### Desktop console (`artmig/gui.py`)
+
+A PySide6 GUI (`make gui`) for monitoring + running migrations. It **reuses the type modules**,
+never reimplements migration logic: status is rolled up read-only from the committed `state.json`
++ inventories (no network to render), and clicking **Migrate** runs `download → transform →
+publish` for one item in a background `QThread` by setting `ctx.item_filter = [<id>]` — the same
+scoping the CLI exposes as `--only`. The `artmig` logger is bridged to the activity pane. PySide6
+is an optional extra (`requirements-gui.txt`), so the CLI stays dependency-light. When editing it,
+keep logic in the type modules and drive via `ctx.item_filter`.
 
 ### Cross-cutting helpers (`artmig/util.py`)
 
