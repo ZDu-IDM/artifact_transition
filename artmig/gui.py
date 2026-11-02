@@ -29,7 +29,7 @@ from .state import State
 from .util import get_logger
 
 try:
-    from PySide6.QtCore import Qt, QThread, Signal
+    from PySide6.QtCore import QSize, Qt, QThread, Signal
     from PySide6.QtGui import QAction, QBrush, QColor, QFont
     from PySide6.QtWidgets import (
         QApplication,
@@ -78,6 +78,11 @@ DONE = "#4FD1A5"        # verified teal — reserved for "migrated"
 FAIL = "#E06A5A"
 PEND = "#6E8585"
 MONO = 'ui-monospace, "Cascadia Code", "Consolas", "Menlo", monospace'
+
+# Row + action-button sizing. Rows must be tall enough that the button (with its
+# padding + border) isn't clipped top/bottom — the button text was truncating.
+_BTN_HEIGHT = 28
+_ROW_HEIGHT = 38
 
 
 # =============================================================================
@@ -498,6 +503,8 @@ class MainWindow(QMainWindow):
         for it in items:
             node = QTreeWidgetItem([it.label, it.sublabel, "", ""])
             node.setData(0, Qt.UserRole, it.ident)
+            # Taller row so the action button's text isn't clipped top/bottom.
+            node.setSizeHint(0, QSize(0, _ROW_HEIGHT))
             self._style_item_node(node, it)
             self.tree.addTopLevelItem(node)
             # leaves
@@ -550,6 +557,7 @@ class MainWindow(QMainWindow):
             btn.setText("Migrate")
             btn.setProperty("kind", "primary")
         btn.setEnabled(btn.isEnabled() and self.worker is None)
+        btn.setMinimumHeight(_BTN_HEIGHT)
         btn.clicked.connect(lambda _=False, t=type_name, i=item.ident: self._start_publish(t, [i]))
         self.tree.setItemWidget(node, 3, btn)
 
@@ -733,7 +741,7 @@ QHeaderView::section {{ background: {PANEL2}; color: {FAINT}; border: none;
 QPlainTextEdit#console {{ background: #0b1517; color: {MUTED};
     border: none; border-top: 1px solid {LINE}; padding: 8px; }}
 
-QPushButton {{ border-radius: 6px; padding: 5px 12px; font-size: 11px;
+QPushButton {{ border-radius: 6px; padding: 4px 14px; font-size: 12px;
     border: 1px solid {LINE}; background: transparent; color: {TEXT}; }}
 QPushButton[kind="primary"] {{ background: {ACCENT}; color: #231704;
     border-color: {ACCENT}; font-weight: 600; }}
