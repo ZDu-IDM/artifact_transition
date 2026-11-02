@@ -70,6 +70,8 @@ except ImportError as exc:  # pragma: no cover - import-time guard
     ) from exc
 
 
+log = get_logger()
+
 MODULES = {"pypi": pypi, "docker": docker, "npm": npm, "data": data}
 # The phases a "Migrate" click runs, mirroring the CLI's `publish` expansion.
 PUBLISH_PHASES = ["download", "transform", "publish"]
@@ -811,25 +813,51 @@ def app_icon() -> QIcon:
     return icon
 
 
+# Bump the suffix if the taskbar shows a stale icon: Windows caches the taskbar
+# icon per AppUserModelID, and an earlier build cached the python fallback under
+# the old id. A fresh id is a new identity with no stale cache.
+APP_USER_MODEL_ID = "idm.artmig.console.v2"
+
+
+def _set_windows_app_id() -> None:
+    """Give the process an explicit AppUserModelID so the taskbar groups the app
+    under our identity (and uses our window icon) instead of python.exe. Must run
+    before any window is created. Logs the result so launch issues are visible."""
+    if sys.platform != "win32":
+        return
+    try:
+        import ctypes
+        fn = ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID
+        fn.argtypes = [ctypes.c_wchar_p]
+        fn.restype = ctypes.c_long  # HRESULT; 0 == S_OK
+        hr = fn(APP_USER_MODEL_ID)
+        exe = sys.executable
+        log.info("windows AppUserModelID=%s (hr=0x%08x) via %s", APP_USER_MODEL_ID,
+                 hr & 0xFFFFFFFF, exe)
+        if "WindowsApps" in exe:
+            log.warning("running under the Microsoft Store Python (%s) — it overrides the "
+                        "taskbar identity, so the custom icon may not show. Use a python.org "
+                        "or venv interpreter instead.", exe)
+    except Exception as exc:  # noqa: BLE001 - cosmetic only; never block startup
+        log.warning("could not set AppUserModelID: %s", exc)
+
+
 def main() -> None:
     config_path = _default_config_path()
-    # Windows: give the process its own AppUserModelID so the taskbar shows our
-    # icon instead of the generic Python one.
-    if sys.platform == "win32":
-        try:
-            import ctypes
-            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("idm.artmig.console")
-        except Exception:  # noqa: BLE001 - cosmetic only; never block startup
-            pass
+    _set_windows_app_id()
 
     app = QApplication(sys.argv)
     app.setApplicationName("artmig console")
     icon = app_icon()
     app.setWindowIcon(icon)
+    log.info("app icon sizes: %s", [s.width() for s in icon.availableSizes()])
     win = MainWindow(config_path)
     win.setWindowIcon(icon)
     win._update_console_banner()
     win.show()
+    # Re-assert the icon after the native window (and its taskbar button) exists —
+    # some Windows builds grab the taskbar icon at this point, not before show().
+    win.setWindowIcon(icon)
     sys.exit(app.exec())
 
 
