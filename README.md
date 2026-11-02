@@ -12,7 +12,7 @@ source snapshot; `make discover` produces the current live inventory.
 | **npm** | ✅ **done** | 4 packages / 15 versions → `@zdu-idm/*` on GitHub Packages (verified) |
 | **data** | ✅ **done** | 11 folder-releases / 578 assets, ~11.4 GB (sha256-verified) |
 | **pypi** | ✅ **done** | 91 releases / 1,692 assets, PEP 503 index live & `pip`-installable |
-| **docker** | 🟡 **pilot only** | 1 image (`idmtools/container-rocky-runtime`, 7 tags) migrated; full run pending (175 images / 569 tags / **281 GB**) |
+| **docker** | 🟡 **pilot only** | 1 image (`idmtools/container-rocky-runtime`, 7 tags) migrated; full run pending. Scope now **2 public repos** (private/staging excluded): **~167 GB / 106 images / 322 tags** (was ~281 GB / 175 / 569 across all three) |
 
 **Work is paused pending a team decision on the Docker run** (see
 [Resuming the Docker migration](#resuming-the-docker-migration)). npm/data/pypi are complete; nothing
@@ -24,17 +24,26 @@ The migration covers **every LOCAL repository** — the ones that store IDM's ow
 discovered live from `GET /api/repositories` (not a static list). REMOTE repos are caching
 proxies of public registries (PyPI, npm, Docker Hub, CRAN, NuGet, RPM) and VIRTUAL repos are
 aggregate views — neither holds IDM-owned data, so both are excluded. `migrate.py discover`
-audits the live LOCAL set against the config and **fails if any LOCAL repo is unhandled**, so
-nothing can be silently missed as Artifactory changes.
+audits the live LOCAL set against the config and **fails if any LOCAL repo is neither handled
+nor deliberately excluded**, so nothing can be silently missed as Artifactory changes. A repo
+can be consciously left out by listing it under `excluded_repos` in `migration.yaml` — `discover`
+then reports it as an *intentional* exclusion instead of a gap.
 
 Current LOCAL repos → GitHub target:
 
 | Source (LOCAL) | Volume | GitHub target |
 |---|---|---|
 | `idm-pypi-production` (Pypi) | 91 pkgs / 1,692 files | **GitHub Releases** + **PEP 503 index** on GitHub Pages |
-| `docker-production-public` + `idm-docker-public` + `docker-staging-public` (Docker) | 175 images / 569 tags / ~281 GB (authenticated count) | **ghcr.io** `ghcr.io/zdu-idm/<repo>/<image>` |
+| `docker-production-public` + `idm-docker-public` (Docker) | ~67 images (storage-listing count); tags/GB need a token re-measure | **ghcr.io** `ghcr.io/zdu-idm/<repo>/<image>` |
 | `idm-npm-production` (Npm) | packages discovered live | **GitHub Packages npm** `@zdu-idm/*` |
 | `idm-data` (Generic) | 568 files / 11 folders | **GitHub Releases** (one per folder) + `manifest.json` |
+
+> **Excluded (intentional):** only the **public production** repos are migrated. All private
+> and staging LOCAL repos are listed under `excluded_repos` in `migration.yaml` and skipped:
+> `docker-staging-public`, `docker-production-private`, `docker-staging-private`,
+> `idm-docker-production`, `idm-docker-staging`, `idm-npm-staging`, `idm-pypi-staging`.
+> Authenticated size of the two in-scope Docker repos: **~167 GB / 106 images / 322 tags**
+> (down from the all-three-repo ~281 GB / 175 / 569).
 
 > The earlier `artifactory-package-summary.{md,html,pdf}` was a point-in-time snapshot and
 > under-counted (e.g. it omitted `docker-staging-public`'s ~65 images). `make discover` replaces
@@ -273,8 +282,12 @@ updated `manifests/pypi-inventory.json`, and push — the workflow redeploys aut
 
 ## Resuming the Docker migration
 
-npm/data/pypi are done. Docker is the only remaining type. One image was migrated as a
-pilot; the full run is **175 images / 569 tags / ~281 GB**.
+npm/data/pypi are done. Docker is the only remaining type, now scoped to the **two public
+repos** (`docker-production-public` + `idm-docker-public`); all private/staging repos are
+intentionally excluded (see `excluded_repos`). One image was migrated as a pilot. The
+authenticated in-scope size is **~167 GB / 106 images / 322 tags** (down from ~281 GB /
+175 / 569 across all three repos). Refresh anytime with `make report` + `ARTIFACTORY_TOKEN`
+(it sums the configured repos).
 
 **Decisions to settle with the team first:**
 1. **Tag scope** — all 569 tags, or `tag_selection: one` (one representative tag per image →

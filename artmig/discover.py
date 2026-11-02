@@ -48,16 +48,29 @@ def _covered_repos(ctx: Context) -> dict[str, str]:
     return out
 
 
+def _excluded_repos(ctx: Context) -> set[str]:
+    """Repos deliberately left out of migration (documented, not a coverage gap)."""
+    return set(ctx.cfg.raw.get("excluded_repos", []) or [])
+
+
 def coverage(ctx: Context, local: list[dict] | None = None) -> dict:
-    """Cross-reference live LOCAL repos against the config. Returns rows + gaps."""
+    """Cross-reference live LOCAL repos against the config. Returns rows + gaps.
+
+    A LOCAL repo is OK if it's either handled (in the config) or listed in
+    `excluded_repos` (an intentional, recorded exclusion). Anything else is an
+    UNCOVERED gap that fails the gate.
+    """
     local = local if local is not None else list_local_repos(ctx)
     covered = _covered_repos(ctx)
+    excluded = _excluded_repos(ctx)
     rows, uncovered = [], []
     for r in local:
         key, ptype = r["key"], r.get("packageType", "?")
         handler = _HANDLER.get(ptype)
         if key in covered:
             status = "covered"
+        elif key in excluded:
+            status = "excluded (intentional)"
         elif handler is None:
             status = f"UNCOVERED — unsupported package type ({ptype})"
             uncovered.append(key)
@@ -65,7 +78,8 @@ def coverage(ctx: Context, local: list[dict] | None = None) -> dict:
             status = f"UNCOVERED — add to types.{handler} in migration.yaml"
             uncovered.append(key)
         rows.append({"repo": key, "type": ptype, "handler": handler, "status": status})
-    return {"local": rows, "uncovered": uncovered, "covered_count": len(covered)}
+    return {"local": rows, "uncovered": uncovered, "covered_count": len(covered),
+            "excluded": sorted(excluded)}
 
 
 # ---- report data + renderers -------------------------------------------------
@@ -101,9 +115,14 @@ def render_markdown(d: dict) -> str:
         "VIRTUAL are aggregate views — both excluded.",
         "",
     ]
+    excl_n = sum(1 for r in cov["local"] if r["status"].startswith("excluded"))
     if cov["uncovered"]:
         lines.append(f"> ⚠️ **{len(cov['uncovered'])} LOCAL repo(s) UNCOVERED:** "
                      f"{', '.join(cov['uncovered'])}")
+    elif excl_n:
+        lines.append(f"> ✅ **All {len(cov['local'])} LOCAL repositories accounted for** "
+                     f"({len(cov['local']) - excl_n} migrated, {excl_n} intentionally "
+                     f"excluded: {', '.join(cov['excluded'])}).")
     else:
         lines.append(f"> ✅ **All {len(cov['local'])} LOCAL repositories are covered "
                      "by the migration.**")
@@ -125,9 +144,14 @@ def render_markdown(d: dict) -> str:
 def _render_body(d: dict) -> str:
     cov = d["coverage"]
     counts = " · ".join(f"{len(d['by_class'][c])} {c}" for c in _CLASSES)
+    excl_n = sum(1 for r in cov["local"] if r["status"].startswith("excluded"))
     if cov["uncovered"]:
         banner = (f'<p class="warn">⚠️ {len(cov["uncovered"])} LOCAL repo(s) UNCOVERED: '
                   f'{html.escape(", ".join(cov["uncovered"]))}</p>')
+    elif excl_n:
+        banner = (f'<p class="ok">✅ All {len(cov["local"])} LOCAL repositories accounted '
+                  f'for ({len(cov["local"]) - excl_n} migrated, {excl_n} intentionally '
+                  f'excluded: {html.escape(", ".join(cov["excluded"]))}).</p>')
     else:
         banner = (f'<p class="ok">✅ All {len(cov["local"])} LOCAL repositories are '
                   "covered by the migration.</p>")
@@ -216,9 +240,14 @@ def write_pdf(d: dict, path) -> bool:
          "artifacts and are migrated; REMOTE are public-registry caches and VIRTUAL "
          "are aggregate views (both excluded).")
     pdf.ln(1)
+    excl_n = sum(1 for r in cov["local"] if r["status"].startswith("excluded"))
     if cov["uncovered"]:
         line(f"[!] {len(cov['uncovered'])} LOCAL repo(s) UNCOVERED: "
              f"{', '.join(cov['uncovered'])}", style="B")
+    elif excl_n:
+        line(f"[OK] All {len(cov['local'])} LOCAL repositories accounted for "
+             f"({len(cov['local']) - excl_n} migrated, {excl_n} excluded: "
+             f"{', '.join(cov['excluded'])}).", style="B")
     else:
         line(f"[OK] All {len(cov['local'])} LOCAL repositories are covered.", style="B")
 

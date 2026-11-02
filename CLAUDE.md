@@ -12,7 +12,7 @@ GitHub destination:
 | Type  | Source (Artifactory LOCAL repo)        | GitHub destination |
 |-------|----------------------------------------|--------------------|
 | pypi  | `idm-pypi-production`                   | GitHub Releases + a static PEP 503 index under `docs/simple/` (served via Pages) |
-| docker| `docker-*-public`, `idm-docker-public` | `ghcr.io/<namespace>/<source-repo>/<image>:<tag>` |
+| docker| `docker-production-public`, `idm-docker-public` (`docker-staging-public` excluded via `excluded_repos`) | `ghcr.io/<namespace>/<source-repo>/<image>:<tag>` |
 | npm   | `idm-npm-production`                    | GitHub Packages npm, **rescoped** to `@<namespace>/<pkg>` |
 | data  | `idm-data`                             | GitHub Releases (one per folder) + a per-release `manifest.json` |
 

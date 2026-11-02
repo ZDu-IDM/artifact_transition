@@ -20,6 +20,21 @@ artifactory:
   base_url: https://packages.idmod.org/artifactory
   docker_registry: packages.idmod.org   # Docker v2 registry host (no /artifactory)
 
+# ---- Deliberately excluded repositories --------------------------------------
+# LOCAL repos we consciously do NOT migrate. `discover` still audits them, but
+# reports them as intentional exclusions instead of failing the coverage gate, so
+# nothing is ever *silently* dropped — a removal has to be recorded here.
+# Scope decision: migrate only the PUBLIC production repos; all private and
+# staging repos are out of scope.
+excluded_repos:
+  - docker-staging-public      # staging (public)
+  - docker-production-private   # private
+  - docker-staging-private      # private + staging
+  - idm-docker-production       # not a *-public repo
+  - idm-docker-staging          # staging
+  - idm-npm-staging             # staging
+  - idm-pypi-staging            # staging
+
 # ---- Per-type source repositories --------------------------------------------
 types:
   pypi:
@@ -29,13 +44,16 @@ types:
 
   docker:
     enabled: true
-    # All LOCAL Docker repos. `migrate.py discover` audits this list against the
-    # live /api/repositories and FAILS if a LOCAL repo is missing here.
+    # LOCAL Docker repos in scope. `migrate.py discover` audits this list against
+    # the live /api/repositories and FAILS if a LOCAL repo is neither handled here
+    # nor in `excluded_repos` below.
     repos:
       - docker-production-public
       - idm-docker-public
-      - docker-staging-public    # LOCAL staging repo (~65 images) — was missed by the summary
-    expected_count: 132          # soft hint; discovery is authoritative
+    # docker-staging-public is intentionally excluded (see excluded_repos) — we
+    # migrate only the production/public images, not the staging repo.
+    expected_count: 67           # soft hint (storage-listing basis: 51 + 16);
+                                 # discovery is authoritative, auth catalog may differ
     # Which tags to migrate per image:
     #   all    - every tag (default)
     #   one    - one representative tag per image ('latest' if present, else the first);
