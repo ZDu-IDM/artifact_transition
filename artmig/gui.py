@@ -30,7 +30,16 @@ from .util import get_logger
 
 try:
     from PySide6.QtCore import QSize, Qt, QThread, Signal
-    from PySide6.QtGui import QAction, QBrush, QColor, QFont
+    from PySide6.QtGui import (
+        QAction,
+        QBrush,
+        QColor,
+        QFont,
+        QIcon,
+        QPainter,
+        QPen,
+        QPixmap,
+    )
     from PySide6.QtWidgets import (
         QApplication,
         QCheckBox,
@@ -758,11 +767,58 @@ def _default_config_path() -> Path:
     return candidate if candidate.exists() else Path("migration.yaml")
 
 
+def app_icon() -> QIcon:
+    """Draw the app icon in-process (no bundled asset): an amber package on a
+    petrol tile with a teal 'migrate' arrow — the console's registry-ledger mark."""
+    size = 256
+    pm = QPixmap(size, size)
+    pm.fill(Qt.transparent)
+    p = QPainter(pm)
+    p.setRenderHint(QPainter.Antialiasing)
+
+    # rounded petrol tile
+    p.setPen(QPen(QColor(LINE), 10))
+    p.setBrush(QColor(GROUND))
+    p.drawRoundedRect(14, 14, size - 28, size - 28, 46, 46)
+
+    # package / crate outline (amber)
+    amber = QPen(QColor(ACCENT), 16, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
+    p.setPen(amber)
+    p.setBrush(Qt.NoBrush)
+    bx, by, bw, bh = 58, 104, 140, 96
+    p.drawRoundedRect(bx, by, bw, bh, 12, 12)
+    p.drawLine(bx, by + 30, bx + bw, by + 30)             # lid seam
+    p.drawLine(bx + bw // 2, by + 30, bx + bw // 2, by + bh)  # center seam
+
+    # teal 'migrate' arrow rising out of the box
+    teal = QPen(QColor(DONE), 18, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
+    p.setPen(teal)
+    cx = bx + bw // 2
+    p.drawLine(cx, 92, cx, 36)        # shaft
+    p.drawLine(cx, 36, cx - 24, 60)   # left head
+    p.drawLine(cx, 36, cx + 24, 60)   # right head
+
+    p.end()
+    return QIcon(pm)
+
+
 def main() -> None:
     config_path = _default_config_path()
+    # Windows: give the process its own AppUserModelID so the taskbar shows our
+    # icon instead of the generic Python one.
+    if sys.platform == "win32":
+        try:
+            import ctypes
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("idm.artmig.console")
+        except Exception:  # noqa: BLE001 - cosmetic only; never block startup
+            pass
+
     app = QApplication(sys.argv)
     app.setApplicationName("artmig console")
+    icon = app_icon()
+    app.setWindowIcon(icon)
     win = MainWindow(config_path)
+    win.setWindowIcon(icon)
     win._update_console_banner()
     win.show()
     sys.exit(app.exec())
