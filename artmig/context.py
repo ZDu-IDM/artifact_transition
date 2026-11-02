@@ -18,8 +18,19 @@ class Context:
     gh: GitHub
     state: State
     dry_run: bool
-    # Optional substrings to restrict Docker images (ephemeral, for bounded runs).
-    image_filter: list[str] = field(default_factory=list)
+    # Optional whitelist of top-level item identifiers to restrict a run to a
+    # subset (ephemeral, for bounded runs / the GUI's per-item buttons). The
+    # identifier is each type's top-level grouping key: a pypi/npm package name,
+    # a docker "<repo>/<image>" key, or a data folder. Empty = process everything.
+    item_filter: list[str] = field(default_factory=list)
+
+    def selected(self, identifier: str) -> bool:
+        """True if an item should be processed under the current filter.
+
+        Exact match (not substring) so selecting 'emodpy' never also pulls in
+        'emodpy-malaria'. An empty filter selects everything.
+        """
+        return not self.item_filter or identifier in self.item_filter
 
     def inventory_path(self, type_name: str) -> Path:
         return self.cfg.manifests_dir / f"{type_name}-inventory.json"

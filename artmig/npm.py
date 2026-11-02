@@ -85,6 +85,8 @@ def inventory(ctx: Context) -> dict:
 def download(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     for pkg, meta in inv["packages"].items():
+        if not ctx.selected(pkg):
+            continue
         for v in meta["versions"]:
             key = f"npm:{pkg}:{v['version']}"
             dest = ctx.staging(TYPE, pkg, f"{pkg}-{v['version']}.tgz")
@@ -132,6 +134,8 @@ def publish(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     slug = ctx.cfg.github_slug
     for pkg, meta in inv["packages"].items():
+        if not ctx.selected(pkg):
+            continue
         new_name = meta["new_name"]
         for v in meta["versions"]:
             key = f"npm:{pkg}:{v['version']}"
@@ -179,6 +183,8 @@ def cleanup(ctx: Context) -> None:
     """Delete the rescoped @<ns>/* packages from GitHub Packages and reset state."""
     inv = ctx.read_inventory(TYPE)
     for pkg, meta in inv["packages"].items():
+        if not ctx.selected(pkg):
+            continue
         ctx.gh.delete_package("npm", meta["new_name"])
         for v in meta["versions"]:
             ctx.state.clear(f"npm:{pkg}:{v['version']}")
@@ -211,5 +217,6 @@ def _npm_view(name: str) -> tuple[str, str, str]:
 def verify(ctx: Context) -> None:
     """Probe that each rescoped package is live on GitHub Packages (needs npm auth)."""
     inv = ctx.read_inventory(TYPE)
-    results = [_npm_view(meta["new_name"]) for meta in inv["packages"].values()]
+    results = [_npm_view(meta["new_name"]) for pkg, meta in inv["packages"].items()
+              if ctx.selected(pkg)]
     report_probes(TYPE, results)

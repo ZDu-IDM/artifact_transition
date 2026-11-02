@@ -36,7 +36,6 @@ def _select_tags(tags: list[str], selection: str) -> list[str]:
 def inventory(ctx: Context) -> dict:
     repos = ctx.cfg.types[TYPE]["repos"]
     selection = ctx.cfg.types[TYPE].get("tag_selection", "all")
-    only = ctx.image_filter or []
     images: dict[str, dict] = {}
     total_images = 0
     for repo in repos:
@@ -48,7 +47,7 @@ def inventory(ctx: Context) -> dict:
             names = _catalog_from_storage(ctx, repo)
         for img in names:
             key = f"{repo}/{img}"
-            if only and not any(s in key for s in only):
+            if not ctx.selected(key):
                 continue
             try:
                 tags = ctx.art.docker_tags(repo, img)
@@ -145,7 +144,9 @@ def _rmi(refs: list[str]) -> None:
 
 def publish(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
-    for _, meta in inv["images"].items():
+    for key, meta in inv["images"].items():
+        if not ctx.selected(key):
+            continue
         repo, image = meta["source_repo"], meta["image"]
         local_refs: list[str] = []
         for tag in meta["tags"]:
@@ -180,7 +181,9 @@ def transform(ctx: Context) -> None:
 def cleanup(ctx: Context) -> None:
     """Delete the migrated container packages from ghcr.io and reset state."""
     inv = ctx.read_inventory(TYPE)
-    for meta in inv["images"].values():
+    for key, meta in inv["images"].items():
+        if not ctx.selected(key):
+            continue
         # ghcr package name is the image path under the namespace: <repo>/<image>
         ctx.gh.delete_package("container", f"{meta['source_repo']}/{meta['image']}")
         for tag in meta["tags"]:
@@ -209,8 +212,8 @@ def verify(ctx: Context) -> None:
     image (login + subdomain registry) and whether its ghcr DESTINATION exists."""
     inv = ctx.read_inventory(TYPE)
     sample = None
-    for meta in inv["images"].values():
-        if meta["tags"]:
+    for key, meta in inv["images"].items():
+        if ctx.selected(key) and meta["tags"]:
             sample = (meta["source_repo"], meta["image"], meta["tags"][0])
             break
     if sample is None:

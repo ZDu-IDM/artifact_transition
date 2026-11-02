@@ -1,0 +1,4 @@
+# Optional dependencies for the desktop migration console (artmig/gui.py).
+# The CLI does NOT need these; install only to run `make gui`.
+-r requirements.txt
+PySide6>=6.6

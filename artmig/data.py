@@ -77,6 +77,8 @@ def download(ctx: Context) -> None:
     repo = inv["source_repo"]
     cap = _cap(ctx)
     for f in inv["files"]:
+        if not ctx.selected(f["folder"]):
+            continue
         key = f"data:{f['path']}"
         dest = ctx.staging(TYPE, f["path"])
         if ctx.state.is_done(key, "downloaded") and dest.exists():
@@ -98,6 +100,8 @@ def publish(ctx: Context) -> None:
         groups[f["folder"]].append(f)
 
     for folder, items in sorted(groups.items()):
+        if not ctx.selected(folder):
+            continue
         tag = f"data/{folder}"
         manifest = {"folder": folder, "source_repo": inv["source_repo"], "assets": []}
         out_dir = ctx.staging(TYPE, "_release", folder)
@@ -194,10 +198,11 @@ def transform(ctx: Context) -> None:
 def cleanup(ctx: Context) -> None:
     """Delete every data/<folder> release and forget its publish state."""
     inv = ctx.read_inventory(TYPE)
-    folders = sorted({f["folder"] for f in inv["files"]})
+    folders = sorted({f["folder"] for f in inv["files"] if ctx.selected(f["folder"])})
     removed = sum(1 for folder in folders if ctx.gh.delete_release(f"data/{folder}"))
     for f in inv["files"]:
-        ctx.state.clear(f"data:{f['path']}")
+        if ctx.selected(f["folder"]):
+            ctx.state.clear(f"data:{f['path']}")
     log.info("data: rollback removed %d of %d folder release(s)", removed, len(folders))
 
 
@@ -208,7 +213,8 @@ def verify(ctx: Context) -> None:
     results: list[tuple[str, str, str]] = []
 
     # smallest under-cap file with a known checksum -> cheap, meaningful sha256 probe
-    candidates = [f for f in inv["files"] if 0 < f["size"] <= cap and f.get("sha256")]
+    candidates = [f for f in inv["files"]
+                  if 0 < f["size"] <= cap and f.get("sha256") and ctx.selected(f["folder"])]
     if candidates:
         f = min(candidates, key=lambda x: x["size"])
         tag = f"data/{f['folder']}"
@@ -220,7 +226,7 @@ def verify(ctx: Context) -> None:
     else:
         results.append(("SKIP", "data asset", "no under-cap file with sha256 in inventory"))
 
-    oversize = [f for f in inv["files"] if f["size"] > cap]
+    oversize = [f for f in inv["files"] if f["size"] > cap and ctx.selected(f["folder"])]
     for f in oversize:
         tag = f"data/{f['folder']}"
         part0 = f"{sanitize_asset_name(f['path'])}.part000"

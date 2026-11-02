@@ -13,14 +13,20 @@ TYPE ?= all
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install lint check auth-check discover inventory dry-run publish verify cleanup report index clean distclean
+.PHONY: help install install-gui gui lint check auth-check discover inventory dry-run publish verify cleanup report index clean distclean
 
 help:  ## Show this help
 	@grep -E '^[a-zA-Z_%-]+:.*?## ' $(MAKEFILE_LIST) \
 		| awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-16s\033[0m %s\n",$$1,$$2}'
 
-install:  ## Install Python dependencies
+install:  ## Install Python dependencies (CLI only)
 	$(PY) -m pip install -r requirements.txt
+
+install-gui:  ## Install desktop console dependencies (adds PySide6)
+	$(PY) -m pip install -r requirements-gui.txt
+
+gui:  ## Launch the PySide6 migration console
+	$(PY) -m artmig.gui
 
 lint:  ## Lint with ruff (same config as CI; `pip install ruff` first)
 	ruff check artmig migrate.py
