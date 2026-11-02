@@ -430,9 +430,11 @@ class MainWindow(QMainWindow):
         self.console.setReadOnly(True)
         self.console.setObjectName("console")
         self.console.setMaximumBlockCount(5000)
+        # Pixel-sized to match the QSS (font-size: 12px). Mixing point- and
+        # pixel-sized fonts makes Qt emit "setPointSize: Point size <= 0 (-1)".
         f = QFont("Consolas")
         f.setStyleHint(QFont.Monospace)
-        f.setPointSize(9)
+        f.setPixelSize(12)
         self.console.setFont(f)
         lay.addWidget(self.console)
         return panel
@@ -549,7 +551,8 @@ class MainWindow(QMainWindow):
         node.setForeground(2, QBrush(QColor(color)))
         bold = QFont()
         bold.setBold(True)
-        node.setFont(0, bold)
+        bold.setPixelSize(13)   # pixel-sized (see console font note) to avoid the
+        node.setFont(0, bold)   # point/pixel mix that warns "setPointSize(-1)"
 
     def _add_action_button(self, node: QTreeWidgetItem, type_name: str, item: Item) -> None:
         status = item_status(self.state, item)
@@ -832,8 +835,8 @@ def _set_windows_app_id() -> None:
         fn.restype = ctypes.c_long  # HRESULT; 0 == S_OK
         hr = fn(APP_USER_MODEL_ID)
         exe = sys.executable
-        log.info("windows AppUserModelID=%s (hr=0x%08x) via %s", APP_USER_MODEL_ID,
-                 hr & 0xFFFFFFFF, exe)
+        log.debug("windows AppUserModelID=%s (hr=0x%08x) via %s", APP_USER_MODEL_ID,
+                  hr & 0xFFFFFFFF, exe)
         if "WindowsApps" in exe:
             log.warning("running under the Microsoft Store Python (%s) — it overrides the "
                         "taskbar identity, so the custom icon may not show. Use a python.org "
@@ -850,7 +853,7 @@ def main() -> None:
     app.setApplicationName("artmig console")
     icon = app_icon()
     app.setWindowIcon(icon)
-    log.info("app icon sizes: %s", [s.width() for s in icon.availableSizes()])
+    log.debug("app icon sizes: %s", [s.width() for s in icon.availableSizes()])
     win = MainWindow(config_path)
     win.setWindowIcon(icon)
     win._update_console_banner()
