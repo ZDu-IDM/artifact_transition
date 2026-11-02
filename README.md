@@ -204,6 +204,10 @@ the live log. A **dry run** toggle (on by default) maps to `--dry-run`; **Refres
 re-crawls Artifactory. The console is read-only until you click — it never pushes on its own, and
 a live (non-dry) run asks for confirmation. Status rendering makes **no** network calls.
 
+Because `state.json` and the inventories are committed (and CI commits them back after each run),
+the console shows real published status straight from a fresh checkout — no need to re-run
+`inventory` first. Status is ledger-based, not a live probe; use `verify` for live ground truth.
+
 Under the hood it sets `ctx.item_filter = [<item>]` and calls the type modules directly — the same
 scoping the CLI exposes as `--only` — so GUI and CLI stay in lockstep.
 
@@ -250,9 +254,9 @@ copy /b malaria__jb_kyle_malaria_octave.tgz.part* jb_kyle_malaria_octave.tgz
 ```
 migrate.py          CLI entrypoint
 artmig/             package: config, artifactory client, github wrapper, state, util,
-                    + one module per type (pypi, docker, npm, data)
+                    + one module per type (pypi, docker, npm, data), + gui.py (desktop console)
 migration.yaml      configuration (no secrets)
-manifests/          generated inventory JSON + resume state + logs
+manifests/          inventory JSON + resume state (committed; CI commits them back) + logs (ignored)
 staging/            local download cache (gitignored)
 docs/simple/        generated PEP 503 index (GitHub Pages source)
 ```
