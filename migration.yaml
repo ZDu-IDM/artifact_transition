@@ -24,8 +24,16 @@ artifactory:
 # LOCAL repos we consciously do NOT migrate. `discover` still audits them, but
 # reports them as intentional exclusions instead of failing the coverage gate, so
 # nothing is ever *silently* dropped — a removal has to be recorded here.
+# Scope decision: migrate only the PUBLIC production repos; all private and
+# staging repos are out of scope.
 excluded_repos:
-  - docker-staging-public   # staging images; only production/public images are migrated
+  - docker-staging-public      # staging (public)
+  - docker-production-private   # private
+  - docker-staging-private      # private + staging
+  - idm-docker-production       # not a *-public repo
+  - idm-docker-staging          # staging
+  - idm-npm-staging             # staging
+  - idm-pypi-staging            # staging
 
 # ---- Per-type source repositories --------------------------------------------
 types:
