@@ -179,6 +179,25 @@ make clean                   # drop staging cache + generated outputs
 Most targets accept `TYPE=all|pypi|docker|npm|data` (default `all`); per-type shortcuts like
 `make publish-docker` are also available.
 
+### Desktop console (GUI)
+
+A PySide6 app wraps the same pipeline for interactive monitoring and per-item runs:
+
+```bash
+make install-gui     # one-time: adds PySide6 (the CLI itself doesn't need it)
+make gui             # or: python -m artmig.gui
+```
+
+It lists every **pypi / docker / npm / data** item (package / image / folder) with its
+migration status rolled up from `manifests/state.json`, and gives each a **Migrate** button
+that runs `download → transform → publish` for just that item in a background thread, streaming
+the live log. A **dry run** toggle (on by default) maps to `--dry-run`; **Refresh inventory**
+re-crawls Artifactory. The console is read-only until you click — it never pushes on its own, and
+a live (non-dry) run asks for confirmation. Status rendering makes **no** network calls.
+
+Under the hood it sets `ctx.item_filter = [<item>]` and calls the type modules directly — the same
+scoping the CLI exposes as `--only` — so GUI and CLI stay in lockstep.
+
 ### Linting / CI
 
 `.github/workflows/ci.yml` runs `ruff` (config in `ruff.toml`) plus a byte-compile check on every

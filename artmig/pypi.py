@@ -121,6 +121,8 @@ def download(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     repo = inv["source_repo"]
     for norm, pkg in inv["packages"].items():
+        if not ctx.selected(norm):
+            continue
         for f in pkg["files"]:
             key = f"pypi:{norm}:{f['filename']}"
             dest = ctx.staging(TYPE, norm, f["filename"])
@@ -140,6 +142,8 @@ def download(ctx: Context) -> None:
 def publish(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     for norm, pkg in inv["packages"].items():
+        if not ctx.selected(norm):
+            continue
         tag = f"pypi/{norm}"
         ctx.gh.ensure_release(tag, title=f"PyPI: {pkg['display_name']}",
                               notes=f"Migrated from Artifactory {inv['source_repo']}.")
@@ -192,6 +196,8 @@ def cleanup(ctx: Context) -> None:
     inv = ctx.read_inventory(TYPE)
     removed = 0
     for norm, pkg in inv["packages"].items():
+        if not ctx.selected(norm):
+            continue
         if ctx.gh.delete_release(f"pypi/{norm}"):
             removed += 1
         for f in pkg["files"]:
@@ -210,7 +216,7 @@ def verify(ctx: Context) -> None:
     ok, detail = http_reachable(f"{base}/simple/")
     results.append(("OK" if ok else "FAIL", "pages simple index", detail))
 
-    norm = next(iter(inv["packages"]), None)
+    norm = next((n for n in inv["packages"] if ctx.selected(n)), None)
     if norm:
         pkg = inv["packages"][norm]
         ok, detail = http_reachable(f"{base}/simple/{norm}/")
